@@ -1,189 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>The Duck Launcher on Github</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<!-- A basic responsive reset -->
-	<style>
-		@-webkit-viewport { width: device-width; zoom: 1.0; }
-		   @-moz-viewport { width: device-width; zoom: 1.0; }
-			@-ms-viewport { width: device-width; zoom: 1.0; }
-			 @-o-viewport { width: device-width; zoom: 1.0; }
-				@viewport { width: device-width; zoom: 1.0; }
-
-		html { overflow-y: auto; }
-
-		img, audio, video, canvas { max-width: 100%; }
-
-		/*  Sets body width */
-		.container {
-			max-width: 40em;
-			width: 88%;
-			margin-left: auto;
-			margin-right: auto;
-		}
-	</style>
-
-	<!-- stylesheets -->
-	<link rel="stylesheet" href="css/slider-css.css" type="text/css">
-	<link rel="stylesheet" href="css/main.css" type="text/css">
-	<!-- HTML5 Shim for IE -->
-	<!--[if IE]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-</head>
-
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>The Duck Launcher</title>
+	<link rel="stylesheet" href="css/style.css"/>
+ </head> 
+	
 <body>
-	<section class="container">
-		<a class="header1" href=""><img src="img/duck2.png"></a>
-		<a class="header2" href=""><h6 class="h-text">Welcome to The Duck's github page</h6></a>
-		<a class="header3" href="http://www.github.com/the-duck/launcher"><h6 class="h-text">Duck Launcher's Github repository!!</h6></a>
-		<h1 id="title">Duck Launcher</h1>
-		<p>A stylish and useful application launcher, made for linux..</p>
+	<div id="slide1">
+		<div class="content">
+			<h1>Duck </br>Launcher</h2>
+			<div class="separator"></div>
+			<p>An application launcher for linux</p>
+			<img src="img/duck.svg" width=400 id="img"></img>
+		</div> 
+    </div> 
 
-		<div class="slider" data-slider>
-			<div class="slides">
-				<div><img src="img/im7.png"></div>
-				<div><img src="img/im1.png"></div>
-				<div><img src="img/im4.png"></div>
-				<div><img src="img/im8.png"></div>
-			</div>
-			<div data-slider-nav></div>
-			<div data-slider-count></div>
+	<div id="slide2">
+		<div class="content" >
+			<iframe width="450" height="350"  id="video" src="https://www.youtube.com/embed/COhXS50T0o4?theme=white"></iframe>
+			<h2 class="vid">Here's a little demo:)</h2>
+			<a href="screenshots.html" id="big">Screenshots<img style="float:right; "src="img/screen.svg" width=50></a>
+			</br>
+			<a href="http://github.com/the-duck/launcher#--install" id="big">Install<img style="float:right; "src="img/install.svg" width=50></a>		
+		</div> 
+    </div> 
+    	<div id="slide3">
+		<div class="content" >
+			<a href="http://launchpad.net/~the-duck/+archive/launcher"><img width=100 src="img/launchpad.svg"></img><h2>The Duck on </br>Launchpad</h2></a>
+			<a href="http://github.com/the-duck/launcher"><img width=100 src="img/github.svg"></img><h2>The Duck on </br>Github</h2></a>
+		</div> 
+    </div> 
 
-	</section>
-	<div class="installd">
-	<a class="install" href="install.html" >Install Now !!</a>
-	</div>
-	<ul class="footer">
-	<li><a class="footer" href="http://www.launchpad.net/~the-duck">The Duck on Launchpad | </a></li>
-	<li><a class="footer" href="http://cferdinandi.github.io/slider/">Check out Slider 4</a></li>
-	</ul>
-
-	<!-- Javascript -->
-	<script src='js/fluidvids.js'></script>
-	<script src='js/slider.js'></script>
-	<script>
-		window.sliderInit = (function (window, document, undefined) {
-
-			'use strict';
-
-			// Feature Test
-			if ( 'querySelector' in document && 'addEventListener' in window && Array.prototype.forEach ) {
-
-				// SELECTORS
-				var sliders = document.querySelectorAll('[data-slider]');
-				var mySwipe = Array;
-
-
-				// EVENTS, LISTENERS, AND INITS
-
-				// Add class to HTML element to activate conditional CSS
-				document.documentElement.className += ' js-slider';
-
-				// Activate all sliders
-				Array.prototype.forEach.call(sliders, function (slider, index) {
-
-					// SELECTORS
-
-					var slideCount = slider.querySelector('[data-slider-count]'); // Slider count wrapper
-					var slideNav = slider.querySelector('[data-slider-nav]'); // Slider nav wrapper
-
-
-					// METHODS
-
-					// Display count of slides
-					var createSlideCount = function () {
-						// Variables
-						var slideTotal = mySwipe[index].getNumSlides();
-						var slideCurrent = mySwipe[index].getPos();
-
-						// Content
-						if ( slideCount !== null ) {
-							slideCount.innerHTML = slideCurrent + ' of ' + slideTotal;
-						}
-					};
-
-					// Display Slider navigation
-					var createNavButtons = function () {
-						if ( slideNav !== null ) {
-							slideNav.innerHTML = '<a data-slider-nav-prev href="#">Previous</a> | <a data-slider-nav-next href="#">Next</a>';
-						}
-					};
-
-					// Stop YouTube and Vimeo videos from playing when leaving the slide
-					var stopVideo = function () {
-						var currentSlide = mySwipe[index].getPos() - 1;
-						var iframe = slider.querySelector( '[data-index="' + currentSlide + '"] iframe');
-						var video = slider.querySelector( '[data-index="' + currentSlide + '"] video' );
-						if ( iframe !== null ) {
-							var iframeSrc = iframe.src;
-							iframe.src = iframeSrc;
-						}
-						if ( video !== null ) {
-							video.pause();
-						}
-					};
-
-					// Handle next button
-					var handleNextBtn = function (event) {
-						event.preventDefault();
-						stopVideo();
-						mySwipe[index].next();
-					};
-
-					// Handle previous button
-					var handlePrevBtn = function (event) {
-						event.preventDefault();
-						stopVideo();
-						mySwipe[index].prev();
-					};
-
-					// Handle keypress
-					var handleKeypress = function (event) {
-						if ( event.keyCode == 37 ) {
-							mySwipe[index].prev();
-						}
-						if ( event.keyCode == 39) {
-							mySwipe[index].next();
-						}
-					};
-
-
-					// EVENTS, LISTENERS, AND INITS
-
-					// Activate Slider
-					mySwipe[index] = Swipe(slider, {
-						continuous: true,
-						callback: function(index, elem) {
-							createSlideCount(); // Update with new position on slide change
-						}
-					});
-
-					// Create slide count and nav
-					createSlideCount();
-					createNavButtons();
-					var btnNext = slider.querySelector('[data-slider-nav-next]'); // Next slide button
-					var btnPrev = slider.querySelector('[data-slider-nav-prev]'); // Previous slide button
-
-					// Toggle Previous & Next Buttons
-					if ( btnNext ) {
-						btnNext.addEventListener('click', handleNextBtn, false);
-					}
-					if ( btnPrev ) {
-						btnPrev.addEventListener('click', handlePrevBtn, false);
-					}
-
-					// Toggle Left & Right Keypress
-					window.addEventListener('keydown', handleKeypress, false);
-
-				});
-
-			}
-
-		})(window, document);
-	</script>
 </body>
 </html>
