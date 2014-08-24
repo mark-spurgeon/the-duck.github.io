@@ -1,36 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>The Duck Launcher</title>
-	<link rel="stylesheet" href="css/style.css"/>
- </head> 
-	
-<body>
-	<div id="slide1">
-		<div class="content">
-			<h1>Duck </br>Launcher</h2>
-			<div class="separator"></div>
-			<p>An application launcher for linux</p>
-			<img src="img/duck.svg" width=400 id="img"></img>
-		</div> 
-    </div> 
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>The Duck Launcher</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+<div class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      </button>
+      <a class="navbar-brand" style="color:rgb(250,130,40);" href="index.html"><img src="duck.svg" width=30 style="padding:20 20;"></img>Duck Launcher</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">What is it??</a></li>
+        <li><a href="gallery.html" style="opacity:0.8;">Gallery</a></li>
+        <li><a href="install.html" style="opacity:0.8;">Install</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a  style="color:rgb(170,170,255);" href="http://www.github.com/the-duck/launcher">Github</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
 
-	<div id="slide2">
-		<div class="content" >
-			<iframe width="450" height="350"  id="video" src="https://www.youtube.com/embed/COhXS50T0o4?theme=white"></iframe>
-			<h2 class="vid">Here's a little demo:)</h2>
-			<a href="screenshots.html" id="big">Screenshots<img style="float:right; "src="img/screen.svg" width=50></a>
-			</br>
-			<a href="http://github.com/the-duck/launcher#--install" id="big">Install<img style="float:right; "src="img/install.svg" width=50></a>		
-		</div> 
+<div class="container">
+  
+  <div class="text-center">
+    <h1>What the is Duck Launcher?</h1>
+    <p class="lead">Well, it is an application launcher made for linux, especially ubuntu. The aim of Duck Launcher is to help increase productivity, while still having a simple, modern and stylish user interface. It is perfect for those who like a unique and beautiful desktop.</p>
+    <iframe  width="420" height="315" src="http://www.youtube.com/embed/COhXS50T0o4" frameborder="0" allowfullscreen></iframe></br>
+      <a class="btn btn-link" style="color:red;" href="https://www.youtube.com/watch?v=COhXS50T0o4">Click here to watch on Youtube</a>
+      <option disabled style="padding:30px;">────────────────</option>
+  </div>
+  <div class="text-right">
+      <h2>Just a few commands away..</h2>
+      <p class="lead">Installing Duck Launcher is is a matter of seconds.</p>
+      <a class="btn btn-primary btn-large" href="install.html">Download</a>
     </div> 
-    	<div id="slide3">
-		<div class="content" >
-			<a href="http://launchpad.net/~the-duck/+archive/launcher"><img width=100 src="img/launchpad.svg"></img><h2>The Duck on </br>Launchpad</h2></a>
-			<a href="http://github.com/the-duck/launcher"><img width=100 src="img/github.svg"></img><h2>The Duck on </br>Github</h2></a>
-		</div> 
+    <div class="text-center">
+        <option disabled style="padding:30px;">────────────────</option>
+    </div>
+  <div class="text-left">
+      <h2>Screenshots</h2>
+      <p class="lead">If you're unsure of what Duck Launcher looks like, here's a gallery.</p>
+      <a class="btn btn-danger btn-large" href="gallery.html">Gallery</a>
     </div> 
-
-</body>
+    <div class="text-center">
+        <option disabled style="padding:30px;">────────────────</option>
+    </div>
+    <div class="text-right">
+        <h2>Support</h2>
+        <p class="lead">Please support the project by sending feedback and bug reports. The recommended way is to report a bug on launchpad, but you can also report them on github.</p>
+	<a class="btn btn-success" href="https://bugs.launchpad.net/ducklauncher/+filebug">Report this bug on Launchpad</a>        
+	<a class="btn btn-success" href="https://github.com/the-duck/launcher/issues/new">Report this bug on Github</a>
+    </div>
+    <div class="text-center">
+        <option disabled style="padding:30px;">────────────────</option>
+    </div>
+</div><!-- /.container -->
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/scripts.js"></script>
+	</body>
 </html>
