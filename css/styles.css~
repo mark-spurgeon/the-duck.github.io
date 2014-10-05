@@ -8,7 +8,7 @@
 */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
-  font-family: 'Droid Serif', serif;
+  font-family: "Droid Serif" Serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }

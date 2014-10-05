@@ -6,11 +6,86 @@
 		<title>The Duck Launcher - Gallery</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<link href="css/styles.css" rel="stylesheet">
+
+
+	<style type="text/css">
+	:focus :active {outline:none;}
+	::-moz-focus-inner {border:0;}
+	.image {
+		-webkit-transition:  all 0.3s linear;
+		transition:all 0.3s linear;
+		display:block;
+		overflow:hidden;
+		float:left;
+		width:200px;
+		margin:5px;
+		padding:5px;
+		background-color:rgb(250,250,250);
+		border-radius:2px;
+		box-shadow: 0px 0px 5px rgba(0,0,0,0.7);
+		z-index:1;
+	}
+	.image:hover {
+		/*transform:scale(1.05);*/
+		box-shadow: 0px 0px 10px rgba(0,0,0,0.9);
+		z-index:2;
+		offset:10px;
+	}
+	.content {
+		-webkit-transition:max-height 0.5s ease;
+		transition:max-height 0.5s ease;
+		max-height:0;
+		position:relative;
+		padding-top:1px;
+		padding-bottom:3px;
+		margin-left:-5px;
+		margin-right:-5px;
+		top:10px;
+		bottom:0px;
+		background-color:rgb(50,50,50);
+		color:white;
+	}
+	.image:hover .content {
+		max-height:500px;
+	}
+	#content-arrow {
+		display:block;
+		margin-left:auto;
+		margin-right:auto;
+		margin-bottom:-11px;
+	}
+	img {
+		position:relative;
+		top:0px;
+		left:0px;
+		right:0px;
+
+	}
+	.sharebutton {
+		transition: background-image 0.8s;
+		display:block;
+		background-image:url(img/share.svg);
+		background-size: cover;
+		width:30px;
+		height:30px;
+		margin:5px;
+		margin-bottom:7px;
+		margin-left:auto;
+		margin-right:auto;
+	}
+	.sharebutton:hover {
+		background-image:url(img/share-hover.svg);
+	}
+	p {
+		margin:10px;
+	}
+	</style>
 	</head>
 
 <script>
@@ -53,10 +128,78 @@
     <p class="lead">These are some screenshots: </p>
       <option disabled style="padding:30px;">────────────────</option>
   </div>
-<iframe width="700" height="600" src="http://www.cincopa.com/media-platform/iframe.aspx?fid=AoNAg5L03hJ7" frameborder="0" allowfullscreen scrolling="no"></iframe>
-	<div class="text-center">
-        <option disabled style="padding:30px;">────────────────</option>
-    </div>
+  <div class="text-center" style="position:absolute;left:0px;right:0px;"> 
+	<div class="image">
+		<img src="img/1.png" width=100%></img>
+		<img id="content-arrow" src="img/arrow.svg" width=15>
+		<div class="content" ><p>The Beetle</p>
+			<a href="img/1.png" class="sharebutton"></a>
+		</div>
+	</div>
+	<div class="image">
+		<img src="img/2.png" width=100%></img>
+		<img id="content-arrow" src="img/arrow.svg" width=15>
+		<div class="content" ><p>The Suprised Woman</p>
+			<a href="img/2.png" class="sharebutton"></a>
+		</div>
+	</div>
+	<div class="image">
+		<img src="img/3.png" width=100%></img>
+		<img id="content-arrow" src="img/arrow.svg" width=15>
+		<div class="content" ><p>The Flat Penguin I</p>
+			<a href="img/3.png" class="sharebutton"></a>
+		</div>
+	</div>
+	<div class="image">
+		<img src="img/4.png" width=100%></img>
+		<img id="content-arrow" src="img/arrow.svg" width=15>
+		<div class="content" ><p>The Flat Penguin II</p>
+			<a href="img/4.png" class="sharebutton"></a>
+		</div>
+	</div>
+	<div class="image">
+		<img src="img/5.png" width=100%></img>
+		<img id="content-arrow" src="img/arrow.svg" width=15>
+		<div class="content" ><p>The Duck Shadow I</p>
+			<a href="img/5.png" class="sharebutton"></a>
+		</div>
+	</div>
+	<div class="image">
+		<img src="img/6.png" width=100%></img>
+		<img id="content-arrow" src="img/arrow.svg" width=15>
+		<div class="content" ><p>The Duck Shadow II</p>
+			<a href="img/6.png" class="sharebutton"></a>
+		</div>
+	</div>
+	<div class="image">
+		<img src="img/7.png" width=100%></img>
+		<img id="content-arrow" src="img/arrow.svg" width=15>
+		<div class="content" ><p>The Lonely Cloud I</p>
+			<a href="img/7.png" class="sharebutton"></a>
+		</div>
+	</div>
+	<div class="image">
+		<img src="img/8.png" width=100%></img>
+		<img id="content-arrow" src="img/arrow.svg" width=15>
+		<div class="content" ><p>The Lonely Cloud I</p>
+			<a href="img/8.png" class="sharebutton"></a>
+		</div>
+	</div>
+	<div class="image">
+		<img src="img/9.png" width=100%></img>
+		<img id="content-arrow" src="img/arrow.svg" width=15>
+		<div class="content" ><p>The Purple Bubbles I</p>
+			<a href="img/9.png" class="sharebutton"></a>
+		</div>
+	</div>
+	<div class="image">
+		<img src="img/10.png" width=100%></img>
+		<img id="content-arrow" src="img/arrow.svg" width=15>
+		<div class="content" ><p>The Purple Bubbles II</p>
+			<a href="img/10.png" class="sharebutton"></a>
+		</div>
+	</div>
+	</div>
 </div><!-- /.container -->
 	<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
