@@ -1,18 +1,21 @@
+---
+---
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
-		<title>The Duck Launcher - Install </title>
+		<title>The Duck Launcher - Journal</title>
     <link rel="icon" type="image/png" href="/img/favicon.png">
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link href="css/styles.css" rel="stylesheet">
+		<link href="../css/styles.css" rel="stylesheet">
 	</head>
 
 <script>
@@ -26,23 +29,22 @@
 
 </script>
 
-
 	<body>
 <div class="navbar navbar-default navbar-static-top">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
       </button>
-      <a class="navbar-brand" style="color:rgb(250,130,40);" href="index.html"><img src="duck.svg" width=25 ></img>Duck Launcher</a>
+      <a class="navbar-brand" style="color:rgb(250,130,40);" href="../index.html"><img src="../duck.svg" width=25></img>Duck Launcher</a>
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><a href="tour.html" >Take the tour</a></li>
-        <li ><a href="journal">Journal</a></li>
-        <li class="active"><a href="install.html" >Install</a></li>
+        <li><a href="../tour.html">Take the tour</a></li>
+        <li class="active"><a href="index.html">Journal</a></li>
+        <li><a href="../install.html">Install</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a  style="color:rgb(255,90,60)" href="contribute.html">Get Involved</a></li>
+        <li><a  style="color:rgb(255,90,60);" href="../contribute.html">Get Involved</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
@@ -51,22 +53,16 @@
 <div class="container">
   
   <div class="text-center">
-    <h1><img src="img/ico/install.svg" width=64 style="margin:5px;margin-top:-10px;padding:2px"> Install</h1>
-    <option disabled style="padding:30px;">────────────────</option>
-    <p class="lead">If you're running on an <b>ubuntu</b> based linux distribution, you can install via Duck Launcher's ppa (personal package archive), simply type these 3 commands in a terminal:</p>
-      <code>sudo apt-add-repository ppa:the-duck/launcher</code></br>
-      <code>sudo apt-get update</code></br>
-      <code>sudo apt-get install duck-launcher</code>
-      <option disabled style="padding:10px;"> </option>
-    <p class="lead">Then, simply run <b>duck-launcher</b> in a terminal.</p>
-    <p class="lead">If you'd like to install Duck Panel with it, just run:</p>
-    <code>sudo apt-get install duck-panel</code>
-      <option disabled style="padding:30px;">──────</option>
-    <p class="lead">Unfortunately, <b>other platforms are not officially supported.</b></p>
+  <p>
+    <h1><img src="../img/ico/journal.svg" width=64 style="margin:5px;margin-top:-10px;padding:2px"> Journal</h1>
+    </p>
+    <p class="lead"></p>
+      <option disabled style="padding:30px;color:#2980b9">────────────────</option>
+    
+    {% for post in site.posts %}
+    {% include post_content %}
+    {% endfor %}
   </div>
-    <div class="text-center">
-        <option disabled style="padding:30px;">──────</option>
-    </div>
 </div><!-- /.container -->
 	<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>

@@ -1,0 +1,13 @@
+<article class="unit-article layout-post">
+    <div class="art-title">
+    <h2>{{post.title}}</h2>
+    <p style="color:rgb(130,130,130);font-size:12px;"> Posted on <b>{{ post.date| date_to_long_string }}</b>, by <a href="mailto:{{post.email}}">{{post.author}}</a> </p>
+    </div>
+    <div class="text-justify article-content">
+    <p>{{post.content}}</p>
+    </div>
+    <div class="text-right">
+    	<p style="color:rgb(120,120,120);font-size:15px">React on <a href="http://plus.google.com/102265308547260992638/"><img src="../img/gplus.png" width="30"></a></p>
+    </div>
+    <option disabled style="padding:30px;">────────────────</option>
+</article>
