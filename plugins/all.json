@@ -2,32 +2,35 @@
     {
         "author": "Mark Spurgeon <theduck.dev@gmail.com>",
         "background-color": "#426293",
+        "description": "A silly and useless plugin.",
         "foreground-color": "#ffffff",
         "modules": [
             "Jinja2"
         ],
         "name": "Duck Launcher - Sample",
         "path": "duck-launcher",
-        "sha": "45c1965b9ea64cdb1bb3d284d1350f2076b2a079",
+        "sha": "735844a0c5be84e0b36495f123117eac391096e9",
         "thumbnail": "https://raw.githubusercontent.com/the-duck/launcher-plugins/master/duck-launcher/logo.svg",
         "version": "0.1"
     },
     {
         "author": "Mark Spurgeon <theduck.dev@gmail.com>",
         "background-color": "rgb(30,30,30)",
+        "description": "Browse your files and folders directly from Duck Launcher.",
         "foreground-color": "#ffffff",
         "modules": [
             "Jinja2"
         ],
         "name": "Files",
         "path": "files",
-        "sha": "ee5dd567dc7b268f36a337834ee6a03436c7536c",
+        "sha": "33a20aed1de108ad6f689bc903397b1bb28a84aa",
         "thumbnail": "https://raw.githubusercontent.com/the-duck/launcher-plugins/master/files/logo.svg",
         "version": "0.5"
     },
     {
         "author": "Mark Spurgeon <theduck.dev@gmail.com>",
         "background-color": "#ecf0f1",
+        "description": "Get the latest news from the Guardian.",
         "foreground-color": "#005689",
         "modules": [
             "Jinja2",
@@ -35,20 +38,21 @@
         ],
         "name": "The Guardian",
         "path": "guardian",
-        "sha": "66d028195c2ccbecc1b9f423fe94e83973111553",
+        "sha": "bdd592ee9cb87145f510c19132c5876768040c7f",
         "thumbnail": "https://raw.githubusercontent.com/the-duck/launcher-plugins/master/guardian/logo.svg",
         "version": "0.3"
     },
     {
         "author": "Mark Spurgeon <theduck.dev@gmail.com>",
         "background-color": "rgb(30,30,30)",
+        "description": "A concept of what could be Duck Launcher's settings.",
         "foreground-color": "#ffffff",
         "modules": [
             "Jinja2"
         ],
         "name": "Settings",
         "path": "settings",
-        "sha": "9aa986ced8cf53f32d428c6e00820a434b668782",
+        "sha": "d7b7a2138eed88a3c4a029b11d4d1cb273609717",
         "thumbnail": "https://raw.githubusercontent.com/the-duck/launcher-plugins/master/settings/logo.svg",
         "version": "0.4"
     }
