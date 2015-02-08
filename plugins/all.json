@@ -6,9 +6,9 @@
         "modules": [
             "Jinja2"
         ],
-        "name": "Duck Launcher Example Plugin",
+        "name": "Duck Launcher - Sample",
         "path": "duck-launcher",
-        "sha": "056fc24cdc09e41a71c0f8e8923221ee228e1ac9",
+        "sha": "45c1965b9ea64cdb1bb3d284d1350f2076b2a079",
         "thumbnail": "https://raw.githubusercontent.com/the-duck/launcher-plugins/master/duck-launcher/logo.svg",
         "version": "0.1"
     },
@@ -21,23 +21,23 @@
         ],
         "name": "Files",
         "path": "files",
-        "sha": "575c24069604f3078de37065b7baeb182eb63834",
+        "sha": "ee5dd567dc7b268f36a337834ee6a03436c7536c",
         "thumbnail": "https://raw.githubusercontent.com/the-duck/launcher-plugins/master/files/logo.svg",
         "version": "0.5"
     },
     {
         "author": "Mark Spurgeon <theduck.dev@gmail.com>",
-        "background-color": "#f5f5f5",
+        "background-color": "#ecf0f1",
         "foreground-color": "#005689",
         "modules": [
             "Jinja2",
             "PyCrypto"
         ],
-        "name": "Guardian",
+        "name": "The Guardian",
         "path": "guardian",
-        "sha": "1e121840a8a30f0048c975d910e8a439e3add4ea",
+        "sha": "66d028195c2ccbecc1b9f423fe94e83973111553",
         "thumbnail": "https://raw.githubusercontent.com/the-duck/launcher-plugins/master/guardian/logo.svg",
-        "version": "0.2"
+        "version": "0.3"
     },
     {
         "author": "Mark Spurgeon <theduck.dev@gmail.com>",
@@ -46,10 +46,10 @@
         "modules": [
             "Jinja2"
         ],
-        "name": "Settings [ CONCEPT ]",
+        "name": "Settings",
         "path": "settings",
-        "sha": "c5893bf9856707894fec20f1024a7de65e0ed5b3",
+        "sha": "9aa986ced8cf53f32d428c6e00820a434b668782",
         "thumbnail": "https://raw.githubusercontent.com/the-duck/launcher-plugins/master/settings/logo.svg",
-        "version": "0.3"
+        "version": "0.4"
     }
 ]
