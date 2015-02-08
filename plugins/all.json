@@ -1,55 +1,55 @@
 [
     {
+        "author": "Mark Spurgeon <theduck.dev@gmail.com>",
+        "background-color": "#426293",
+        "foreground-color": "#ffffff",
+        "modules": [
+            "Jinja2"
+        ],
         "name": "Duck Launcher Example Plugin",
-        "author": "Mark Spurgeon <theduck.dev@gmail.com>",
-        "modules": [
-            "Jinja2"
-        ],
-        "sha": "056fc24cdc09e41a71c0f8e8923221ee228e1ac9",
-        "version": "0.1",
-        "foreground-color": "#ffffff",
         "path": "duck-launcher",
+        "sha": "056fc24cdc09e41a71c0f8e8923221ee228e1ac9",
         "thumbnail": "https://raw.githubusercontent.com/the-duck/launcher-plugins/master/duck-launcher/logo.svg",
-        "background-color": "#426293"
+        "version": "0.1"
     },
     {
-        "name": "Files",
         "author": "Mark Spurgeon <theduck.dev@gmail.com>",
+        "background-color": "rgb(30,30,30)",
+        "foreground-color": "#ffffff",
         "modules": [
             "Jinja2"
         ],
-        "sha": "575c24069604f3078de37065b7baeb182eb63834",
-        "version": "0.5",
-        "foreground-color": "#ffffff",
+        "name": "Files",
         "path": "files",
+        "sha": "575c24069604f3078de37065b7baeb182eb63834",
         "thumbnail": "https://raw.githubusercontent.com/the-duck/launcher-plugins/master/files/logo.svg",
-        "background-color": "rgb(30,30,30)"
+        "version": "0.5"
     },
     {
-        "name": "Guardian",
         "author": "Mark Spurgeon <theduck.dev@gmail.com>",
+        "background-color": "#f5f5f5",
+        "foreground-color": "#005689",
         "modules": [
             "Jinja2",
             "PyCrypto"
         ],
-        "sha": "1e121840a8a30f0048c975d910e8a439e3add4ea",
-        "version": "0.2",
-        "foreground-color": "#005689",
+        "name": "Guardian",
         "path": "guardian",
+        "sha": "1e121840a8a30f0048c975d910e8a439e3add4ea",
         "thumbnail": "https://raw.githubusercontent.com/the-duck/launcher-plugins/master/guardian/logo.svg",
-        "background-color": "#f5f5f5"
+        "version": "0.2"
     },
     {
-        "name": "Settings [ CONCEPT ]",
         "author": "Mark Spurgeon <theduck.dev@gmail.com>",
+        "background-color": "rgb(30,30,30)",
+        "foreground-color": "#ffffff",
         "modules": [
             "Jinja2"
         ],
-        "sha": "c5893bf9856707894fec20f1024a7de65e0ed5b3",
-        "version": "0.3",
-        "foreground-color": "#ffffff",
+        "name": "Settings [ CONCEPT ]",
         "path": "settings",
+        "sha": "c5893bf9856707894fec20f1024a7de65e0ed5b3",
         "thumbnail": "https://raw.githubusercontent.com/the-duck/launcher-plugins/master/settings/logo.svg",
-        "background-color": "rgb(30,30,30)"
+        "version": "0.3"
     }
 ]
