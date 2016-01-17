@@ -1,0 +1,19 @@
+#container {
+  width:600px;
+  margin:50 auto;
+}
+#left-panel {
+  float:left;
+  background:gray;
+  width:200px;
+  margin:0px;
+  padding: 0px;
+  min-height:100px;
+}
+#content {
+  float:right;
+  width: 400px;
+  margin:0px;
+  padding:0px;
+  min-height: 200px;
+}
