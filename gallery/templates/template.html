@@ -78,7 +78,7 @@
             <div class="slider">
               {% for m in col.media %}
                 {% if m.ext not in ["mp4","avi","webm"]%}
-                <a href="{{m.file[2:]}}" class="mp-link" style="background-image:url('{{m.file[2:]}}')"></a>
+                <a href="{{m.file}}" class="mp-link" style="background-image:url('{{m.file}}')"></a>
                 {%endif%}
               {% endfor %}
             </div>
