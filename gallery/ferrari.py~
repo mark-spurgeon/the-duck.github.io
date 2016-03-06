@@ -88,7 +88,7 @@ if __name__=="__main__":
                 #Set Last image as collection's image
 
                 if d['ext'] not in ["mp4", "webm", "avi"]:
-                    colDict["imageFile"] =
+                    colDict["imageFile"] = d
 
                 if d["ext"]!="yaml":
                     media_list.append(d)

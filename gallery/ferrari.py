@@ -82,8 +82,9 @@ if __name__=="__main__":
                 d['title']=m.split('.')[0].replace("_"," ").replace("-"," ")
                 d["ext"]=m.split(".")[1:][0]
                 fi = os.path.join(colDir,m)
+                print fi
                 if fi.startswith("./"):
-                    fi.replace("./","")
+                    fi= fi.replace("./","")
                 d['file']=fi
                 #Set Last image as collection's image
 
