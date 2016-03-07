@@ -7,6 +7,9 @@ try:
 except ImportError:
     from yaml import Loader, Dumper
 
+import Image
+
+
 if __name__=="__main__":
     galDir = os.path.join(os.curdir, "_gallery")
 
@@ -75,29 +78,52 @@ if __name__=="__main__":
             else:
                 print("[warning]: 'collection.yaml' is missing in '{}'".format(colDict['title']))
 
-            media = [f for f in os.listdir(colDir) if os.path.isfile(os.path.join(colDir,f))]
+            medias = [f for f in os.listdir(colDir) if os.path.isfile(os.path.join(colDir,f))]
             media_list = []
-            for m in media:
+            for media in medias:
                 d = {}
-                d['title']=m.split('.')[0].replace("_"," ").replace("-"," ")
-                d["ext"]=m.split(".")[1:][0]
-                fi = os.path.join(colDir,m)
-                print fi
-                if fi.startswith("./"):
-                    fi= fi.replace("./","")
-                d['file']=fi
-                #Set Last image as collection's image
+                d['title']=media.split('.')[0].replace("_"," ").replace("-"," ")
 
-                if d['ext'] not in ["mp4", "webm", "avi"]:
+                fi = os.path.join(colDir,media)
+
+                d["ext"]=os.path.splitext(fi)[1].lower()
+
+                accepted_exts = [".png",".jpg",".jpeg",".gif"]
+                print d['ext']
+
+                if d['ext'] in accepted_exts and media.startswith(".")==False:
+                    size = 860, 860
+                    outfile =os.path.join(colDir,".thumbnail."+ media)
+                    if fi != outfile:
+                        print outfile
+                        try:
+                            im = Image.open(fi)
+                            im.thumbnail(size, Image.ANTIALIAS)
+                            im.save(outfile, "JPEG")
+
+                            fi = outfile
+                        except IOError:
+                            print "cannot create thumbnail for '%s'" % fi
+
+
+                    if fi.startswith("./"):
+                        fi= fi.replace("./","")
+                    d['file']=fi
+
+                    #Set Last image as collection's image
                     colDict["imageFile"] = d
 
-                if d["ext"]!="yaml":
                     media_list.append(d)
+                else:
+                    pass
             colDict["media"] = media_list
             catDict["collections"].append(colDict)
         #back to category
         output.append(catDict)
     #back to gallery
+
+
+    print json.dumps(output, indent=4)
 
     #The HTML
     from jinja2 import Environment, FileSystemLoader
