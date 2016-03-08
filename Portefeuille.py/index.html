@@ -3,13 +3,17 @@
   <title>Portefeuille.py</title>
   <meta charset="utf-8" \>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="icons/icon-16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="icons/icon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="icons/icon-64.png" type="image/png" sizes="64x64">
+  <link rel="icon" href="icons/icon-128.png" type="image/png" sizes="128x128">
   <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
 
 <div id="header">
   <div class="container">
-    <h1><span class="h-color">Portefeuille</span>.py<sup class="status">Very Early Stuff</sup></h1>
+    <h1><span class="h-color">Portefeuille</span>.py<sup class="status"><a href="http://github.com">Very Early Stuff</a></sup></h1>
     <h2>The most basic <span class="h-color">static portfolio</span> generator</h2>
   </div>
 </div>
@@ -31,7 +35,7 @@
     </div>
     <div class="right-container">
       <div >
-        <p style="margin-top:0px;">You see, there's just one file, you download it (and install dependencies, sorry!), place it where you want your html file to be, place your folder with all your images in the same folder, then run <code>python portefeuille.py</code>. If you want to add more information, your can add <code>*.yaml</code> files, follow the <a href="#">documentation</a></p>
+        <p style="margin-top:0px;">You see, there's just one file, you download it, place it where you want your HTML file to be, place your folder with all your images in the same folder, then run <code>python portefeuille.py</code>. And that's it, you have your portfolio!</p>
       </div>
     </div>
   </div>
@@ -41,10 +45,46 @@
     </div>
     <div class="right-container">
       <div >
-        <p style="margin-top:0px;">So, you must follow a certain <i>architecture</i>. Let me explain, you have groups of images, <span class="h-color" style="bold">collections</span>, which are stored in <span class="h-color" style="bold">categories</span>, they must follow this architecture. This is how portfolios should be designed, in my opinion. </p>
+        <p style="margin-top:0px;">As you might have noticed, Portfolio.py is focused on images and media. So basically it scans a folder containing images. These images, however, have to be stored in <span class="h-color" style="bold">categories</span>, sub-folders, covering something general like "mobile designs" or "videos". In these categories are <span class="h-color" style="bold">collections</span>, these are groups of images that cover a common project, like "Design for The Bakery Foundation".. Anything outside of a collection cannot yet be identified by Portfolio.py</p>
+        <p>This decision helps better organising a portfolio, and most portfolios do follow this order. Check out <a href="#">the demo</a> if you don't believe me.</p>
       </div>
     </div>
   </div>
+
+  <div class="category">
+    <div class="left-container">
+      <h1 class="ctgry-h1"><span class="h-color">Let's get started</span> / Shall we ? </h1>
+    </div>
+    <div class="right-container">
+      <div >
+        <p style="margin-top:0px;">First, download <span class="h-color" style="bold">Python 2.7+</span>, make sure you have <span class="h-color" style="bold">pip</span> installed, and install these modules (in a terminal):
+        <pre><code>pip install PyYAML Jinja2</code></pre>
+        </p>
+        <p>Finally, download <a><span class="h-color" style="bold">portefeuille.py</span></a> from github, copy this file to the folder where you want your HTML file generated. Add the folder containing your images, and you're ready to generate your portfolio!  </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="category">
+    <div class="left-container">
+      <h1 class="ctgry-h1"><span class="h-color">TODO</span> / Next on the list </h1>
+    </div>
+    <div class="right-container">
+      <div >
+        <p style="margin-top:0px;">
+          <ul>
+            <li>Docs: folder structure</li>
+            <li>Docs: myself.yaml</li>
+            <li>Docs: category.yaml</li>
+            <li>Docs: collection.yaml</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+
 </div>
 
 <script src="js/jquery.magnific-popup.js"></script>
