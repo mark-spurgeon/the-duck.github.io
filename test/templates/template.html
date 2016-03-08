@@ -1,0 +1,105 @@
+<html>
+<head>
+  <title>Mark Spurgeon - Portfolio</title>
+  <meta charset="utf-8" \>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script >
+
+    function updateCollections(v) {
+      if (v) {
+        var d =document.getElementById(v);
+        if (d != null) {
+          d.style.display = "block";
+          d.className="collection-view active";
+        }
+      }
+    }
+
+    function closePopup(v) {
+      var d =document.getElementById(v);
+      if (d != null) {
+        d.style.display = "block";
+        d.className="collection-view";
+      }
+    }
+
+    $(document).ready(function() {
+      var hash = window.location.hash.substring(1);
+      updateCollections(hash);
+      $('.mp-link').magnificPopup({
+        type:'image',
+        gallery:{
+          enabled:true
+        }
+      });
+    });
+
+
+  </script>
+</head>
+<body>
+
+<div id="header">
+  <div class="container">
+    {% if myself.picture %}
+    <img class="profile-picture" src="{{myself.picture}}"></img>
+    {% endif %}
+    <h1 class="ctgry-color">{{myself.name}}{% if myself.status %}<sup class="status">{{myself.status}}</sup>{% endif %}</h1>
+    {% if myself.description %}<h2>{{myself.description}}</h2>{% endif %}
+    {% if myself.email %}
+      <h3><span class="ctgry-color">Email</span> <a href="mailto:{{myself.email}}">{{myself.email}}</a></h2>
+    {% endif %}
+    {% if myself.github %}
+      <h3><span class="ctgry-color">Github</span> <a href="{{myself.github}}">{{myself.github}}</a></h2>
+    {% endif %}
+  </div>
+</div>
+
+<div class="container">
+{% for cat in categories%}
+  <div class="category">
+    <div class="left-container">
+      <h1 class="ctgry-h1"><span class="ctgry-color">{{cat.title}}</span> / {{cat.description}}</h1>
+    </div>
+    <div class="right-container">
+      {% for col in cat.collections %}
+        <div class="collection" style="background-image:url('{{col['imageFile']['file']}}')">
+          <a href="#{{col['id']}}" onclick="updateCollections('{{col['id']}}')">{{col.title}}</a>
+        </div>
+        <div id="{{col['id']}}" class="collection-view">
+          <div class="container popup">
+            <div class="popup-header">
+              <a href="" class="title"><span class="ctgry-color">{{cat.title}}</span> / {{col.title}}</a>
+              <a  class="close" onclick="closePopup('{{col['id']}}')">back</a>
+            </div>
+
+            <p class="description">{{col.description}}</p>
+
+            {% if col['type'] == "video" %}
+              <a class="link" href="{{col['link']}}">Watch the movie</a>
+            {% elif col['type'] =="website"%}
+              <a class="link" href="{{col['link']}}">Visit the website</a>
+            {% endif %}
+            <div class="slider">
+              {% for m in col.media %}
+                {% if m.ext not in ["mp4","avi","webm"]%}
+                <a href="{{m.file}}" class="mp-link" style="background-image:url('{{m.file}}')"></a>
+                {%endif%}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endfor %}
+</div>
+
+<script src="js/jquery.magnific-popup.js"></script>
+<link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+</body>
+</html>

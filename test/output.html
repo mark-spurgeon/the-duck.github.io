@@ -1,0 +1,429 @@
+<html>
+<head>
+  <title>Mark Spurgeon - Portfolio</title>
+  <meta charset="utf-8" \>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script >
+
+    function updateCollections(v) {
+      if (v) {
+        var d =document.getElementById(v);
+        if (d != null) {
+          d.style.display = "block";
+          d.className="collection-view active";
+        }
+      }
+    }
+
+    function closePopup(v) {
+      var d =document.getElementById(v);
+      if (d != null) {
+        d.style.display = "block";
+        d.className="collection-view";
+      }
+    }
+
+    $(document).ready(function() {
+      var hash = window.location.hash.substring(1);
+      updateCollections(hash);
+      $('.mp-link').magnificPopup({
+        type:'image',
+        gallery:{
+          enabled:true
+        }
+      });
+    });
+
+
+  </script>
+</head>
+<body>
+
+<div id="header">
+  <div class="container">
+    <h1 class="ctgry-color">Mark Spurgeon<span class="status"></span></h1>
+    <h2>19 years old. I like 3D art, illustrating, designing and programming.</h2>
+    
+      <h3><span class="ctgry-color">Email</span> <a href="mailto:https://github.com/the-duck">theduck.dev@gmail.com</a></h2>
+    
+    
+      <h3><span class="ctgry-color">Github</span> <a href="https://github.com/the-duck">https://github.com/the-duck</a></h2>
+    
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="category">
+    <div class="left-container">
+      <h1 class="ctgry-h1"><span class="ctgry-color">3D Artwork</span> / Everything, from the ugly to the better</h1>
+    </div>
+    <div class="right-container">
+      
+        <div class="collection" style="background-image:url('test/_portfolio/_3D-Artwork/Guitar_Player/.thumbnail.photo_v2.png')">
+          <a href="#guitar-player" onclick="updateCollections('guitar-player')">Guitar Player</a>
+        </div>
+        <div id="guitar-player" class="collection-view">
+          <div class="container popup">
+            <div class="popup-header">
+              <a href="" class="title"><span class="ctgry-color">3D Artwork</span> / Guitar Player</a>
+              <a href="#" class="close" onclick="closePopup('guitar-player')">back</a>
+            </div>
+
+            <p class="description">None</p>
+
+            
+            <div class="slider">
+              
+                
+                <a href="test/_portfolio/_3D-Artwork/Guitar_Player/.thumbnail.photo_v5.png" class="mp-link" style="background-image:url('test/_portfolio/_3D-Artwork/Guitar_Player/.thumbnail.photo_v5.png')"></a>
+                
+              
+                
+                <a href="test/_portfolio/_3D-Artwork/Guitar_Player/.thumbnail.photo_v4.png" class="mp-link" style="background-image:url('test/_portfolio/_3D-Artwork/Guitar_Player/.thumbnail.photo_v4.png')"></a>
+                
+              
+                
+                <a href="test/_portfolio/_3D-Artwork/Guitar_Player/.thumbnail.untitled2.png" class="mp-link" style="background-image:url('test/_portfolio/_3D-Artwork/Guitar_Player/.thumbnail.untitled2.png')"></a>
+                
+              
+                
+                <a href="test/_portfolio/_3D-Artwork/Guitar_Player/.thumbnail.photo_v1.png" class="mp-link" style="background-image:url('test/_portfolio/_3D-Artwork/Guitar_Player/.thumbnail.photo_v1.png')"></a>
+                
+              
+                
+                <a href="test/_portfolio/_3D-Artwork/Guitar_Player/.thumbnail.photo_v3.png" class="mp-link" style="background-image:url('test/_portfolio/_3D-Artwork/Guitar_Player/.thumbnail.photo_v3.png')"></a>
+                
+              
+                
+                <a href="test/_portfolio/_3D-Artwork/Guitar_Player/.thumbnail.photo_v2.png" class="mp-link" style="background-image:url('test/_portfolio/_3D-Artwork/Guitar_Player/.thumbnail.photo_v2.png')"></a>
+                
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="collection" style="background-image:url('test/_portfolio/_3D-Artwork/Fancy_Animation/.thumbnail.0112.png')">
+          <a href="#fancy-animation" onclick="updateCollections('fancy-animation')">Fancy Animation</a>
+        </div>
+        <div id="fancy-animation" class="collection-view">
+          <div class="container popup">
+            <div class="popup-header">
+              <a href="" class="title"><span class="ctgry-color">3D Artwork</span> / Fancy Animation</a>
+              <a href="#" class="close" onclick="closePopup('fancy-animation')">back</a>
+            </div>
+
+            <p class="description">None</p>
+
+            
+            <div class="slider">
+              
+                
+                <a href="test/_portfolio/_3D-Artwork/Fancy_Animation/.thumbnail.0112.png" class="mp-link" style="background-image:url('test/_portfolio/_3D-Artwork/Fancy_Animation/.thumbnail.0112.png')"></a>
+                
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="collection" style="background-image:url('')">
+          <a href="#aston-martin" onclick="updateCollections('aston-martin')">Aston Martin</a>
+        </div>
+        <div id="aston-martin" class="collection-view">
+          <div class="container popup">
+            <div class="popup-header">
+              <a href="" class="title"><span class="ctgry-color">3D Artwork</span> / Aston Martin</a>
+              <a href="#" class="close" onclick="closePopup('aston-martin')">back</a>
+            </div>
+
+            <p class="description">None</p>
+
+            
+            <div class="slider">
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="collection" style="background-image:url('test/_portfolio/_3D-Artwork/Guido_(short-film)/.thumbnail.GUIDO_1.png')">
+          <a href="#guido-(short-film)" onclick="updateCollections('guido-(short-film)')">Guido (short film)</a>
+        </div>
+        <div id="guido-(short-film)" class="collection-view">
+          <div class="container popup">
+            <div class="popup-header">
+              <a href="" class="title"><span class="ctgry-color">3D Artwork</span> / Guido (short film)</a>
+              <a href="#" class="close" onclick="closePopup('guido-(short-film)')">back</a>
+            </div>
+
+            <p class="description">This is a project I worked on for school. It's a short film telling the story of a kid who discovers the urban world.</p>
+
+            
+              <a class="link" href="https://www.youtube.com/watch?v=4Y-6j-uj8EI">Watch the movie</a>
+            
+            <div class="slider">
+              
+                
+                <a href="test/_portfolio/_3D-Artwork/Guido_(short-film)/.thumbnail._GUIDO.png" class="mp-link" style="background-image:url('test/_portfolio/_3D-Artwork/Guido_(short-film)/.thumbnail._GUIDO.png')"></a>
+                
+              
+                
+                <a href="test/_portfolio/_3D-Artwork/Guido_(short-film)/.thumbnail.gangsta.png" class="mp-link" style="background-image:url('test/_portfolio/_3D-Artwork/Guido_(short-film)/.thumbnail.gangsta.png')"></a>
+                
+              
+                
+                <a href="test/_portfolio/_3D-Artwork/Guido_(short-film)/.thumbnail.a3_meta.png" class="mp-link" style="background-image:url('test/_portfolio/_3D-Artwork/Guido_(short-film)/.thumbnail.a3_meta.png')"></a>
+                
+              
+                
+                <a href="test/_portfolio/_3D-Artwork/Guido_(short-film)/.thumbnail.GUIDO_1.png" class="mp-link" style="background-image:url('test/_portfolio/_3D-Artwork/Guido_(short-film)/.thumbnail.GUIDO_1.png')"></a>
+                
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="collection" style="background-image:url('')">
+          <a href="#headphones" onclick="updateCollections('headphones')">Headphones</a>
+        </div>
+        <div id="headphones" class="collection-view">
+          <div class="container popup">
+            <div class="popup-header">
+              <a href="" class="title"><span class="ctgry-color">3D Artwork</span> / Headphones</a>
+              <a href="#" class="close" onclick="closePopup('headphones')">back</a>
+            </div>
+
+            <p class="description">None</p>
+
+            
+            <div class="slider">
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="collection" style="background-image:url('')">
+          <a href="#factory" onclick="updateCollections('factory')">Factory</a>
+        </div>
+        <div id="factory" class="collection-view">
+          <div class="container popup">
+            <div class="popup-header">
+              <a href="" class="title"><span class="ctgry-color">3D Artwork</span> / Factory</a>
+              <a href="#" class="close" onclick="closePopup('factory')">back</a>
+            </div>
+
+            <p class="description">None</p>
+
+            
+            <div class="slider">
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="collection" style="background-image:url('')">
+          <a href="#scary-faces" onclick="updateCollections('scary-faces')">Scary Faces</a>
+        </div>
+        <div id="scary-faces" class="collection-view">
+          <div class="container popup">
+            <div class="popup-header">
+              <a href="" class="title"><span class="ctgry-color">3D Artwork</span> / Scary Faces</a>
+              <a href="#" class="close" onclick="closePopup('scary-faces')">back</a>
+            </div>
+
+            <p class="description">None</p>
+
+            
+            <div class="slider">
+              
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+
+  <div class="category">
+    <div class="left-container">
+      <h1 class="ctgry-h1"><span class="ctgry-color">Logos and Design</span> / These are not made by a designer</h1>
+    </div>
+    <div class="right-container">
+      
+        <div class="collection" style="background-image:url('')">
+          <a href="#that-startpage-rocks" onclick="updateCollections('that-startpage-rocks')">That Startpage Rocks</a>
+        </div>
+        <div id="that-startpage-rocks" class="collection-view">
+          <div class="container popup">
+            <div class="popup-header">
+              <a href="" class="title"><span class="ctgry-color">Logos and Design</span> / That Startpage Rocks</a>
+              <a href="#" class="close" onclick="closePopup('that-startpage-rocks')">back</a>
+            </div>
+
+            <p class="description">None</p>
+
+            
+            <div class="slider">
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="collection" style="background-image:url('test/_portfolio/_Logos-and-Design/T_Shirts_:_Patisserie/.thumbnail.The_Eclairs.png')">
+          <a href="#t-shirts-:-patisserie" onclick="updateCollections('t-shirts-:-patisserie')">T Shirts : Patisserie</a>
+        </div>
+        <div id="t-shirts-:-patisserie" class="collection-view">
+          <div class="container popup">
+            <div class="popup-header">
+              <a href="" class="title"><span class="ctgry-color">Logos and Design</span> / T Shirts : Patisserie</a>
+              <a href="#" class="close" onclick="closePopup('t-shirts-:-patisserie')">back</a>
+            </div>
+
+            <p class="description">None</p>
+
+            
+            <div class="slider">
+              
+                
+                <a href="test/_portfolio/_Logos-and-Design/T_Shirts_:_Patisserie/.thumbnail.caracs.png" class="mp-link" style="background-image:url('test/_portfolio/_Logos-and-Design/T_Shirts_:_Patisserie/.thumbnail.caracs.png')"></a>
+                
+              
+                
+                <a href="test/_portfolio/_Logos-and-Design/T_Shirts_:_Patisserie/.thumbnail.The_Eclairs.png" class="mp-link" style="background-image:url('test/_portfolio/_Logos-and-Design/T_Shirts_:_Patisserie/.thumbnail.The_Eclairs.png')"></a>
+                
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="collection" style="background-image:url('test/_portfolio/_Logos-and-Design/The_Great_Owl/.thumbnail.The_Great_Owl.png')">
+          <a href="#the-great-owl" onclick="updateCollections('the-great-owl')">The Great Owl</a>
+        </div>
+        <div id="the-great-owl" class="collection-view">
+          <div class="container popup">
+            <div class="popup-header">
+              <a href="" class="title"><span class="ctgry-color">Logos and Design</span> / The Great Owl</a>
+              <a href="#" class="close" onclick="closePopup('the-great-owl')">back</a>
+            </div>
+
+            <p class="description">None</p>
+
+            
+            <div class="slider">
+              
+                
+                <a href="test/_portfolio/_Logos-and-Design/The_Great_Owl/.thumbnail.blueprint_1.png" class="mp-link" style="background-image:url('test/_portfolio/_Logos-and-Design/The_Great_Owl/.thumbnail.blueprint_1.png')"></a>
+                
+              
+                
+                <a href="test/_portfolio/_Logos-and-Design/The_Great_Owl/.thumbnail.blueprint_2.png" class="mp-link" style="background-image:url('test/_portfolio/_Logos-and-Design/The_Great_Owl/.thumbnail.blueprint_2.png')"></a>
+                
+              
+                
+                <a href="test/_portfolio/_Logos-and-Design/The_Great_Owl/.thumbnail.The_Great_Owl_Colours.png" class="mp-link" style="background-image:url('test/_portfolio/_Logos-and-Design/The_Great_Owl/.thumbnail.The_Great_Owl_Colours.png')"></a>
+                
+              
+                
+                <a href="test/_portfolio/_Logos-and-Design/The_Great_Owl/.thumbnail.The_Great_Owl.png" class="mp-link" style="background-image:url('test/_portfolio/_Logos-and-Design/The_Great_Owl/.thumbnail.The_Great_Owl.png')"></a>
+                
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="collection" style="background-image:url('')">
+          <a href="#kiki1204" onclick="updateCollections('kiki1204')">Kiki1204</a>
+        </div>
+        <div id="kiki1204" class="collection-view">
+          <div class="container popup">
+            <div class="popup-header">
+              <a href="" class="title"><span class="ctgry-color">Logos and Design</span> / Kiki1204</a>
+              <a href="#" class="close" onclick="closePopup('kiki1204')">back</a>
+            </div>
+
+            <p class="description">None</p>
+
+            
+            <div class="slider">
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="collection" style="background-image:url('')">
+          <a href="#duck-launcher" onclick="updateCollections('duck-launcher')">Duck Launcher</a>
+        </div>
+        <div id="duck-launcher" class="collection-view">
+          <div class="container popup">
+            <div class="popup-header">
+              <a href="" class="title"><span class="ctgry-color">Logos and Design</span> / Duck Launcher</a>
+              <a href="#" class="close" onclick="closePopup('duck-launcher')">back</a>
+            </div>
+
+            <p class="description">None</p>
+
+            
+            <div class="slider">
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="collection" style="background-image:url('')">
+          <a href="#mark" onclick="updateCollections('mark')">Mark</a>
+        </div>
+        <div id="mark" class="collection-view">
+          <div class="container popup">
+            <div class="popup-header">
+              <a href="" class="title"><span class="ctgry-color">Logos and Design</span> / Mark</a>
+              <a href="#" class="close" onclick="closePopup('mark')">back</a>
+            </div>
+
+            <p class="description">None</p>
+
+            
+            <div class="slider">
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="collection" style="background-image:url('')">
+          <a href="#kebabologie" onclick="updateCollections('kebabologie')">Kebabologie</a>
+        </div>
+        <div id="kebabologie" class="collection-view">
+          <div class="container popup">
+            <div class="popup-header">
+              <a href="" class="title"><span class="ctgry-color">Logos and Design</span> / Kebabologie</a>
+              <a href="#" class="close" onclick="closePopup('kebabologie')">back</a>
+            </div>
+
+            <p class="description">None</p>
+
+            
+            <div class="slider">
+              
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+
+  <div class="category">
+    <div class="left-container">
+      <h1 class="ctgry-h1"><span class="ctgry-color"> Websites</span> / None</h1>
+    </div>
+    <div class="right-container">
+      
+    </div>
+  </div>
+
+</div>
+
+<script src="js/jquery.magnific-popup.js"></script>
+<link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+</body>
+</html>
