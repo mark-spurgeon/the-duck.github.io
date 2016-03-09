@@ -179,7 +179,7 @@ body {
 }
 
 #header {
-  padding-top:200px;
+  padding-top:20px;
   padding-bottom:200px;
 }
 #header h1 {
@@ -235,6 +235,10 @@ body {
   .right-container {
     margin-left: 5px;
     margin-top:0px;
+  }
+  #header {
+    padding-top:200px;
+    padding-bottom:200px;
   }
 }
 @media screen and (min-width: 840px) {
