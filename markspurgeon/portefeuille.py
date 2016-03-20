@@ -18,7 +18,7 @@
 #
 ################################
 #
-#   Portefeuille.py v1
+#   Portefeuille.py v1.1
 #   a static portfolio generator
 #
 ################################
@@ -127,7 +127,6 @@ if __name__=="__main__":
                     if i.has_key("github"):
                         myself["github"] =i["github"]
 
-        print myself['picture']
 
         ###
         # Portfolio gallery
@@ -169,6 +168,7 @@ if __name__=="__main__":
                 colDict['description'] = None
                 colDict["imageFile"] = {}
                 colDict['type']="images"
+                colDict['date']=None
 
                 colDir = os.path.join(catDir, col)
                 yml_file = os.path.join(colDir, "collection.yaml")
@@ -190,6 +190,10 @@ if __name__=="__main__":
                                 colDict["type"] = i["type"]
                             else:
                                 print("[warning]: Collection's type is not specified, default is 'images' ")
+                            if i.has_key("date"):
+                                colDict["date"] = str(i["date"])
+                            else:
+                                print("[warning]: Collection's date is not specified, I guess there isn't any date ")
                             if i.has_key("link"):
                                 colDict["link"] = i["link"]
                             else:
@@ -234,9 +238,20 @@ if __name__=="__main__":
                         media_list.append(d)
                     else:
                         pass
+
+                if colDict['date']!=None:
+                    nums = [int(s) for s in colDict['date'].split() if s.isdigit() and len(str(s))==4]
+                    if len(nums)>0:
+                        colDict['year'] = nums[0]
+                    else:
+                        colDict['year']=0
+                else:
+                    colDict['year']=0
                 colDict["media"] = media_list
                 catDict["collections"].append(colDict)
+
             #back to category
+            catDict['collections']=sorted(catDict['collections'], key=lambda t: t['year'],reverse=True)
             output_categories.append(catDict)
         #back to gallery
 
