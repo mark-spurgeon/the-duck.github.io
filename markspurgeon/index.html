@@ -2,19 +2,24 @@
 <head>
   <title>Mark Spurgeon - Portfolio</title>
   <meta charset="utf-8" \>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="http://cdn.jsdelivr.net/vivus/latest/vivus.min.js"></script>
   <script >
 
+
     function updateCollections(v) {
       if (v) {
-        var n = v.replace('c_','');
-        var d =document.getElementById(v);
-        if (d != null) {
-          d.style.display = "block";
-          d.className="collection-view active";
+        if (v.contains('collection_')) {
+          console.log(v);
+          var n = v.replace('collection_','');
+          console.log(n);
+          var d =document.getElementById(n);
+          if (d != null) {
+            d.style.display = "block";
+            d.className="collection-view active";
+          }
         }
       }
     }
@@ -29,6 +34,9 @@
     }
 
     $(document).ready(function() {
+
+      if (typeof String.prototype.contains === 'undefined') { String.prototype.contains = function(it) { return this.indexOf(it) != -1; }; }
+
       var hash = window.location.hash.substring(1);
       updateCollections(hash);
       $('.mp-link').magnificPopup({
@@ -189,8 +197,12 @@
   </div>
 
   <div class="myself">
+    <hr>
+    <p>This is just a place where most of what I've made on a computer is stored, the main reason being not to lose them...</p>
+    <img src="_portfolio/DSC_0766_mod_2.png"></img>
     <h1 class="ctgry-s-color">Mark Spurgeon</h1>
     <h2>19 years old. I like 3D art, illustrating, designing and programming.</h2>
+    <hr>
     
       <h3><span class="ctgry-s-color">Email</span> <a href="mailto:theduck.dev@gmail.com">theduck.dev@gmail.com</a></h2>
     
@@ -207,11 +219,12 @@
     <div class="ctgry-container">
       <h1 class="ctgry-h1"><span class="ctgry-color">3D Artwork</span></h1>
       <hr>
-      <p class="ctgry-p">Everything, somethings are good, some aren't</p>
+      <p class="ctgry-p">Everything. Some things are good, some aren't</p>
     </div>
     <div class="collections-container">
       
-        <a class="collection" href="#c_guido-(short-film)" onclick="updateCollections('guido-(short-film)')"  style="background-image:url('_portfolio/3D-Artwork/Guido_(short-film)/.thumbnail.GUIDO_1.png')">
+      <div class="col-block">
+        <a class="collection" href="#collection_guido-(short-film)" onclick="updateCollections('collection_guido-(short-film)')"  style="background-image:url('_portfolio/3D-Artwork/Guido_(short-film)/GUIDO_1.png')">
 
           <div class="col-info">
             <h1  class="col-title">Guido (short film)</h1>
@@ -225,6 +238,7 @@
             
           </div>
         </a>
+      </div>
         <div id="guido-(short-film)" class="collection-view">
           <div class="container popup">
             <div class="popup-header">
@@ -259,7 +273,8 @@
           </div>
         </div>
       
-        <a class="collection" href="#c_fancy-animation" onclick="updateCollections('fancy-animation')"  style="background-image:url('_portfolio/3D-Artwork/Fancy_Animation/.thumbnail.0112.png')">
+      <div class="col-block">
+        <a class="collection" href="#collection_fancy-animation" onclick="updateCollections('collection_fancy-animation')"  style="background-image:url('_portfolio/3D-Artwork/Fancy_Animation/0112.png')">
 
           <div class="col-info">
             <h1  class="col-title">Fancy Animation</h1>
@@ -270,6 +285,7 @@
             
           </div>
         </a>
+      </div>
         <div id="fancy-animation" class="collection-view">
           <div class="container popup">
             <div class="popup-header">
@@ -292,7 +308,8 @@
           </div>
         </div>
       
-        <a class="collection" href="#c_spuds" onclick="updateCollections('spuds')"  style="background-image:url('_portfolio/3D-Artwork/Spuds/.thumbnail.photo_3.PNG')">
+      <div class="col-block">
+        <a class="collection" href="#collection_spuds" onclick="updateCollections('collection_spuds')"  style="background-image:url('_portfolio/3D-Artwork/Spuds/photo_3.PNG')">
 
           <div class="col-info">
             <h1  class="col-title">Spud's Beer</h1>
@@ -306,6 +323,7 @@
             
           </div>
         </a>
+      </div>
         <div id="spuds" class="collection-view">
           <div class="container popup">
             <div class="popup-header">
@@ -334,7 +352,8 @@
           </div>
         </div>
       
-        <a class="collection" href="#c_factory" onclick="updateCollections('factory')"  style="background-image:url('')">
+      <div class="col-block">
+        <a class="collection" href="#collection_factory" onclick="updateCollections('collection_factory')"  style="background-image:url('')">
 
           <div class="col-info">
             <h1  class="col-title">Factory</h1>
@@ -345,6 +364,7 @@
             
           </div>
         </a>
+      </div>
         <div id="factory" class="collection-view">
           <div class="container popup">
             <div class="popup-header">
@@ -361,7 +381,8 @@
           </div>
         </div>
       
-        <a class="collection" href="#c_guitar-player" onclick="updateCollections('guitar-player')"  style="background-image:url('_portfolio/3D-Artwork/Guitar_Player/.thumbnail.photo_v2.png')">
+      <div class="col-block">
+        <a class="collection" href="#collection_guitar-player" onclick="updateCollections('collection_guitar-player')"  style="background-image:url('_portfolio/3D-Artwork/Guitar_Player/photo_v2.png')">
 
           <div class="col-info">
             <h1  class="col-title">Guitar Player</h1>
@@ -369,6 +390,7 @@
             
           </div>
         </a>
+      </div>
         <div id="guitar-player" class="collection-view">
           <div class="container popup">
             <div class="popup-header">
@@ -409,7 +431,8 @@
           </div>
         </div>
       
-        <a class="collection" href="#c_old-stuff" onclick="updateCollections('old-stuff')"  style="background-image:url('_portfolio/3D-Artwork/Old_Stuff/.thumbnail.photo_1.JPG')">
+      <div class="col-block">
+        <a class="collection" href="#collection_old-stuff" onclick="updateCollections('collection_old-stuff')"  style="background-image:url('_portfolio/3D-Artwork/Old_Stuff/photo_1.JPG')">
 
           <div class="col-info">
             <h1  class="col-title">Old Stuff</h1>
@@ -417,6 +440,7 @@
             
           </div>
         </a>
+      </div>
         <div id="old-stuff" class="collection-view">
           <div class="container popup">
             <div class="popup-header">
@@ -445,7 +469,8 @@
           </div>
         </div>
       
-        <a class="collection" href="#c_aston-martin" onclick="updateCollections('aston-martin')"  style="background-image:url('')">
+      <div class="col-block">
+        <a class="collection" href="#collection_aston-martin" onclick="updateCollections('collection_aston-martin')"  style="background-image:url('')">
 
           <div class="col-info">
             <h1  class="col-title">Aston Martin</h1>
@@ -453,6 +478,7 @@
             
           </div>
         </a>
+      </div>
         <div id="aston-martin" class="collection-view">
           <div class="container popup">
             <div class="popup-header">
@@ -469,7 +495,8 @@
           </div>
         </div>
       
-        <a class="collection" href="#c_headphones" onclick="updateCollections('headphones')"  style="background-image:url('')">
+      <div class="col-block">
+        <a class="collection" href="#collection_headphones" onclick="updateCollections('collection_headphones')"  style="background-image:url('')">
 
           <div class="col-info">
             <h1  class="col-title">Headphones</h1>
@@ -477,6 +504,7 @@
             
           </div>
         </a>
+      </div>
         <div id="headphones" class="collection-view">
           <div class="container popup">
             <div class="popup-header">
@@ -493,7 +521,8 @@
           </div>
         </div>
       
-        <a class="collection" href="#c_scary-faces" onclick="updateCollections('scary-faces')"  style="background-image:url('')">
+      <div class="col-block">
+        <a class="collection" href="#collection_scary-faces" onclick="updateCollections('collection_scary-faces')"  style="background-image:url('')">
 
           <div class="col-info">
             <h1  class="col-title">Scary Faces</h1>
@@ -501,6 +530,7 @@
             
           </div>
         </a>
+      </div>
         <div id="scary-faces" class="collection-view">
           <div class="container popup">
             <div class="popup-header">
@@ -528,7 +558,8 @@
     </div>
     <div class="collections-container">
       
-        <a class="collection" href="#c_t-shirts-:-patisserie" onclick="updateCollections('t-shirts-:-patisserie')"  style="background-image:url('_portfolio/Logos-and-Design/T_Shirts_:_Patisserie/.thumbnail.The_Eclairs.png')">
+      <div class="col-block">
+        <a class="collection" href="#collection_t-shirts-:-patisserie" onclick="updateCollections('collection_t-shirts-:-patisserie')"  style="background-image:url('_portfolio/Logos-and-Design/T_Shirts_:_Patisserie/The_Eclairs.png')">
 
           <div class="col-info">
             <h1  class="col-title">T-Shirts - Patisserie</h1>
@@ -542,6 +573,7 @@
             
           </div>
         </a>
+      </div>
         <div id="t-shirts-:-patisserie" class="collection-view">
           <div class="container popup">
             <div class="popup-header">
@@ -566,7 +598,8 @@
           </div>
         </div>
       
-        <a class="collection" href="#c_the-great-owl" onclick="updateCollections('the-great-owl')"  style="background-image:url('_portfolio/Logos-and-Design/The_Great_Owl/.thumbnail.The_Great_Owl.png')">
+      <div class="col-block">
+        <a class="collection" href="#collection_the-great-owl" onclick="updateCollections('collection_the-great-owl')"  style="background-image:url('_portfolio/Logos-and-Design/The_Great_Owl/The_Great_Owl.png')">
 
           <div class="col-info">
             <h1  class="col-title">The Great Owl Pub</h1>
@@ -580,6 +613,7 @@
             
           </div>
         </a>
+      </div>
         <div id="the-great-owl" class="collection-view">
           <div class="container popup">
             <div class="popup-header">
@@ -612,7 +646,8 @@
           </div>
         </div>
       
-        <a class="collection" href="#c_mark" onclick="updateCollections('mark')"  style="background-image:url('_portfolio/Logos-and-Design/Mark/.thumbnail.photo 4.JPG')">
+      <div class="col-block">
+        <a class="collection" href="#collection_mark" onclick="updateCollections('collection_mark')"  style="background-image:url('_portfolio/Logos-and-Design/Mark/photo 4.JPG')">
 
           <div class="col-info">
             <h1  class="col-title">Random logos</h1>
@@ -626,6 +661,7 @@
             
           </div>
         </a>
+      </div>
         <div id="mark" class="collection-view">
           <div class="container popup">
             <div class="popup-header">
@@ -673,7 +709,8 @@
     </div>
     <div class="collections-container">
       
-        <a class="collection" href="#c_that-startpage-rocks" onclick="updateCollections('that-startpage-rocks')"  style="background-image:url('')">
+      <div class="col-block">
+        <a class="collection" href="#collection_that-startpage-rocks" onclick="updateCollections('collection_that-startpage-rocks')"  style="background-image:url('')">
 
           <div class="col-info">
             <h1  class="col-title">That Startpage Rocks</h1>
@@ -681,6 +718,7 @@
             
           </div>
         </a>
+      </div>
         <div id="that-startpage-rocks" class="collection-view">
           <div class="container popup">
             <div class="popup-header">
@@ -697,7 +735,8 @@
           </div>
         </div>
       
-        <a class="collection" href="#c_duck-launcher" onclick="updateCollections('duck-launcher')"  style="background-image:url('')">
+      <div class="col-block">
+        <a class="collection" href="#collection_duck-launcher" onclick="updateCollections('collection_duck-launcher')"  style="background-image:url('')">
 
           <div class="col-info">
             <h1  class="col-title">Duck Launcher</h1>
@@ -705,6 +744,7 @@
             
           </div>
         </a>
+      </div>
         <div id="duck-launcher" class="collection-view">
           <div class="container popup">
             <div class="popup-header">
@@ -721,7 +761,8 @@
           </div>
         </div>
       
-        <a class="collection" href="#c_kebabologie" onclick="updateCollections('kebabologie')"  style="background-image:url('')">
+      <div class="col-block">
+        <a class="collection" href="#collection_kebabologie" onclick="updateCollections('collection_kebabologie')"  style="background-image:url('')">
 
           <div class="col-info">
             <h1  class="col-title">Kebabologie</h1>
@@ -729,6 +770,7 @@
             
           </div>
         </a>
+      </div>
         <div id="kebabologie" class="collection-view">
           <div class="container popup">
             <div class="popup-header">

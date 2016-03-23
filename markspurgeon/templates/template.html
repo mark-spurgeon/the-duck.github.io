@@ -2,19 +2,24 @@
 <head>
   <title>Mark Spurgeon - Portfolio</title>
   <meta charset="utf-8" \>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="http://cdn.jsdelivr.net/vivus/latest/vivus.min.js"></script>
   <script >
 
+
     function updateCollections(v) {
       if (v) {
-        var n = v.replace('c_','');
-        var d =document.getElementById(v);
-        if (d != null) {
-          d.style.display = "block";
-          d.className="collection-view active";
+        if (v.contains('collection_')) {
+          console.log(v);
+          var n = v.replace('collection_','');
+          console.log(n);
+          var d =document.getElementById(n);
+          if (d != null) {
+            d.style.display = "block";
+            d.className="collection-view active";
+          }
         }
       }
     }
@@ -29,6 +34,9 @@
     }
 
     $(document).ready(function() {
+
+      if (typeof String.prototype.contains === 'undefined') { String.prototype.contains = function(it) { return this.indexOf(it) != -1; }; }
+
       var hash = window.location.hash.substring(1);
       updateCollections(hash);
       $('.mp-link').magnificPopup({
@@ -189,8 +197,12 @@
   </div>
 
   <div class="myself">
+    <hr>
+    <p>This is just a place where most of what I've made on a computer is stored, the main reason being not to lose them...</p>
+    <img src="{{myself.picture}}"></img>
     <h1 class="ctgry-s-color">{{myself.name}}{% if myself.status %}<sup class="status">{{myself.status}}</sup>{% endif %}</h1>
     {% if myself.description %}<h2>{{myself.description}}</h2>{% endif %}
+    <hr>
     {% if myself.email %}
       <h3><span class="ctgry-s-color">Email</span> <a href="mailto:{{myself.email}}">{{myself.email}}</a></h2>
     {% endif %}
@@ -211,7 +223,8 @@
     </div>
     <div class="collections-container">
       {% for col in cat.collections %}
-        <a class="collection" href="#c_{{col['id']}}" onclick="updateCollections('{{col['id']}}')"  style="background-image:url('{{col['imageFile']['file']}}')">
+      <div class="col-block">
+        <a class="collection" href="#collection_{{col['id']}}" onclick="updateCollections('collection_{{col['id']}}')"  style="background-image:url('{{col['imageFile']['bigfile']}}')">
 
           <div class="col-info">
             <h1  class="col-title">{{col.title}}</h1>
@@ -225,6 +238,7 @@
             {% endif %}
           </div>
         </a>
+      </div>
         <div id="{{col['id']}}" class="collection-view">
           <div class="container popup">
             <div class="popup-header">

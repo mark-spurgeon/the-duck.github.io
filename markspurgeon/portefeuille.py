@@ -230,7 +230,13 @@ if __name__=="__main__":
 
                         if fi.startswith("./"):
                             fi= fi.replace("./","")
+
+                        fibig = str(os.path.join(colDir,media)).replace("./","")
+                        if fibig.startswith("./"):
+                            fibig= fibig.replace("./","")
+
                         d['file']=fi
+                        d['bigfile'] = fibig
 
                         #Set Last image as collection's image
                         colDict["imageFile"] = d
