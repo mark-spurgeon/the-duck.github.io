@@ -10,6 +10,7 @@
 
     function updateCollections(v) {
       if (v) {
+        var n = v.replace('c_','');
         var d =document.getElementById(v);
         if (d != null) {
           d.style.display = "block";
@@ -24,7 +25,6 @@
         d.style.display = "block";
         d.className="collection-view";
         var urlWithoutHash = document.location.href.replace(location.hash , "" );
-        document.location = urlWithoutHash;
       }
     }
 
@@ -188,29 +188,42 @@
 
   </div>
 
-
-    <h1 class="ctgry-color">{{myself.name}}{% if myself.status %}<sup class="status">{{myself.status}}</sup>{% endif %}</h1>
+  <div class="myself">
+    <h1 class="ctgry-s-color">{{myself.name}}{% if myself.status %}<sup class="status">{{myself.status}}</sup>{% endif %}</h1>
     {% if myself.description %}<h2>{{myself.description}}</h2>{% endif %}
     {% if myself.email %}
-      <h3><span class="ctgry-color">Email</span> <a href="mailto:{{myself.email}}">{{myself.email}}</a></h2>
+      <h3><span class="ctgry-s-color">Email</span> <a href="mailto:{{myself.email}}">{{myself.email}}</a></h2>
     {% endif %}
     {% if myself.github %}
-      <h3><span class="ctgry-color">Github</span> <a href="{{myself.github}}">{{myself.github}}</a></h2>
+      <h3><span class="ctgry-s-color">Github</span> <a href="{{myself.github}}">{{myself.github}}</a></h2>
     {% endif %}
   </div>
+</div>
 </div>
 
 <div class="container">
 {% for cat in categories%}
   <div class="category" id="{{cat.id}}">
-    <div class="left-container">
-      <h1 class="ctgry-h1"><span class="ctgry-color">{{cat.title}}</span> / {{cat.description}}</h1>
+    <div class="ctgry-container">
+      <h1 class="ctgry-h1"><span class="ctgry-color">{{cat.title}}</span></h1>
+      <hr>
+      <p class="ctgry-p">{{cat.description}}</p>
     </div>
-    <div class="right-container">
+    <div class="collections-container">
       {% for col in cat.collections %}
-        <a class="collection" href="#{{col['id']}}" onclick="updateCollections('{{col['id']}}')"  style="background-image:url('{{col['imageFile']['file']}}')">
-          <span  class="col-title">{{col.title}}</span>
-          {% if col.date!= None%}<span  class="col-date">{{col.date}}</span>{% endif %}
+        <a class="collection" href="#c_{{col['id']}}" onclick="updateCollections('{{col['id']}}')"  style="background-image:url('{{col['imageFile']['file']}}')">
+
+          <div class="col-info">
+            <h1  class="col-title">{{col.title}}</h1>
+            {% if col.date!= None%}
+            <hr>
+            <p  class="col-date">{{col.date}}</p>
+            {% endif %}
+            {% if col.description!= None%}
+            <hr>
+            <p>{{col.description}}</p>
+            {% endif %}
+          </div>
         </a>
         <div id="{{col['id']}}" class="collection-view">
           <div class="container popup">

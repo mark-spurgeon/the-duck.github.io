@@ -2,6 +2,14 @@
   font-family: "Spartan";
   src:url('leaguespartan-bold.ttf');
 }
+@font-face {
+  font-family: "Merriweather";
+  src:url('Merriweather-Regular.ttf');
+}
+@font-face {
+  font-family: "Merriweather Italic";
+  src:url('Merriweather-BoldIt.ttf');
+}
 body {
   font-family:'Montserrat',Arial;
   margin:0px;
@@ -16,11 +24,11 @@ body {
 
 .category {
   width: 100%;
-  overflow: hidden;
   position: relative;
   display:flex;
   flex-wrap: wrap;
   flex-direction: row;
+  margin-top:100px;
 }
 .left-container {
   flex-basis: 300px;
@@ -30,32 +38,52 @@ body {
   padding:0px;
   height:auto;
 }
-.right-container {
-  margin:0px;
-  padding:0px;
-  margin-left:5px;
-  margin-right: 5px;
-  min-width: 400px;
-  margin-bottom:20px;
-  flex:2;
+.collections-container {
+  width:100%;
 }
 
 .image {
   width:300px;
 }
 
+.ctgry-container {
+  z-index:10;
+  border-style:solid;
+  border-width: 1px;
+  border-color:rgba(0,0,0,0.8);
+  position: absolute;
+  background:#FFFCE6;
+  top:-90px;
+  left:10px;
+  width:400px;
+  padding:20px;
+  box-shadow:2px 2px 0px 0px rgba(0,0,0,0.6)
+}
+
 .ctgry-h1 {
   font-size: 1.5em;
-  border-style: solid;
-  border-width: 0px;
-  border-top-width: 5px;
-  border-color: black;
   margin:0px;
   font-family: "Spartan";
+  text-transform: uppercase;
   padding:4px;
+  text-align: center;
+}
+.ctgry-p {
+  margin:0px;
+  font-size: 1.3em;
+  font-family: "Merriweather Italic";
+  text-align: center;
+  color:rgba(0,0,0,0.8);
 }
 .ctgry-color {
   color:#e22b3d;
+}
+.ctgry-s-color {
+  color:#4d3ed2;
+}
+hr {
+  width:15px;
+  margin:8px auto;
 }
 
 .collection {
@@ -64,7 +92,7 @@ body {
   background-position: center;
   background-size: cover;
   width:100%;
-  height:200px;;
+  height:500px;;
   margin:0px;
   margin-top:0px;
   margin-bottom: 8px;
@@ -72,36 +100,44 @@ body {
   float:left;
   margin-right:6px;
   text-decoration: none;
+  position:relative;
+}
+
+
+.collection .col-info {
+  position: absolute;
+  width:250px;
+  background:#FFFCE6;
+  bottom:5px;
+  right:5px;
+  color:black;
+  border-style: solid;
+  border-width: 1px;
+  border-color:rgba(0,0,0,0.8);
+  box-shadow:2px 2px 0px 0px rgba(0,0,0,0.6)
+}
+.collection .col-info p {
+  margin:10px;
+  text-align: center;
 }
 
 .collection .col-title {
-  margin-top:0px;
-  margin-left:0px;
-  color: white;
-  font-size: 1.5em;
-  border-style: solid;
-  border-width: 0px;
-  border-bottom-width: 3px;
-  border-color: transparent;
-  text-decoration: none;
-  text-shadow: 1px 2px 2px rgba(150, 150, 150, 0.2);
+  margin:10px;
+  color: black;
+  font-size: 1.6em;
+  text-align: center;
+  font-family: "Spartan";
   font-weight: bold;
-}
-.collection .col-title:hover {
-  border-color: white;
+  text-transform: uppercase;
+
 }
 .collection .col-date {
   margin-top:0px;
   margin-left:0px;
-  color: rgba(255,255,255,0.6);
-  font-size: 1.5em;
-  border-style: solid;
-  border-width: 0px;
-  border-bottom-width: 3px;
-  border-color: transparent;
-  text-decoration: none;
-  text-shadow: 1px 2px 2px rgba(150, 150, 150, 0.2);
-  font-weight: bold;
+  font-size: 1.2em;
+  font-family: "Merriweather Italic";
+  color:#4d3ed2;
+  text-align: center;
 }
 
 
@@ -213,7 +249,8 @@ body {
   padding-bottom:20px;
   width: 100%;
   text-align: center;
-
+  font-family: "Merriweather Italic";
+  font-weight: normal;
 }
 #header h3 {
   margin:5px;
@@ -221,6 +258,9 @@ body {
   padding-bottom: 10px;
   width: 100%;
   text-align: center;
+  font-family: "Merriweather";
+  font-weight: bold;
+  font-size: 1em;
 }
 #header h3 span {
 }
@@ -270,8 +310,10 @@ body {
   padding:40px;
 }
 .buttons {
-  margin:20px;
-  padding:20px;
+  margin-top:20px;
+  padding-bottom:20px;
+  margin-bottom:20px;
+  padding-top:20px;
   height:auto;
   width: 100%;
   overflow: hidden;
@@ -326,6 +368,21 @@ body {
   .buttons .button {
     width:100%;
   }
+  .icon {
+    padding:0px;
+    margin:0 auto;
+    width:100%;
+  }
+  .ctgry-container {
+    width:auto;
+    right:5px;
+  }
+}
+
+.myself {
+  width:90%;
+  margin:0 auto;
+  padding-bottom:30px;
 }
 
 
