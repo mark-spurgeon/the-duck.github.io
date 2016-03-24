@@ -25,6 +25,7 @@ body {
 .container {
   margin:10px auto;
   width:100%;
+  position: relative;
 }
 
 .category {
@@ -33,7 +34,9 @@ body {
   display:flex;
   flex-wrap: wrap;
   flex-direction: row;
-  margin-top:100px;
+  margin-top:10px;
+  overflow: hidden;
+  z-index:-1;
 }
 .left-container {
   flex-basis: 300px;
@@ -51,17 +54,20 @@ body {
   width:300px;
 }
 
+.ctgry-title {
+  height:100px;
+  z-index:10;
+}
+
 .ctgry-container {
   z-index:10;
   border-style:solid;
   border-width: 1px;
   border-color:rgba(0,0,0,0.8);
-  position: absolute;
   background:#FFFCE6;
-  top:-90px;
-  left:10px;
   width:400px;
   padding:20px;
+  margin:10px;
   box-shadow:2px 2px 0px 0px rgba(0,0,0,0.6)
 }
 
@@ -127,6 +133,7 @@ hr {
 .collection .col-info p {
   margin:10px;
   text-align: center;
+  font-family: "Merriweather";
 }
 
 .collection .col-title {
@@ -178,13 +185,20 @@ hr {
 }
 .popup-header {
   height:48px;
-  padding:10px;
   padding-bottom: 0px;
+  position: absolute;
+  left:10px;
+  right:10px;
+  top:0px;
+  background:#FFFCE6;
 }
 .popup-header a {
   transition: color .4s;
   text-decoration: none;
   color:rgba(0,0,0,0.5);
+  font-family: "Spartan";
+  text-transform: uppercase;
+  margin:5px;
 }
 .popup-header a:hover {
   color:black;
@@ -199,22 +213,19 @@ hr {
   color:black;
   text-decoration: none;
   padding:0px;
-  border-style: solid;
-  border-width: 0px;
-  border-top-width: 3px;
-  border-color: black;
   font-family: "Spartan";
   text-transform: uppercase;
 }
 
 .mp-link {
-  background-size: cover;
-  background-position: center;
-  width:300px;
-  height:300px;
   display:block;
-  float:left;
   margin:4px;
+  width:45%;
+  float:left;
+
+}
+.mp-link img  {
+  width:100%;
 }
 .mfp-img {
   max-height: 90% !important;
@@ -227,6 +238,7 @@ hr {
   padding: 3px;
   text-decoration: none;
   font-weight: bold;
+  font-family: "Merriweather It"
 }
 .link:hover {
   text-decoration: underline;
@@ -234,8 +246,10 @@ hr {
 .description {
   width:400px;
   text-align: left;
-  padding:10px;
+  padding-left:10px;
+  margin-top:58px;
   padding-top:0px;
+  font-family: "Merriweather It";
 }
 
 #header {
@@ -421,8 +435,8 @@ hr {
   }
 }
 @media screen and (min-width: 1280px) {
-  .container {width:1280px};
+  .container {width:1180px};
 }
 @media screen and (min-width: 1440px) {
-  .container {width:1440px}
+  .container {width:1280px}
 }

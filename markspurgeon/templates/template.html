@@ -39,9 +39,6 @@
 
       var hash = window.location.hash.substring(1);
       updateCollections(hash);
-      $('.mp-link').magnificPopup({
-        type:'image'
-      });
     });
 
 
@@ -198,7 +195,7 @@
 
   <div class="myself">
     <hr>
-    <p>This is just a place where most of what I've made on a computer is stored, the main reason being not to lose them...</p>
+    <p>This is a place where most of what I've made on a computer is kept, just not to lose them...</p>
     <img src="{{myself.picture}}"></img>
     <h1 class="ctgry-s-color">{{myself.name}}{% if myself.status %}<sup class="status">{{myself.status}}</sup>{% endif %}</h1>
     {% if myself.description %}<h2>{{myself.description}}</h2>{% endif %}
@@ -215,12 +212,14 @@
 
 <div class="container">
 {% for cat in categories%}
-  <div class="category" id="{{cat.id}}">
-    <div class="ctgry-container">
-      <h1 class="ctgry-h1"><span class="ctgry-color">{{cat.title}}</span></h1>
-      <hr>
-      <p class="ctgry-p">{{cat.description}}</p>
-    </div>
+<div class="ctgry-title">
+<div class="ctgry-container"  id="{{cat.id}}">
+  <h1 class="ctgry-h1"><span class="ctgry-color">{{cat.title}}</span></h1>
+  <hr>
+  <p class="ctgry-p">{{cat.description}}</p>
+</div>
+</div>
+  <div class="category">
     <div class="collections-container">
       {% for col in cat.collections %}
       <div class="col-block">
@@ -240,10 +239,14 @@
         </a>
       </div>
         <div id="{{col['id']}}" class="collection-view">
-          <div class="container popup">
+          <div class="popup">
+
+            <div class="container">
             <div class="popup-header">
-              <a href="" class="title"><span class="ctgry-color">{{cat.title}}</span> / {{col.title}}</a>
-              <a  class="close" onclick="closePopup('{{col['id']}}')">back</a>
+              <div class="container">
+                <a href="" class="title"><span class="ctgry-color">{{cat.title}}</span> / {{col.title}}</a>
+                <a  class="close" onclick="closePopup('{{col['id']}}')">back</a>
+              </div>
             </div>
 
             <p class="description">{{col.description}}</p>
@@ -256,11 +259,14 @@
             <div class="slider">
               {% for m in col.media %}
                 {% if m.ext not in ["mp4","avi","webm"]%}
-                <a href="{{m.file}}" class="mp-link" style="background-image:url('{{m.file}}')"></a>
+                <a href="{{m.bigfile}}" class="mp-link">
+                  <img src="{{m.file}}"></img>
+                </a>
                 {%endif%}
               {% endfor %}
             </div>
           </div>
+        </div>
         </div>
       {% endfor %}
     </div>
