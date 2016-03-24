@@ -197,7 +197,7 @@ hr {
   color:rgba(0,0,0,0.5);
   font-family: "Spartan";
   text-transform: uppercase;
-  margin:5px;
+  margin:0px;
 }
 .popup-header a:hover {
   color:black;
