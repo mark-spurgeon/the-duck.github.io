@@ -224,7 +224,7 @@
     <div class="collections-container">
       {% for col in cat.collections %}
       <div class="col-block">
-        <a class="collection" href="#collection_{{col['id']}}" onclick="updateCollections('collection_{{col['id']}}')"  style="background-image:url('{{col['imageFile']['bigfile']}}')">
+        <a class="collection" href="#collection_{{col['id']}}" onclick="updateCollections('collection_{{col['id']}}')"  style="background-image:url('{{col['imageFile']['file']}}')">
 
           <div class="col-info">
             <h1  class="col-title">{{col.title}}</h1>
