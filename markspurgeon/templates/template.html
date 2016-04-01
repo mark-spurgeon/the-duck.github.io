@@ -13,7 +13,7 @@
 
     function updateCollections(v) {
       if (v) {
-        if (v.contains('collection_')) {
+        if (v.indexOd('collection_')> -1) {
           console.log(v);
           var n = v.replace('collection_','');
           console.log(n);
