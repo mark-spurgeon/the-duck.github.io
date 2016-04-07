@@ -66,6 +66,7 @@ body {
   background:#FFFCE6;
   width:400px;
   padding:20px;
+  padding-bottom: 10px;
   margin:10px;
   box-shadow:2px 2px 0px 0px rgba(0,0,0,0.6)
 }
@@ -80,8 +81,10 @@ body {
 }
 .ctgry-p {
   margin:0px;
-  font-size: 1.3em;
-  font-family: "Merriweather It";
+  font-size: 1.6em;
+  padding:0px;
+  font-family: "Crimson Text";
+  font-style: italic;
   text-align: center;
   color:rgba(0,0,0,0.8);
 }
@@ -132,7 +135,7 @@ hr {
 .collection .col-info p {
   margin:10px;
   text-align: center;
-  font-family: "Merriweather";
+  font-family: "Crimson Text";
 }
 
 .collection .col-title {
@@ -148,8 +151,10 @@ hr {
 .collection .col-date {
   margin-top:0px;
   margin-left:0px;
-  font-size: 1.2em;
-  font-family: "Merriweather Italic";
+  font-size: 1.4em;
+  font-family: "Crimson Text";
+  font-style: normal;;
+  font-weight: bold;
   color:#4d3ed2;
   text-align: center;
 }
@@ -232,14 +237,19 @@ hr {
 
 .link {
   margin: 10px;
-  color: white;
-  background-color: black;
-  padding: 3px;
+  margin-top: 0px;
+  padding: 0px;
   text-decoration: none;
   font-weight: bold;
-  font-family: "Merriweather It"
+  font-family: "Crimson Text";
+  font-style: italic;;
+  font-weight: normal;;
+  font-size: 1.3em;
+  color: #4d3ed2;
+  opacity: 0.9;
 }
 .link:hover {
+  opacity: 1;
   text-decoration: underline;
 }
 .description {
@@ -247,8 +257,11 @@ hr {
   text-align: left;
   padding-left:10px;
   margin-top:0px;
+  margin-bottom: 5px;
   padding-top:50px;
-  font-family: "Merriweather It";
+  font-family: "Crimson Text";
+  font-style: italic;
+  font-size: 1.3em;
 }
 
 #header {
@@ -272,7 +285,9 @@ hr {
   padding-bottom:20px;
   width: 100%;
   text-align: center;
-  font-family: "Merriweather Italic";
+  font-family: "Crimson Text";
+  font-size: 1.8em;
+  font-style: italic;
   font-weight: normal;
 }
 #header h3 {
@@ -281,9 +296,9 @@ hr {
   padding-bottom: 10px;
   width: 100%;
   text-align: center;
-  font-family: "Merriweather";
-  font-weight: bold;
-  font-size: 1em;
+  font-family: "Crimson Text";
+  font-weight: normal;;
+  font-size: 1.4em;
 }
 #header h3 span {
 }
