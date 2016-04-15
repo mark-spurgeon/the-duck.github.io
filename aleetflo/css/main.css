@@ -1,0 +1,124 @@
+body {
+  font-family: "Crimson Text";
+  font-size: 1.8em;
+}
+
+p {
+  font-family: "Crimson Text";
+  text-align: justify;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Andada SC";
+}
+
+
+header {
+  height:250px;
+
+  position: fixed;
+  width: 100%;
+  padding:10px;
+  margin:0px;
+  left:0px;
+  top:0px;
+  background:white;
+  z-index:10;
+}
+
+header.sticky {
+  height: 64px;
+  background-color: white;
+  display: block;
+  position: sticky;
+}
+header.sticky .af-link {
+  width:64px;
+}
+
+.hlink-left {
+  width:68px;
+  float: left;
+}
+
+
+.af-link {
+  z-index:100;
+  display: block;
+  width:340px;
+  margin:10px auto;
+  transition: width .2s;
+}
+.af-link img {
+  width: inherit;
+}
+
+
+#menu {
+  transition: left .4s;
+  position: fixed;
+  width:50%;
+  min-width: 300px;
+  top:0px;
+  bottom:0px;
+  left:-100%;
+  z-index: 11;
+  background: white;
+  box-shadow: 0px 0px 50px 10px rgba(0,0,0,0.1)
+}
+#menu.open {
+  left: 00%;
+}
+#menu h3 {
+  margin:100px;
+  margin-bottom: 10px;
+}
+#menu ul {
+  margin:100px;
+  margin-top:30px;
+  list-style-type: decimal;
+}
+#menu ul li {
+  transition: opacity .1s;
+  text-decoration: none;
+  opacity:.5;
+  color:black;
+}
+#menu ul li:hover {
+  opacity: 1;
+}
+ul li a {
+  text-decoration: none;
+  color:black;
+}
+ul li a:hover {
+  color:black;
+}
+#closemenu {
+  transition: opacity .2s;
+  position: absolute;
+  top:10px;
+  left:10px;
+  opacity: .5;
+  cursor: pointer;
+}
+#closemenu:hover {
+  opacity: 1;
+}
+#openmenu {
+  display: block;
+  position: absolute;
+  left:10px;
+  top:10px;
+  transition: opacity .2s;
+  opacity: .5;
+  cursor: pointer;
+}
+#openmenu:hover {
+  opacity: 1;
+}
+#first-row {
+  margin-top:260px;
+}
+#first-row.not-at-top {
+  margin-top:64px;
+}

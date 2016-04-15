@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="48"
+   height="48"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="menu.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="31.678384"
+     inkscape:cx="17.167985"
+     inkscape:cy="29.177042"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1280"
+     inkscape:window-height="969"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       position="0,0"
+       orientation="0,48"
+       id="guide2985" />
+    <sodipodi:guide
+       position="48,0"
+       orientation="-48,0"
+       id="guide2987" />
+    <sodipodi:guide
+       position="48,48"
+       orientation="0,-48"
+       id="guide2989" />
+    <sodipodi:guide
+       position="0,48"
+       orientation="48,0"
+       id="guide2991" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="11.607143,23.125"
+       id="guide2992" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="37.232143,18.035714"
+       id="guide2994" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="32.678571,37.232143"
+       id="guide2996" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="37.232143,10.625"
+       id="guide2998" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-1004.3622)">
+    <text
+       xml:space="preserve"
+       style="font-size:9.99031162px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:center;line-height:129.99999523%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Roboto;-inkscape-font-specification:Roboto Semi-Light"
+       x="14.307133"
+       y="1042.0901"
+       id="text2993"
+       sodipodi:linespacing="130%"
+       transform="scale(1.019959,0.98043157)"><tspan
+         sodipodi:role="line"
+         id="tspan2995"
+         x="14.307133"
+         y="1042.0901"
+         style="font-size:9.99031162px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:129.99999523%;writing-mode:lr-tb;text-anchor:middle;font-family:Andada;-inkscape-font-specification:Andada">1.</tspan></text>
+    <rect
+       y="1040.351"
+       x="11.608908"
+       height="1.383929"
+       width="25.623234"
+       id="rect3771"
+       style="fill:#000000;fill-opacity:1;stroke:none" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       id="rect3000"
+       width="25.623234"
+       height="1.383929"
+       x="11.608908"
+       y="1033.8777" />
+    <rect
+       y="1027.3152"
+       x="11.608908"
+       height="1.383929"
+       width="25.623234"
+       id="rect3002"
+       style="fill:#000000;fill-opacity:1;stroke:none" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       id="rect3004"
+       width="19.417875"
+       height="1.383929"
+       x="17.814266"
+       y="1020.488" />
+  </g>
+</svg>

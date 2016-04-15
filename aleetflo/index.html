@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Ale et Flo</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Crimson+Text:600italic,600,700' rel='stylesheet' type='text/css'>
+
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <link href='https://fonts.googleapis.com/css?family=Andada' rel='stylesheet' type='text/css'>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script>
+
+  function openMenu() {
+    $("#menu").addClass("open")
+  }
+  function closeMenu() {
+    $("#menu").removeClass("open")
+  }
+
+
+  $(window).scroll(function() {
+if ($(this).scrollTop() > 1){
+    $('header').addClass("sticky");
+    $('#first-row').addClass("not-at-top");
+    $('#af-brand').attr("src","icons/dessin.svg");
+  }
+  else{
+    $('header').removeClass("sticky");
+    $('#first-row').removeClass("not-at-top");
+    $('#af-brand').attr("src","icons/aleetflo-small.svg");
+  }
+});
+  </script>
+
+</head>
+<body>
+
+  <header>
+    <div class="hlink-left" style="margin-top: 0%">
+      <p><a onclick="openMenu()" id="openmenu"><img src="icons/menu.svg"></img></a></p>
+    </div>
+    <div class="hlink-center" style="margin-top: 0%">
+      <a href="/" class="af-link">
+        <img src="icons/aleetflo-small.svg" id="af-brand"></img>
+      </a>
+    </div>
+  </header>
+
+  <div id="menu">
+    <h3>Ale & Flo</h3>
+    <ul>
+      <li><a href="contact">Nos Savons</a></li>
+      <li><a href="contact">About</a></li>
+      <li><a href="contact">Contactez-nous</a></li>
+    </ul>
+    <a id="closemenu" onclick="closeMenu()"><img src="icons/close.svg"></img></a>
+  </div>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container" id="first-row">
+    <div class="row" >
+      <div class="four columns">
+        <h2>Qui sommes-nous ?</h2>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien nisl, pellentesque eu sagittis in, auctor sed ante. Aenean mollis quam et arcu placerat, in dignissim magna vestibulum. Nam consequat mauris et eros lobortis, non aliquam est vulputate. Duis facilisis nec tortor ac posuere. Fusce facilisis arcu ut efficitur iaculis. Cras pharetra, tellus nec molestie tincidunt, enim eros porttitor elit, ut euismod quam ex et ante. Fusce fermentum interdum odio, at pretium dolor convallis in.
+<h2>Nos savons</h2>
+<p> Goût vanille, goût fraise.. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien nisl, pellentesque eu sagittis in, auctor sed ante. Aenean mollis quam et arcu placerat, in dignissim magna vestibulum. Nam consequat mauris et eros lobortis, non aliquam est vulputate. Duis facilisis nec tortor ac posuere. Fusce facilisis arcu ut efficitur iaculis. Cras pharetra, tellus nec molestie tincidunt, enim eros porttitor elit, ut euismod quam ex et ante. Fusce fermentum interdum odio, at pretium dolor convallis in.
+
+Phasellus dignissim mollis sem, quis luctus mauris hendrerit non. Aliquam id erat tincidunt mauris interdum porttitor. Vivamus vitae ex hendrerit, commodo urna vel, pellentesque enim. Vivamus tincidunt mi in nulla hendrerit eleifend. Aliquam laoreet sed enim faucibus volutpat. Fusce malesuada ante vitae diam varius lobortis. </p>
+
+      </div>
+      <div class="four columns">
+        <h2>Produits locaux</h2>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien nisl, pellentesque eu sagittis in, auctor sed ante. Aenean mollis quam et arcu placerat, in dignissim magna vestibulum. Nam consequat mauris et eros lobortis, non aliquam est vulputate. Duis facilisis nec tortor ac posuere. Fusce facilisis arcu ut efficitur iaculis. Cras pharetra, tellus nec molestie tincidunt, enim eros porttitor elit, ut euismod quam ex et ante. Fusce fermentum interdum odio, at pretium dolor convallis in.</p>
+        <h2>Deux artisanes, des centaines de savons!</h2>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien nisl, pellentesque eu sagittis in, auctor sed ante. Aenean mollis quam et arcu placerat, in dignissim magna vestibulum. Nam consequat mauris et eros lobortis, non aliquam est vulputate. Duis facilisis nec tortor ac posuere. Fusce facilisis arcu ut efficitur iaculis. Cras pharetra, tellus nec molestie tincidunt, enim eros porttitor elit, ut euismod quam ex et ante. Fusce fermentum interdum odio, at pretium dolor convallis in.</p>
+
+      </div>
+      <div class="four columns">
+        <h2>Produits locaux</h2>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien nisl, pellentesque eu sagittis in, auctor sed ante. Aenean mollis quam et arcu placerat, in dignissim magna vestibulum. Nam consequat mauris et eros lobortis, non aliquam est vulputate. Duis facilisis nec tortor ac posuere. Fusce facilisis arcu ut efficitur iaculis. Cras pharetra, tellus nec molestie tincidunt, enim eros porttitor elit, ut euismod quam ex et ante. Fusce fermentum interdum odio, at pretium dolor convallis in.</p>
+        <h2>Deux artisanes, des centaines de savons!</h2>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien nisl, pellentesque eu sagittis in, auctor sed ante. Aenean mollis quam et arcu placerat, in dignissim magna vestibulum. Nam consequat mauris et eros lobortis, non aliquam est vulputate. Duis facilisis nec tortor ac posuere. Fusce facilisis arcu ut efficitur iaculis. Cras pharetra, tellus nec molestie tincidunt, enim eros porttitor elit, ut euismod quam ex et ante. Fusce fermentum interdum odio, at pretium dolor convallis in.</p>
+
+      </div>
+    </div>
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
