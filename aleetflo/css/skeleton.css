@@ -136,6 +136,10 @@ body {
   src:url('../fonts/AndadaSC-Bold.otf');
   font-family: "Andada SC Bold"
 }
+@font-face {
+  src:url('../fonts/AndadaSC-Regular.otf');
+  font-family: "Andada SC"
+}
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
