@@ -13,7 +13,7 @@
 
     function updateCollections(v) {
       if (v) {
-        if (v.indexOd('collection_')> -1) {
+        if (v.indexOf('collection_')> -1) {
           console.log(v);
           var n = v.replace('collection_','');
           console.log(n);
@@ -244,40 +244,45 @@
           </div>
         </a>
       </div>
-        <div id="{{col['id']}}" class="collection-view">
-          <div class="popup">
-
-            <div class="container">
-            <div class="popup-header">
-              <div class="container">
-                <a class="title"><span class="ctgry-color">{{cat.title}}</span> / {{col.title}}</a>
-                <a  class="close" onclick="closePopup('{{col['id']}}')">back</a>
-              </div>
-            </div>
-            <p class="description">{% if col.description != None %}{{col.description}}{% endif %}</p>
-
-            {% if col['type'] == "video" %}
-              <a class="link" href="{{col['link']}}">Watch the movie</a>
-            {% elif col['type'] =="website"%}
-              <a class="link" href="{{col['link']}}">Visit the website</a>
-            {% endif %}
-            <div class="slider">
-              {% for m in col.media %}
-                {% if m.ext not in ["mp4","avi","webm"]%}
-                <a href="{{m.bigfile}}" class="mp-link">
-                  <img src="{{m.file}}"></img>
-                </a>
-                {%endif%}
-              {% endfor %}
-            </div>
-          </div>
-        </div>
-        </div>
       {% endfor %}
     </div>
   </div>
 {% endfor %}
 </div>
+
+{% for cat in categories%}
+{% for col in cat.collections %}
+<div id="{{col['id']}}" class="collection-view">
+  <div class="popup">
+
+    <div class="container">
+    <div class="popup-header">
+      <div class="container">
+        <a class="title"><span class="ctgry-color">{{cat.title}}</span> / {{col.title}}</a>
+        <a  class="close" onclick="closePopup('{{col['id']}}')">back</a>
+      </div>
+    </div>
+    <p class="description">{% if col.description != None %}{{col.description}}{% endif %}</p>
+
+    {% if col['type'] == "video" %}
+      <a class="link" href="{{col['link']}}">Watch the movie</a>
+    {% elif col['type'] =="website"%}
+      <a class="link" href="{{col['link']}}">Visit the website</a>
+    {% endif %}
+    <div class="slider">
+      {% for m in col.media %}
+        {% if m.ext not in ["mp4","avi","webm"]%}
+        <a href="{{m.bigfile}}" class="mp-link">
+          <img src="{{m.file}}"></img>
+        </a>
+        {%endif%}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+</div>
+{% endfor %}
+{% endfor %}
 
 <script src="js/jquery.magnific-popup.js"></script>
 <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">

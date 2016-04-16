@@ -16,10 +16,10 @@ header {
   height:250px;
 
   position: fixed;
-  width: 100%;
   padding:10px;
   margin:0px;
   left:0px;
+  right:0px;
   top:0px;
   background:white;
   z-index:10;
@@ -69,11 +69,11 @@ header.sticky .af-link {
   left: 00%;
 }
 #menu h3 {
-  margin:100px;
+  margin:68px;
   margin-bottom: 10px;
 }
 #menu ul {
-  margin:100px;
+  margin:68px;
   margin-top:30px;
   list-style-type: decimal;
 }
