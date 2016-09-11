@@ -1,0 +1,9 @@
+body {
+  background:rgb(35,35,35)
+}
+#logo {
+  background: red
+}
+#triangle-down {
+  border-top-color: red;
+}

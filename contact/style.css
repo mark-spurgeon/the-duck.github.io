@@ -1,0 +1,60 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background: rgb(220,220,220);
+  background: url('0193.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* HEADER */
+
+header {
+    margin:20px;
+}
+
+#logo {
+  float:left;
+  display: block;
+  width:210px;
+  height:150px;
+  background: rgb(50,50,120);
+  padding:10px;
+}
+#logo:hover {
+  background: rgb(120,50,50)
+}
+#logo img {
+  width:210px;
+}
+#links {
+  transition:height .2s, width .5s;
+  position:absolute;
+  opacity: .01;
+  top:190px;
+  width: 210px;
+  height:0px;
+  padding:10px;
+  background:white;
+}
+#logo:hover + #links, #links:hover {
+  opacity: 1;
+  height:200px;
+  width:545px;
+}
+
+
+#contact {
+  font-family: "Raleway";
+  font-weight:900;;
+  font-size: 24px;
+  float:left;
+  display: block;
+  width:315px;
+  height:150px;
+  padding:10px;
+  color:rgba(0,0,0,0.6);
+  background: white;
+}
+#contact .colored {
+  color: rgb(50,50,120);
+}

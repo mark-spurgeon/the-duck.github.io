@@ -1,0 +1,260 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background: rgb(220,220,220);
+  background: url('gangsta.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.full-width-container {
+max-width: 100%;
+clear: both;
+margin: 0 20px;;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Raleway";
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+}
+p {
+  letter-spacing: .1rem;
+  max-width: 35em;
+  text-align: justify;
+}
+
+footer {
+  background: white;
+  color:black;
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: normal;;
+  letter-spacing: .2rem;
+  font-size: .9em;
+  padding: 5px;
+}
+
+/* HEADER */
+
+header {
+    margin:20px;
+    height: 128px;
+}
+
+
+
+#logo {
+  float:left;
+  display: block;
+  width:180px;
+  height:128px;
+  background: rgb(50,50,120);
+  padding:10px;
+}
+#logo:hover {
+  /*background: rgb(50,50,120);*/
+}
+#logo img {
+  width:180px;
+}
+#links {
+  transition:height .1s, width .6s;
+  position:absolute;
+  opacity: .0;
+  top:168px;
+  width: 128px;
+  height:0px;
+  padding:10px;
+  background:white;
+  overflow:hidden;
+}
+#logo:hover + #links, #links:hover {
+  opacity: 1;
+  height:256px;
+  width:470px;
+}
+#triangle-down {
+  transition: border-top-width .3s;
+  position: absolute;
+  top:0px;
+  left:0px;
+  width: 0px;
+  height: 0px;;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-top: 0px solid rgb(50,50,120);;
+  /*border-top-color: rgb(120,50,50);*/
+  border-top-width: 00px;
+ }
+
+#logo:hover + #links #triangle-down, #links:hover #triangle-down {
+  border-top-width: 10px;
+  z-index: 100;
+}
+
+#contact {
+  transition: background .2s;
+  font-family: "Arial";
+  font-weight: bold;
+  font-size: 20px;
+  float:left;
+  display: block;
+  width:270px;
+  height:128px;
+  padding:10px;
+  color:black;
+  background: white;
+  text-decoration: none;
+}
+#contact .colored {
+  color:rgb(50,50,120);
+}
+#contact:hover {
+  background: rgb(240,240,240);
+}
+#link-content {
+  height:256px;
+  width: 470px;
+  margin: 0px;
+  padding: 0px;
+  background:white;;
+}
+.a {
+  display: block;
+  float:left;
+  margin: 0px;
+  height:126px;
+  width: 10px;
+  text-decoration: none;
+  filter: grayscale(100%);
+}
+.a:hover {
+  filter: grayscale(0%);
+}
+.a.social {
+  width:188px;
+}
+.a.social .b {
+  width: 188px;
+  height:62px;
+  text-decoration: none;
+  display: block;
+  filter: grayscale(100%);
+}
+.a.social .b:hover {
+  filter: grayscale(0%);
+}
+.a.social .b.instagram {
+  background-image: url("l_instagram.gif");
+}
+.a.social .b.youtube {
+  background-image: url("l_youtube.gif");
+}
+.a.threed {
+  width:278px;
+  background-image: url("l_threed.gif");
+}
+.a.ideas {
+  width:188px;
+  background-image: url("l_ideas.png");
+}
+.a.logos {
+  width:138px;
+  background-image: url('l_logo.png')
+}
+.a.hireme {
+  width:138px;
+  background-image: url("l_hireme.gif");
+}
+
+#project {
+  font-family: "Raleway";
+  font-size: 21px;
+  color:white;
+  font-weight: bold;
+  display:block;
+  float: right;
+  width:200px;
+  height: 128px;
+  text-align: right;
+  padding:5px;
+  padding-bottom: 10px;
+  border-style: solid;
+  border-width: 0px;
+  border-top-width: 4px;
+  border-color: white;
+  text-decoration: none;
+  letter-spacing: .3rem;
+  line-height: 2.2rem;
+}
+#project .text {
+  transition: background-color 1.5s;
+  font-weight:normal;
+  font-family: "Raleway";
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 0;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+#project:hover, #project:hover .text {
+  color:black;
+}
+
+
+/* Specific to Index */
+footer#index-footer {
+  position: fixed;
+  bottom:0px;
+  right:0px;
+  text-transform: uppercase;
+  font-weight: lighter;
+  letter-spacing: .2rem;
+  font-size: .9em;
+  color:white;
+  background: transparent;
+}
+
+#inspi-box {
+  display: block;
+  width:60%;
+  min-width: 300px;
+  height:200px;
+  background:;
+  position:absolute;
+  top:50%;
+  left: 50%;
+  margin-left: -30%;
+  margin-top:-100px;
+  color:white;
+  z-index: -1;
+}
+#inspi-box h1, #inspi-box h3 {
+  text-transform: none;
+  font-weight: bold;
+  letter-spacing: .3rem;
+  text-shadow: 2px 2px 5px rgba(0,0,0,1);
+}
+#inspi-box h3 {
+  text-align: right;
+}
+
+/* Specific to 3d Work page */
+
+.container {
+  z-index: -1;
+}
+
+.big-projects {
+  background:white;
+}
+.small-projects {
+  background:white;
+}
+.project-text {
+  padding:10px;
+  background:white;
+}
+.project-text img {
+  width:100%;
+}
