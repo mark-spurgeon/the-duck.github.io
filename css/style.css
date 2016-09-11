@@ -2,7 +2,7 @@ body {
   margin: 0px;
   padding: 0px;
   background: rgb(220,220,220);
-  background: url('gangsta.png') no-repeat center center fixed;
+  background: url('/gangsta.png') no-repeat center center fixed;
   background-size: cover;
 }
 
