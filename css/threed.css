@@ -7,3 +7,7 @@ body {
 #triangle-down {
   border-top-color: red;
 }
+.project-text {
+  background-color: :transparent;
+  color:white;
+}
