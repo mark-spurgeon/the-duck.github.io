@@ -7,6 +7,14 @@ body {
 #triangle-down {
   border-top-color: red;
 }
+
+.small-projects{
+  background: transparent;
+}
+.big-projects{
+  background: transparent;
+}
+
 .project-text {
   background-color: :transparent;
   color:white;
