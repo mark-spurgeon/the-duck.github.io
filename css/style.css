@@ -146,26 +146,26 @@ header {
   filter: grayscale(0%);
 }
 .a.social .b.instagram {
-  background-image: url("l_instagram.gif");
+  background-image: url("/img/l_instagram.gif");
 }
 .a.social .b.youtube {
-  background-image: url("l_youtube.gif");
+  background-image: url("/img/l_youtube.gif");
 }
 .a.threed {
   width:278px;
-  background-image: url("l_threed.gif");
+  background-image: url("/img/l_threed.gif");
 }
 .a.ideas {
   width:188px;
-  background-image: url("l_ideas.png");
+  background-image: url("/img/l_ideas.png");
 }
 .a.logos {
   width:138px;
-  background-image: url('l_logo.png')
+  background-image: url('/img/l_logo.png')
 }
 .a.hireme {
   width:138px;
-  background-image: url("l_hireme.gif");
+  background-image: url("/img/l_hireme.gif");
 }
 
 #project {
