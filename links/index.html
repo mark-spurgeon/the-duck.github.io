@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Marko</title>
+    <style>
+      body {
+        color: #5B2D2D;
+        background: rgb(250,250,250);
+      }
+
+      #contain {background:black;display:block; }
+
+      .header {
+        height:55px;
+        width:100%;
+        background: black;
+        margin:0px auto;
+        background: url(marko_header.svg) center no-repeat  ;
+        background-size: 100% auto;
+      }
+      .container {
+        width: auto;
+        max-width:450px;
+        margin:10px auto;
+        overflow: hidden;
+        min-height:400px;
+      }
+
+      .link {
+        margin:0px;
+        padding:0px;
+        float:left;
+      }
+      .link.cube {
+        position: relative;
+        width:50%;
+      }
+      .link.large {
+        position: relative;
+        width:100%;
+        display: block;
+        height:50px;
+        margin-bottom: 20px;
+      }
+
+      .link.cube:after {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+      }
+      .content {
+        position: absolute;
+        width:100%;
+        height:100%;
+      }
+      .button {
+        display: block;
+        margin:8px;
+        background: gray;
+        width: auto;
+        height:90%;
+        text-align: center;
+        line-height:
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+
+      </div>
+
+      <div class="links">
+        <div class="link cube">
+          <div class="content">
+            <a href="https://youtube.com/TheKiki1204" class="button">
+              yt
+            </a>
+          </div>
+
+        </div>
+        <div class="link cube">
+          <div class="content">
+            <a href="https://instagram.com/marko_studios" class="button">
+              insta
+            </a>
+          </div>
+
+        </div>
+        <div class="link large">
+          <div class="content">
+            <a href="http://itsmarko.com/cv" class="button">
+              portfolio / about me
+            </a>
+          </div>
+
+        </div>
+        <div class="link cube">
+          <div class="content">
+            <a href="https://vimeo.com/itsmarko" class="button">
+              vimeo
+            </a>
+          </div>
+
+        </div>
+        <div class="link cube">
+          <div class="content">
+            <a href="http://itsmarko.com" class="button">
+              latest projects
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+  </body>
+</html>
