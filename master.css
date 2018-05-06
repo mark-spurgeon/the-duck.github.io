@@ -1,0 +1,176 @@
+body {
+  background: red;
+  padding:0;
+  margin:0;
+  font-family: Helvetica, sans-serif;
+}
+
+
+#header {
+  position:fixed;
+  width:100%;
+  top:0;
+  display: flex;
+  flex-direction: row;
+  height:64pt;
+  border-style: solid;
+  border-color: black;
+  border-width: 0pt;
+  border-top-width: 2.5pt;
+  border-bottom-width: 2.5pt;
+  background: white;
+}
+
+.h-icon {
+  flex-grow:1;
+  border-style: solid;
+  border-width: 0pt;
+  border-right-width: 2.5pt;
+  border-color:black;
+}
+.h-icon-link {
+  display: block;
+  background: green;
+  width:64pt;
+  height:64pt;
+}
+.h-icon-link:hover {
+  background-color:red;
+}
+.h-icon-icon{
+  float:right;
+  height:64pt;
+  margin-right:3pt;
+}
+.h-titlebar {
+  flex-grow:6;
+  border-style: solid;
+  border-width: 0pt;
+  border-right-width: 2.5pt;
+}
+.h-title {
+  padding:6pt;
+  padding-bottom:0pt;
+  margin:0pt;
+  margin-top:6pt;
+  font-weight: 600;
+  font-size: 18pt
+}
+.h-subtitle {
+  padding:6pt;
+  margin:0pt;
+  margin-top:2pt;
+  font-weight: 400;
+  font-size: 14pt
+}
+.h-links {
+  flex-grow:3;
+}
+
+#content {
+  display: flex;
+  background:white;
+  min-height: 600pt;
+  border-style: solid;
+  border-width: 0pt;
+  border-top-width: 2.5pt;
+}
+.c-left {
+  flex-grow: 1;
+  border-style: solid;
+  border-width: 0pt;
+  border-right-width: 2.5pt;
+}
+.c-center {
+  flex-grow: 4;
+  border-style: solid;
+  border-width: 0pt;
+  border-right-width: 2.5pt;
+}
+.c-right {
+  flex-grow: 3;
+}
+
+.fifty-box {
+  float:left;
+  width: 50%;
+  margin:0pt;
+  padding:0pt;
+}
+.boxofthings {
+  display: block;
+  float:left;
+  width:256pt;
+  height:206pt;
+  margin:24pt auto;
+  padding:12pt;
+  border-style: solid;
+  border-width: 2.5pt;
+}
+.boxofthings.left {
+  float:right;
+  margin-right:24pt;
+}
+.boxofthings.right {
+  float:left;
+  margin-left:24pt;
+}
+.boxofthings h2 {
+  padding:0pt;
+  margin:0pt;
+}
+.boxofthings ul li {
+  margin-top:8pt;
+}
+.boxofthings ul li a {
+  font-size: 14pt;
+  font-weight: 600;
+  color:black;
+  text-decoration: none;
+}
+.boxofthings ul li a:hover {
+  color:blue;
+}
+
+
+#hidden-content {
+  background:black;
+  display:block;
+  height:256pt;
+  max-height: 256pt;
+  margin:0pt;
+  padding:0pt;
+}
+
+
+.justasection {
+  height:48pt;
+  width:100%;
+  border-style: solid;
+  border-width: 0pt;
+  border-top-width: 2.5pt;
+  background:white;
+}
+.justasection p {
+  width : 100%;
+  height:32pt;
+  font-size: 18pt;
+  font-weight: 600;
+  text-align:center;
+}
+#footer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height:128pt;
+  border-style: solid;
+  border-width: 0pt;
+  border-top-width: 2.5pt;
+  background:white;
+}
+.f-left {
+  flex:1
+}
+.f-right {
+  flex:1
+}
