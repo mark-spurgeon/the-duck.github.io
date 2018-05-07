@@ -27,17 +27,30 @@ body {
   border-width: 0pt;
   border-right-width: 2.5pt;
   border-color:black;
+  background-color: white;
+  transition: background-color .1s;
+}
+.h-icon:hover {
+  background-color: #EFECDF
+}
+.h-icon:hover .h-icon-icon {
+  margin-right:24pt;
+}
+.h-icon:hover .h-icon-icon path {
+  fill:#823544;
 }
 .h-icon-link {
   display: block;
-  background: green;
   width:64pt;
   height:64pt;
+  transition:margin-right .3s;
+  padding:0pt;
+  padding-right:0pt;
+  margin-right: 0pt;
 }
-.h-icon-link:hover {
-  background-color:red;
-}
+
 .h-icon-icon{
+  transition:margin-right .3s;
   float:right;
   height:64pt;
   margin-right:3pt;
@@ -47,6 +60,13 @@ body {
   border-style: solid;
   border-width: 0pt;
   border-right-width: 2.5pt;
+  transition: background-color 0s, padding-left .2s;
+}
+.h-titlebar:hover {
+  color: #EFECDF;
+  border-color:black;
+  background-color: #823544;
+  padding-left:8pt;
 }
 .h-title {
   padding:6pt;
@@ -90,6 +110,27 @@ body {
 .c-right {
   flex-grow: 3;
 }
+.c-r-link {
+  display: block;
+  width: 128pt;
+  height:24pt;
+  margin:12pt;
+  padding:6pt;
+  color:black;
+  text-decoration: none;
+  border-style: solid;
+  border-width: 2.25pt;
+  border-color: black;
+  font-weight: 700;
+  line-height: 24pt;
+  text-align: right;
+  transition:padding-right .3s;
+}
+.c-r-link:hover {
+  text-decoration: underline;
+  padding-right:24pt;
+}
+
 
 .fifty-box {
   float:left;
@@ -99,21 +140,12 @@ body {
 }
 .boxofthings {
   display: block;
-  float:left;
-  width:256pt;
-  height:206pt;
-  margin:24pt auto;
+  height:196pt;
+  width:auto;
+  margin:24pt;
   padding:12pt;
   border-style: solid;
   border-width: 2.5pt;
-}
-.boxofthings.left {
-  float:right;
-  margin-right:24pt;
-}
-.boxofthings.right {
-  float:left;
-  margin-left:24pt;
 }
 .boxofthings h2 {
   padding:0pt;
@@ -159,18 +191,26 @@ body {
   text-align:center;
 }
 #footer {
+  position:relative;
   display: flex;
   flex-direction: row;
   width: 100%;
-  height:128pt;
+  height:400px;
+  padding-bottom:92pt;
   border-style: solid;
   border-width: 0pt;
   border-top-width: 2.5pt;
   background:white;
 }
-.f-left {
-  flex:1
+#game {
+  height:400px;
+  width:940px;
+  margin:0 auto;
 }
-.f-right {
-  flex:1
+#background: {
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:920px;
+  height:400px;
 }
