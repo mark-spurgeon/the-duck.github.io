@@ -267,7 +267,7 @@ function renderCanvas(options) {
       img.src = options.backgroundImage;
     } else {
       console.warn('Couldnt find an image');
-      img.src = "http://topolitique.ch/neme/style/bg.png" + '?' + timestamp;
+      img.src = "http://www.itsmarko.com/neme/style/bg.png" + '?' + timestamp;
     }
   });
 
@@ -278,13 +278,13 @@ function renderCanvas(options) {
       var overlay = new Image();
       var timestamp = new Date().getTime();
       if (options.format==="instagram-feed") {
-        overlay.src = "http://topolitique.ch/neme/style/watermark_Square.png"+ "?"+timestamp;
+        overlay.src = "http://www.itsmarko.com/neme/style/watermark_Square.png"+ "?"+timestamp;
       } else if (options.format==="instagram-story") {
-        overlay.src = "http://topolitique.ch/neme/style/watermark_Screen.png"+ "?"+timestamp;
+        overlay.src = "http://www.itsmarko.com/neme/style/watermark_Screen.png"+ "?"+timestamp;
       } else if (options.format==="twitter-feed") {
-        overlay.src = "http://topolitique.ch/neme/style/watermark_Twitter.png"+ "?"+timestamp;
+        overlay.src = "http://www.itsmarko.com/neme/style/watermark_Twitter.png"+ "?"+timestamp;
       } else {
-        overlay.src = "http://topolitique.ch/neme/style/watermark_Screen.png"+ "?"+timestamp;
+        overlay.src = "http://www.itsmarko.com/neme/style/watermark_Screen.png"+ "?"+timestamp;
       }
       overlay.onload = function(e) {
         if (options.showWatermark) {
