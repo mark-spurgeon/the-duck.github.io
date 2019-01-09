@@ -60,12 +60,6 @@ function getArticleInfo(){
       console.log('Retrieving info for : ', urlObj.value);
       var url = getWhateverOriginUrl(articleInfo.url);/* workaround CORS permission issue */
 
-      var iframeElement = document.getElementById('iframe');
-      iframeElement.src=articleInfo.url;
-      iframeElement.onload=function() {
-        console.log('loaded');
-      }
-
       //url = articleInfo.url;
       $.ajax({
         url: url,
