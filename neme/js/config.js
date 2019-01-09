@@ -50,6 +50,19 @@ var globalOptions = {
     leftMargin:48,
     rightMargin:400,
     authorImageSize:96
+  },
+  "youtube-thumbnail" : {
+    imageWidth:1280,
+    imageHeight:720,
+    kickerFontSize:48,
+    headlineFontSize:96,
+    headlineLineMargin:6,
+    headlineRoundedCorders:8,
+    authorsFontSize:24,
+    bottomMargin:64,
+    leftMargin:48,
+    rightMargin:100,
+    authorImageSize:96
   }
 };
 
