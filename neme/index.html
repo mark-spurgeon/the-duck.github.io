@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>News Meme Generator | TOPO</title>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="style/master.css">
+  </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/functions.js"></script>
+  <script src="js/main.js"></script>
+  <body onload="onload();">
+    <div class="container">
+      <div class="left">
+        <header>
+          <div class="branding">
+            <img src="style/topo-brand-1.png" alt="" class="brand-left">
+            <a href="http://topolitique.ch"><img src="style/topo-brand-2.png" alt="" class="brand-right"></a>
+          </div>
+          <div class="title">
+            <div class="name">
+              News Meme Generator
+            </div>
+            <div class="info">
+              <div class="author">
+                Made by Mark Spurgeon <br/>
+                markspurgeon96@hotmail.com
+              </div>
+              <div class="version">
+                ⚙️ Version 1.2 - 07/01/2019
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="importance 1">
+          <h2>Link </h2>
+          <div class="box">
+            <p>Copy and paste the article link in here (though it works without a link too) 👇 </p>
+            <input type="text" id="url" name="url" placeholder="Welcome to the hotel caalifornia. Such a lovely place, such a lovely face." />
+          </div>
+          <div class="box">
+            <p>Choose the best suited format for your image</p>
+
+            <select class="" name="format" id="format" style="margin-left:24px">
+              <option value="instagram-feed" default>Instagram Square (1280x1280px)</option>
+              <option value="instagram-story">Instagram Story (1080x1920px)</option>
+              <option value="twitter-feed">Twitter Feed (1024x512px)</option>
+              <option value="facebook-feed">Facebook Feed (1200x630px)</option>
+
+            </select>
+          </div>
+
+        </div>
+        <div class="importance two">
+          <h2>Background image 📰 </h2>
+          <div class="box">
+            <input type="checkbox" id="showWatermark" name="showWatermark" checked><label for="showWatermark"> Show the watermark</label></br>
+          </div>
+          <div class="box">
+            <input type="file" id="customBackgroundImage" name="customBackgroundImage" accept="image/png, image/jpeg" >
+          </div>
+        </div>
+        <div class="importance two">
+          <h2>Kicker 👟 </h2>
+          <div class="box">
+            <input type="checkbox" id="showKicker" name="showKicker" checked><label for="showKicker"> Show the <i>kicker</i></label></br>
+
+          </div>
+          <div class="box">
+            Set the <i>kicker's</i> text : <input type="text" id="customKicker" name="customKicker" placeholder="Looking for some hot stuff baby this eeeveniing" />
+          </div>
+        </div>
+
+        <div class="importance two">
+          <h2>Headline 📰 </h2>
+          <div class="box">
+            Custom text colour : <input class="color-change" type="text" id="customHeadlineColor" name="customHeadlineColor" placeholder="#ffffff" />
+            Background colour: <input class="color-change"  type="text" id="customHeadlineBackground" name="customHeadlineBackground" placeholder="rgba(10,10,0,0.5)" />
+          </div>
+          <div class="box">
+            Set the title : <input type="text" id="customHeadline" name="customHeadline" placeholder="The eye of the tiiiigeeeer" />
+          </div>
+        </div>
+        <div class="importance one">
+          <h2>Author 👩‍⚖️ </h2>
+          <div class="box">
+            <input type="checkbox" id="showAuthor" name="showAuthor" checked><label for="showAuthor"> Show the author's face</label></br>
+          </div>
+          <div class="box">
+            Set new author:
+            <input type="text" id="customAuthorName" name="customAuthorName" placeholder="That's me in the corneer. That's me in the spot. light. losing my religion" />
+            Set new source:
+            <input type="text" id="customSource" name="customSource" placeholder="Gimme Gimme Gimme a maaan after midniight" />
+          </div>
+        </div>
+        <div class="importance two" style="padding-top:12px">
+          <input class="button" type="button" value=" 🤖  Generate Image" onclick="generateImage();"/>
+        </div>
+        <div class="importance two">
+          <div class="box">
+            <p> 🕥 Wait a few seconds, and the image will appear there 👉 </p>
+            <p>Right-click on the image, something like <code>save as...</code> should appear, and download it!!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div id="canvas-block">
+          <p style="padding:256px;padding-bottom:0px;text-align:center;"><b>Here goes the generated image :)</b><p>
+          <p style="padding-top:0px;padding-left:128px;padding-right:128px;text-align:center;font-size:10pt">Check out the source code at <a target="_blank" href="https://github.com/the-duck/neme">https://github.com/the-duck/neme</a> <p>
+
+        </div>
+        <iframe src="" width="200" height="200" id="iframe"></iframe>
+
+      </div>
+    </div>
+  </body>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-41795617-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-41795617-1');
+</script>
+
+</html>
