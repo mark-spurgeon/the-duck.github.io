@@ -258,7 +258,8 @@ function renderCanvas(canvas, options) {
       var img = new Image();
       var timestamp = new Date().getTime(); /* hack around CORS permission issue */
       img.onload = function(event) {
-        renderBackgroundImage(ctx1, this, {width:options.width, height:options.height});
+        //renderBackgroundImage(ctx1, this, {width:options.width, height:options.height});
+        renderCoverImage(ctx1, this, {x:0, y:0, width:options.width, height:options.height})
         resolve(true);
       }
       img.onerror = function(event) {
