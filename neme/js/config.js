@@ -55,7 +55,7 @@ var globalOptions = {
     imageWidth:1280,
     imageHeight:720,
     kickerFontSize:48,
-    headlineFontSize:96,
+    headlineFontSize:80,
     headlineLineMargin:6,
     headlineRoundedCorders:8,
     authorsFontSize:24,

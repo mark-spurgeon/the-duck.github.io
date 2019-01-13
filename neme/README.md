@@ -3,7 +3,7 @@ News Meme generator
 
 This is a simple meme generator for articles published from [topolitque.ch](http://www.topolitique.ch) destined for sharing them on various social media platforms. It is inspired from Vox's [meme project](https://github.com/voxmedia/meme), however this tool doesn't generate an image from a link, and lacks some options specific to news articles. Also, the code from vox's repo is outdated.
 
-> Unfortunately, due to restrictions with CORS, only a few news sources work, such as bbc news and the guardian (no image, but the rest works). I'd be happy to get some help on how to overcome these (obviously, only with client-side javascript). Still, you can see it in action here : [http://topolitique.ch/neme/](http://topolitique.ch/neme/)
+> Unfortunately, due to restrictions with CORS, only a few news sources work, such as bbc news and the guardian (no image, but the rest works). I'd be happy to get some help on how to overcome these (obviously, only with client-side javascript). Still, you can see it in action here : [http://markspurgeon.ch/neme/](http://markspurgeon.ch/neme/)
 
 ![neme image](https://github.com/the-duck/neme/raw/master/screenshot.png)
 

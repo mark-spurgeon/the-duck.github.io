@@ -1,3 +1,15 @@
+@font-face {
+ font-family: IBM Plex Condensed;
+ font-weight: bold;
+ src: url(../fonts/IBMPlexSansCondensed-Bold.otf);
+}
+@font-face {
+ font-family: IBM Plex Condensed;
+ font-weight: normal;
+ src: url(../fonts/IBMPlexSansCondensed-Regular.otf);
+}
+
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -146,6 +158,9 @@ header .title .info .version {
 .importance.two {
   border-bottom-width:1px !important;
 }
+.importance.three {
+  border-bottom-width:0px !important;
+}
 .box {
   display: block;
   flex:1;
@@ -172,6 +187,19 @@ h2 {
   font-weight: lighter;
 
 }
+h3 {
+  padding-top:0px;
+  margin:0px;
+  font-size: 16px;
+  flex-basis: 128px;
+  font-weight: lighter;
+}
+h3.disclaimer {
+  background:#C30E00;
+  color:white;
+  margin-right: 4px;
+  padding-left:6px;
+}
 input {
   padding:6px;
 }
@@ -187,6 +215,10 @@ p{
   max-width: 714px;
   margin-top:0px;
   margin-bottom: 8px;
+}
+p.disclaimer {
+  padding-top:0px;
+  font-size: 12px;
 }
 
 code {

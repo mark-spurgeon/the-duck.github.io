@@ -14,24 +14,26 @@ function onload() {
 function generateImage(){
   getArticleInfo().then(function(articleInfo) {
     var options = getOptions(articleInfo);
-    renderCanvas(options)
+
+    var canvas = createCanvas(options);
+
+    renderCanvas(canvas, options).then(function(canvas){
+      try {
+        var image = canvas.toDataURL("image/png");
+        var a = document.createElement('a');
+        document.getElementById('canvas-block').appendChild(a);
+        a.className="button download";
+        //a.href=URL.createObjectURL(b);
+        a.href = image;
+        a.download='output.png';
+        a.innerHTML="download";
+      } catch(e) {
+        console.warn('The image probably comes from another source. To download it, please right-click on the image and choose "save as" ');
+      }
+    })
   })
 }
 
-function file_get_contents_curl($url)
-{
-    $ch = curl_init();
-
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-
-    $data = curl_exec($ch);
-    curl_close($ch);
-
-    return $data;
-}
 
 function getArticleInfo(){
   /*
@@ -58,17 +60,11 @@ function getArticleInfo(){
   var articleDataPromise = new Promise(function(resolve, reject) {
     if (articleInfo.url) {
       console.log('Retrieving info for : ', urlObj.value);
-      var url = getWhateverOriginUrl(articleInfo.url);/* workaround CORS permission issue */
-
-      var iframeElement = document.getElementById('iframe');
-      iframeElement.src=articleInfo.url;
-      iframeElement.onload=function() {
-        console.log('loaded');
-      }
+      var retrieveURL = getWhateverOriginUrl(articleInfo.url);/* workaround CORS permission issue */
 
       //url = articleInfo.url;
       $.ajax({
-        url: url,
+        url: retrieveURL,
         dataType: 'json',
         timeout:3000,
         error: function(e) {
@@ -76,6 +72,7 @@ function getArticleInfo(){
           resolve(false);
         },
         success: function(data) {
+          console.log('found website',data);
           var el = document.createElement( 'html' );
           el.innerHTML = data.contents;
 
@@ -233,8 +230,7 @@ function getOptions(articleInfo) {
   /*renderCanvas(articleInfo,options);*/
 }
 
-function renderCanvas(options) {
-  /* Empty element where canvas should be */
+function createCanvas(options) {
   var block = document.getElementById('canvas-block');
   block.innerHTML="";
   /* Create canvas */
@@ -244,180 +240,189 @@ function renderCanvas(options) {
   can1.height = options.height;
   var ctx1 = can1.getContext("2d");
   block.appendChild(can1);
-
   /* Draw a black background */
   ctx1.beginPath();
   ctx1.fillStyle="#000000";/* TODO : add as an option?*/
   ctx1.rect(0,0,options.width,options.height);
   ctx1.fill();
   ctx1.closePath()
-  /* Find (or not) and draw background image */
-  var backgroundImagePromise = new Promise(function(resolve, reject){
-    var img = new Image();
-    var timestamp = new Date().getTime(); /* hack around CORS permission issue */
-    img.onload = function(event) {
-      renderBackgroundImage(ctx1, this, {width:options.width, height:options.height});
-      resolve(true);
-    }
-    img.onerror = function(event) {
-      console.warn('The image we found is not suitable (probably a CORS issue)');
-      resolve(false); /* continue the process */
-    };
-    if (options.backgroundImage) {
-      img.src = options.backgroundImage;
-    } else {
-      console.warn('Couldnt find an image');
-      img.src = "http://www.itsmarko.com/neme/style/bg.png" + '?' + timestamp;
-    }
-  });
+  return can1
+}
 
-  backgroundImagePromise.then(function(value){
-    /* Draw watermark/overlay */
-    /* TODO : find cleaner way of including overlay image + add custom overlay image option*/
-    var overlayPromise = new Promise(function(resolve, reject){
-      var overlay = new Image();
-      var timestamp = new Date().getTime();
-      if (options.format==="instagram-feed") {
-        overlay.src = "http://www.itsmarko.com/neme/style/watermark_Square.png"+ "?"+timestamp;
-      } else if (options.format==="instagram-story") {
-        overlay.src = "http://www.itsmarko.com/neme/style/watermark_Screen.png"+ "?"+timestamp;
-      } else if (options.format==="twitter-feed") {
-        overlay.src = "http://www.itsmarko.com/neme/style/watermark_Twitter.png"+ "?"+timestamp;
-      } else {
-        overlay.src = "http://www.itsmarko.com/neme/style/watermark_Screen.png"+ "?"+timestamp;
-      }
-      overlay.onload = function(e) {
-        if (options.showWatermark) {
-          ctx1.drawImage(overlay, 0,0);
-        }
+function renderCanvas(canvas, options) {
+
+  var renderPromise = new Promise(function(Resolve, Reject) {
+    var ctx1 = canvas.getContext('2d');
+    /* Find (or not) and draw background image */
+    var backgroundImagePromise = new Promise(function(resolve, reject){
+      var img = new Image();
+      var timestamp = new Date().getTime(); /* hack around CORS permission issue */
+      img.onload = function(event) {
+        renderBackgroundImage(ctx1, this, {width:options.width, height:options.height});
         resolve(true);
       }
-      overlay.onerror = function(e) {
-        console.warn('Could not load watermark/overlay image');
-        resolve(false);
-      }
-    })
-    overlayPromise.then(function(wat){
-      /* Draw Headline */
-      /* custom options */
-      if (options.headlineColor) {
-        var headlineColor = options.headlineColor
+      img.onerror = function(event) {
+        console.warn('The image we found is not suitable (probably a CORS issue)');
+        resolve(false); /* continue the process */
+      };
+      if (options.backgroundImage) {
+        img.src = options.backgroundImage;
       } else {
-        var headlineColor = "#ffffff"
+        console.warn('Couldnt find an image');
+        img.src = "http://markspurgeon.ch/neme/style/bg.png" + '?' + timestamp;
       }
-      if (options.headlineBackgroundColor) {
-        var headlineBackground = options.headlineBackgroundColor
-      } else {
-        var headlineBackground = "transparent"
-      }
-      var headlineOptions = {
-        fontSize:globalOptions[options.format].headlineFontSize,
-        lineHeight:Math.round(globalOptions[options.format].headlineFontSize*1.2),
-        width:options.width-globalOptions[options.format].leftMargin-globalOptions[options.format].rightMargin,
-        fontFamily:"IBM Plex Sans",
-        fillForeground:headlineColor,
-        fillBackground:headlineBackground,
-        lineMargin:globalOptions[options.format].headlineLineMargin,
-        roundedCorners:globalOptions[options.format].headlineRoundedCorders
-      }
-      var headlineDrawable = prepareText(ctx1, options.headline, headlineOptions);
-      renderText(ctx1, headlineDrawable, {x:globalOptions[options.format].leftMargin, y:options.height-headlineDrawable.height-globalOptions[options.format].bottomMargin});
+    });
 
-      /* Draw Kicker */
-      if (options.showKicker) {
-        if (options.kicker) {
-          var kickerDrawable = prepareText(ctx1, options.kicker, {fontSize:globalOptions[options.format].kickerFontSize,lineHeight:Math.round(globalOptions[options.format].kickerFontSize*1.5),width:options.width-globalOptions[options.format].rightMargin,fontFamily:"IBM Plex Sans",fillForeground:"#1e1e1e",fillBackground:"#ffffff", roundedCorners:4});
-          renderText(ctx1, kickerDrawable, {x:globalOptions[options.format].leftMargin+globalOptions[options.format].headlineFontSize/8, y:options.height-headlineDrawable.height-kickerDrawable.height-globalOptions[options.format].bottomMargin-10});
+    backgroundImagePromise.then(function(value){
+      /* Draw watermark/overlay */
+      /* TODO : find cleaner way of including overlay image + add custom overlay image option*/
+      var overlayPromise = new Promise(function(resolve, reject){
+        var overlay = new Image();
+        var timestamp = new Date().getTime();
+        if (options.format==="instagram-feed") {
+          overlay.src = "http://markspurgeon.ch/neme/style/watermark_Square.png";
+        } else if (options.format==="instagram-story") {
+          overlay.src = "http://markspurgeon.ch/neme/style/watermark_Screen.png";
+        } else if (options.format==="twitter-feed") {
+          overlay.src = "http://markspurgeon.ch/neme/style/watermark_Twitter.png";
+        } else {
+          overlay.src = "http://markspurgeon.ch/neme/style/watermark_Screen.png";
         }
-      }
-
-
-      /* Draw Author's faces (only for topolitique.ch articles); create author text (any article) */
-      var authorsText = "";
-      var authorsNum = 0;
-      if (options.authorName) {
+        overlay.onload = function(e) {
+          if (options.showWatermark) {
+            ctx1.drawImage(overlay, 0,0);
+          }
+          resolve(true);
+        }
+        overlay.onerror = function(e) {
+          console.warn('Could not load watermark/overlay image');
+          resolve(false);
+        }
+      })
+      overlayPromise.then(function(wat){
+        /* Draw Headline */
         /* custom options */
-        authorsText = options.authorName;
-      } else {
-        /*this system is not great*/
-        if (options.authorOneName) {
-          var authorsText=authorsText+options.authorOneName;
-          if (options.showAuthor && options.authorOneThumbnail) {
-            authorsNum=1;
-            var au = new Image();
-            var timestamp = new Date().getTime();
-            au.src = options.authorOneThumbnail+ "?"+timestamp;
-            au.onload = function(e){
-              renderCircleImage(ctx1, this, {x:globalOptions[options.format].leftMargin,y:options.height-globalOptions[options.format].bottomMargin+14, size:globalOptions[options.format].authorImageSize})
-            }
-          }
+        if (options.headlineColor) {
+          var headlineColor = options.headlineColor
+        } else {
+          var headlineColor = "#ffffff"
         }
-        if (options.authorTwoName) {
-          var authorsText=authorsText+", "+options.authorTwoName;
-          if (options.showAuthor && options.authorTwoThumbnail) {
-            authorsNum=2;
-            var au2 = new Image();
-            var timestamp = new Date().getTime();
-            au2.src = options.authorTwoThumbnail+ "?"+timestamp;
-            au2.onload = function(e){
-              renderCircleImage(ctx1, this, {x:globalOptions[options.format].leftMargin+(globalOptions[options.format].authorImageSize+14),y:options.height-globalOptions[options.format].bottomMargin+14, size:globalOptions[options.format].authorImageSize})
-            }
-          }
+        if (options.headlineBackgroundColor) {
+          var headlineBackground = options.headlineBackgroundColor
+        } else {
+          var headlineBackground = "transparent"
         }
-        if (options.authorThreeName) {
-          var authorsText=authorsText+", "+options.authorThreeName;
-          if (options.showAuthor && options.authorThreeThumbnail) {
-            authorsNum=3;
-            var au2 = new Image();
-            var timestamp = new Date().getTime();
-            au2.src = options.authorThreeThumbnail+ "?"+timestamp;
-            au2.onload = function(e){
-              renderCircleImage(ctx1, this, {x:globalOptions[options.format].leftMargin+2*(globalOptions[options.format].authorImageSize+14),y:options.height-globalOptions[options.format].bottomMargin+14, size:globalOptions[options.format].authorImageSize})
-            }
-          }
-        }
-      }
-
-      /* set author's text margin, whether there are author's images or not. */
-      if (options.showAuthor) {
-        var leftPos = globalOptions[options.format].leftMargin+(globalOptions[options.format].authorImageSize+14)*(authorsNum)+14;
-      } else {
-        var leftPos=globalOptions[options.format].leftMargin+globalOptions[options.format].headlineFontSize/4;
-      }
-      if (authorsNum==0) {
-        var leftPos=globalOptions[options.format].leftMargin+globalOptions[options.format].headlineFontSize/4;
-      }
-      /* Draw author text */
-      if (authorsText) {
-        var textWidth = options.width/3*2;
-        var authorTextOptions = {
-          fontSize:globalOptions[options.format].authorsFontSize,
-          lineHeight:Math.round(globalOptions[options.format].authorsFontSize*1.5),
-          width:textWidth,
+        var headlineOptions = {
+          fontSize:globalOptions[options.format].headlineFontSize,
+          lineHeight:Math.round(globalOptions[options.format].headlineFontSize*1.2),
+          width:options.width-globalOptions[options.format].leftMargin-globalOptions[options.format].rightMargin,
           fontFamily:"IBM Plex Sans",
-          fontWeight:'normal',
-          textShadow:false,
-          fillForeground:'#ffffff',
-          fillBackground:"rgba(30,30,30,0.1)",
-          roundedCorners:4,
-          textMargin:3
+          fillForeground:headlineColor,
+          fillBackground:headlineBackground,
+          lineMargin:globalOptions[options.format].headlineLineMargin,
+          roundedCorners:globalOptions[options.format].headlineRoundedCorders
         }
-        /* TODO : set options to style author text?*/
-        var authorTextDrawable = prepareText(ctx1, authorsText, authorTextOptions);
-        renderText(ctx1, authorTextDrawable, {x:leftPos, y:options.height-globalOptions[options.format].bottomMargin+10});
-        var sourceTopMargin = authorTextDrawable.height;
-      } else {
-        var sourceTopMargin = 0;
-      }
+        var headlineDrawable = prepareText(ctx1, options.headline, headlineOptions);
+        renderText(ctx1, headlineDrawable, {x:globalOptions[options.format].leftMargin, y:options.height-headlineDrawable.height-globalOptions[options.format].bottomMargin});
 
-      if (options.source) {
-        var soOptions = getSourceOptions(options.source);
-        /* TODO : set options to style source?*/
-        var sourceDrawable = prepareText(ctx1, soOptions.text, {fontSize:20, lineHeight:30, width:300, fontFamily:"IBM Plex Sans", fillBackground:soOptions.background,fillForeground:soOptions.foreground, roundedCorners:3});
-        renderText(ctx1, sourceDrawable, {x:leftPos, y:options.height-globalOptions[options.format].bottomMargin+15+sourceTopMargin});
-      }
-    }) /* after overlay is drawn */ ;
-  }) /* after background is drawn */
+        /* Draw Kicker */
+        if (options.showKicker) {
+          if (options.kicker) {
+            var kickerDrawable = prepareText(ctx1, options.kicker, {fontSize:globalOptions[options.format].kickerFontSize,lineHeight:Math.round(globalOptions[options.format].kickerFontSize*1.5),width:options.width-globalOptions[options.format].rightMargin,fontFamily:"IBM Plex Condensed",fillForeground:"#1e1e1e",fillBackground:"#ffffff", roundedCorners:4});
+            renderText(ctx1, kickerDrawable, {x:globalOptions[options.format].leftMargin+globalOptions[options.format].headlineFontSize/8, y:options.height-headlineDrawable.height-kickerDrawable.height-globalOptions[options.format].bottomMargin-10});
+          }
+        }
+
+        /* Draw Author's faces (only for topolitique.ch articles); create author text (any article) */
+        var authorsText = "";
+        var authorsNum = 0;
+        if (options.authorName) {
+          /* custom options */
+          authorsText = options.authorName;
+        } else {
+          /*this system is not great*/
+          if (options.authorOneName) {
+            var authorsText=authorsText+options.authorOneName;
+            if (options.showAuthor && options.authorOneThumbnail) {
+              authorsNum=1;
+              var au = new Image();
+              var timestamp = new Date().getTime();
+              au.src = options.authorOneThumbnail+ "?"+timestamp;
+              au.onload = function(e){
+                renderCircleImage(ctx1, this, {x:globalOptions[options.format].leftMargin,y:options.height-globalOptions[options.format].bottomMargin+4, size:globalOptions[options.format].authorImageSize})
+              }
+            }
+          }
+          if (options.authorTwoName) {
+            var authorsText=authorsText+", "+options.authorTwoName;
+            if (options.showAuthor && options.authorTwoThumbnail) {
+              authorsNum=2;
+              var au2 = new Image();
+              var timestamp = new Date().getTime();
+              au2.src = options.authorTwoThumbnail+ "?"+timestamp;
+              au2.onload = function(e){
+                renderCircleImage(ctx1, this, {x:globalOptions[options.format].leftMargin+(globalOptions[options.format].authorImageSize+14),y:options.height-globalOptions[options.format].bottomMargin+4, size:globalOptions[options.format].authorImageSize})
+              }
+            }
+          }
+          if (options.authorThreeName) {
+            var authorsText=authorsText+", "+options.authorThreeName;
+            if (options.showAuthor && options.authorThreeThumbnail) {
+              authorsNum=3;
+              var au2 = new Image();
+              var timestamp = new Date().getTime();
+              au2.src = options.authorThreeThumbnail+ "?"+timestamp;
+              au2.onload = function(e){
+                renderCircleImage(ctx1, this, {x:globalOptions[options.format].leftMargin+2*(globalOptions[options.format].authorImageSize+14),y:options.height-globalOptions[options.format].bottomMargin+4, size:globalOptions[options.format].authorImageSize})
+              }
+            }
+          }
+        }
+
+        /* set author's text margin, whether there are author's images or not. */
+        if (options.showAuthor) {
+          var leftPos = globalOptions[options.format].leftMargin+(globalOptions[options.format].authorImageSize+14)*(authorsNum)+14;
+        } else {
+          var leftPos=globalOptions[options.format].leftMargin+globalOptions[options.format].headlineFontSize/4;
+        }
+        if (authorsNum==0) {
+          var leftPos=globalOptions[options.format].leftMargin+globalOptions[options.format].headlineFontSize/4;
+        }
+        /* Draw author text */
+        if (authorsText) {
+          var textWidth = options.width/3*2;
+          var authorTextOptions = {
+            fontSize:globalOptions[options.format].authorsFontSize,
+            lineHeight:Math.round(globalOptions[options.format].authorsFontSize*1.5),
+            width:textWidth,
+            fontFamily:"IBM Plex Sans",
+            fontWeight:'normal',
+            textShadow:false,
+            fillForeground:'#ffffff',
+            fillBackground:"rgba(30,30,30,0.1)",
+            roundedCorners:4,
+            textMargin:3
+          }
+          /* TODO : set options to style author text?*/
+          var authorTextDrawable = prepareText(ctx1, authorsText, authorTextOptions);
+          renderText(ctx1, authorTextDrawable, {x:leftPos, y:options.height-globalOptions[options.format].bottomMargin+10});
+          var sourceTopMargin = authorTextDrawable.height;
+        } else {
+          var sourceTopMargin = 0;
+        }
+
+        if (options.source) {
+          var soOptions = getSourceOptions(options.source);
+          /* TODO : set options to style source?*/
+          var sourceDrawable = prepareText(ctx1, soOptions.text, {fontSize:20, lineHeight:30, width:300, fontFamily:"IBM Plex Sans", fillBackground:soOptions.background,fillForeground:soOptions.foreground, roundedCorners:3});
+          renderText(ctx1, sourceDrawable, {x:leftPos, y:options.height-globalOptions[options.format].bottomMargin+15+sourceTopMargin});
+        }
+        Resolve(canvas)
+
+      }) /* after overlay is drawn */ ;
+    }) /* after background is drawn */
+  })
+  return renderPromise
 }
 
 

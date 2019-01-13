@@ -150,13 +150,14 @@ function renderBackgroundImage(ctx, image, opts) {
     var imWidth=options.imageWidth;
     var imHeight=options.imageHeight;
     if (options.imageWidth<options.imageHeight) {
-      imWidth=options.height*ratio;
-      imHeight=options.height;
-    } else if (options.imageWidth>options.imageHeight){
       imWidth=options.width;
       imHeight=options.width/ratio;
+    } else if (options.imageWidth>options.imageHeight){
+      imWidth=options.height*ratio;
+      imHeight=options.height;
+
     }
-    ctx.drawImage(image, (imWidth-options.width) / -2, (imHeight-options.height) / -2, imWidth, imHeight);
+    ctx.drawImage(image, (imWidth-options.width) / -2, (imHeight-options.height) / -2, imWidth, imHeight );
   }
 }
 
@@ -204,12 +205,9 @@ function renderCircleImage(ctx, image, opts) {
   ctx.arc(options.x+options.size/2, options.y+options.size/2, options.size/2+6, 0, Math.PI * 2, false);
   ctx.fill();
   ctx.closePath();
-
-  ctx.save();
   ctx.beginPath();
   ctx.arc(options.x+options.size/2, options.y+options.size/2, options.size/2, 0, Math.PI * 2, false);
   ctx.clip();
   ctx.drawImage(image, options.x,options.y, options.size,options.size)
   // Undo the clipping
-  ctx.restore();
 }
