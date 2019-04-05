@@ -255,7 +255,9 @@ function renderCircleImage(ctx, image, opts) {
   ctx.closePath();
   ctx.beginPath();
   ctx.arc(options.x+options.size/2, options.y+options.size/2, options.size/2, 0, Math.PI * 2, false);
+  ctx.save()
   ctx.clip();
   ctx.drawImage(image, options.x,options.y, options.size,options.size)
   // Undo the clipping
+  ctx.restore()
 }

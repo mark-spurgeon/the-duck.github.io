@@ -10,7 +10,8 @@ var globalOptions = {
     bottomMargin:256,
     leftMargin:48,
     rightMargin:48,
-    authorImageSize:96
+    authorImageSize:116,
+    authorsLeftMargin:12
   },
   "instagram-story" : {
     imageWidth:1080,
@@ -23,7 +24,8 @@ var globalOptions = {
     bottomMargin:456,
     leftMargin:150,
     rightMargin:150,
-    authorImageSize:96
+    authorImageSize:96,
+    authorsLeftMargin:12
   },
   "twitter-feed" : {
     imageWidth:1080,
@@ -36,7 +38,8 @@ var globalOptions = {
     bottomMargin:128,
     leftMargin:24,
     rightMargin:400,
-    authorImageSize:96
+    authorImageSize:96,
+    authorsLeftMargin:12
   },
   "facebook-feed" : {
     imageWidth:1200,
@@ -49,7 +52,8 @@ var globalOptions = {
     bottomMargin:128,
     leftMargin:48,
     rightMargin:400,
-    authorImageSize:96
+    authorImageSize:96,
+    authorsLeftMargin:12
   },
   "youtube-thumbnail" : {
     imageWidth:1280,
@@ -62,7 +66,8 @@ var globalOptions = {
     bottomMargin:64,
     leftMargin:48,
     rightMargin:100,
-    authorImageSize:96
+    authorImageSize:96,
+    authorsLeftMargin:12
   }
 };
 

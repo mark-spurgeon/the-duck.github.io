@@ -12,11 +12,12 @@ function onload() {
   Main process : (1) get info from article, (2) get user inputs, (3) draw
 */
 function generateImage(){
+  var ca = document.getElementById('canvas-block');
+  ca.innerHTML='<p style="padding:256px;text-align:center">Please wait...</p>';
   getArticleInfo().then(function(articleInfo) {
     var options = getOptions(articleInfo);
 
     var canvas = createCanvas(options);
-
     renderCanvas(canvas, options).then(function(canvas){
       try {
         var image = canvas.toDataURL("image/png");
@@ -59,94 +60,48 @@ function getArticleInfo(){
 
   var articleDataPromise = new Promise(function(resolve, reject) {
     if (articleInfo.url) {
-      console.log('Retrieving info for : ', urlObj.value);
-      var retrieveURL = getWhateverOriginUrl(articleInfo.url);/* workaround CORS permission issue */
+      var nemeRequest = 'https://topo-neme.herokuapp.com/v1?a='+encodeURIComponent(articleInfo.url);
 
-      //url = articleInfo.url;
-      $.ajax({
-        url: retrieveURL,
-        dataType: 'json',
-        timeout:3000,
-        error: function(e) {
-          console.warn('Could not retrieve the articles information');
-          resolve(false);
-        },
-        success: function(data) {
-          console.log('found website',data);
-          var el = document.createElement( 'html' );
-          el.innerHTML = data.contents;
+      console.log(nemeRequest);
 
-          /* find authors through <a rel="author">...</a> */
-          var listOfLinks = el.getElementsByTagName("A");
-          var authNum=0;
-          for (var i = 0; i < listOfLinks.length; i++) {
-            if (listOfLinks[i].rel=="author") {
-              var htmlRegex = new RegExp("<([A-Za-z][A-Za-z0-9]*)\b[^>]*>(.*?)</\1>");
-              var firstElement = listOfLinks[i].innerHTML;
-              if (listOfLinks[i].firstChild){
-                var authorName = listOfLinks[i].firstChild.innerHTML;
-              } else {
-                var authorName = listOfLinks[i].innerHTML;
-              }
-
-              if (authNum===0) {
-                articleInfo.authorOneName=authorName;
-                authNum+=1
-              }
-              if (authNum===1 && articleInfo.authorOneName!=authorName) {
-                articleInfo.authorTwoName=authorName;
-                authNum+=1
-              }
-              if (authNum===2 && articleInfo.authorTwoName!=authorName) {
-                articleInfo.authorThreeName=authorName;
-                authNum+=1
-              }
-
-            }
-          }
-          /* find info from <meta ... /> */
-          var list = el.getElementsByTagName("meta");
-          for (var i = 0; i < list.length; i++) {
-            if (list[i].getAttribute('property')==="og:title") {
-              articleInfo.headline = list[i].getAttribute('content');
-            }
-            if (list[i].getAttribute('property')==="og:description") {
-              articleInfo.description = list[i].getAttribute('content');
-            }
-            if (list[i].getAttribute('property')==="og:image") {
-              articleInfo.backgroundImage = list[i].getAttribute('content');
-            }
-            if (list[i].getAttribute('property')==="article:kicker") {
-              articleInfo.kicker = list[i].getAttribute('content');
-            }
-            if (list[i].getAttribute('property')==="topo:kicker") {
-              articleInfo.kicker = list[i].getAttribute('content');
-            }
-            if (list[i].getAttribute('property')==="author") {
-              articleInfo.authorOneName = list[i].getAttribute('content');
-            }
-            if (list[i].getAttribute('property')==="article:author:1:name") {
-              articleInfo.authorOneName = list[i].getAttribute('content');
-            }
-            if (list[i].getAttribute('property')==="article:author:1:image") {
-              articleInfo.authorOneThumbnail = list[i].getAttribute('content');
-            }
-            if (list[i].getAttribute('property')==="article:author:2:name") {
-              articleInfo.authorTwoName = list[i].getAttribute('content');
-            }
-            if (list[i].getAttribute('property')==="article:author:2:image") {
-              articleInfo.authorTwoThumbnail = list[i].getAttribute('content');
-            }
-            if (list[i].getAttribute('property')==="article:author:3:name") {
-              articleInfo.authorThreeName = list[i].getAttribute('content');
-            }
-            if (list[i].getAttribute('property')==="article:author:3:image") {
-              articleInfo.authorThreeThumbnail = list[i].getAttribute('content');
-            }
-          }
-          resolve(articleInfo);
+      $.get(
+        nemeRequest,
+        (resp)=> {
+          console.log('success ',resp);
         }
-      });
+      ).fail((e)=>{
+        console.error(e);
+      }).done((r)=>{
+        console.log(r);
+        if (r.status==="ok"){
+          var data = r.data;
+          articleInfo.headline=data.title;
+          articleInfo.backgroundImage=data.image_data;
+          if (data.extra&&data.extra.kicker){articleInfo.kicker=data.extra.kicker}
+
+          if (data.authors){
+            for (var i = 0; i < data.authors.length; i++) {
+              var a = data.authors[i]
+              if (i===0){
+                articleInfo.authorOneName = a.name
+                articleInfo.authorOneThumbnail = a.image
+              }
+              if (i===1){
+                articleInfo.authorTwoName = a.name
+                articleInfo.authorTwoThumbnail = a.image
+              }
+              if (i===2){
+                articleInfo.authorThreeName = a.name
+                articleInfo.authorThreeThumbnail = a.image
+              }
+            }
+          }
+
+          resolve(articleInfo)
+        } else {
+          resolve(articleInfo)
+        }
+      })
     } else { 
       console.log("Continuing without an article input");
       resolve(articleInfo);
@@ -190,8 +145,6 @@ function getOptions(articleInfo) {
   var customHeadline = document.getElementById('customHeadline');
   if (customHeadline.value!=''){
     options.headline= customHeadline.value;
-  } else {
-    customHeadline.value=options.headline;
   }
   var customKicker = document.getElementById('customKicker');
   if (customKicker.value!=''){
@@ -329,8 +282,8 @@ function renderCanvas(canvas, options) {
         /* Draw Kicker */
         if (options.showKicker) {
           if (options.kicker) {
-            var kickerDrawable = prepareText(ctx1, options.kicker, {fontSize:globalOptions[options.format].kickerFontSize,lineHeight:Math.round(globalOptions[options.format].kickerFontSize*1.5),width:options.width-globalOptions[options.format].rightMargin,fontFamily:"IBM Plex Condensed",fillForeground:"#1e1e1e",fillBackground:"#ffffff", roundedCorners:4});
-            renderText(ctx1, kickerDrawable, {x:globalOptions[options.format].leftMargin+globalOptions[options.format].headlineFontSize/8, y:options.height-headlineDrawable.height-kickerDrawable.height-globalOptions[options.format].bottomMargin-10});
+            var kickerDrawable = prepareText(ctx1, options.kicker, {fontSize:globalOptions[options.format].kickerFontSize,lineHeight:Math.round(globalOptions[options.format].kickerFontSize*1.5),width:options.width-globalOptions[options.format].rightMargin,fontFamily:"IBM Plex Sans",fillForeground:"#ffffff",fillBackground:"#C30E00", roundedCorners:4});
+            renderText(ctx1, kickerDrawable, {x:globalOptions[options.format].leftMargin+globalOptions[options.format].headlineFontSize/8+4, y:options.height-headlineDrawable.height-kickerDrawable.height-globalOptions[options.format].bottomMargin-10});
           }
         }
 
@@ -347,22 +300,21 @@ function renderCanvas(canvas, options) {
             if (options.showAuthor && options.authorOneThumbnail) {
               authorsNum=1;
               var au = new Image();
-              var timestamp = new Date().getTime();
-              au.src = options.authorOneThumbnail+ "?"+timestamp;
+              au.src = options.authorOneThumbnail;
               au.onload = function(e){
-                renderCircleImage(ctx1, this, {x:globalOptions[options.format].leftMargin,y:options.height-globalOptions[options.format].bottomMargin+4, size:globalOptions[options.format].authorImageSize})
+                renderCircleImage(ctx1, this, {x:globalOptions[options.format].leftMargin+globalOptions[options.format].authorsLeftMargin,y:options.height-globalOptions[options.format].bottomMargin+8, size:globalOptions[options.format].authorImageSize})
               }
             }
           }
           if (options.authorTwoName) {
+            console.log(options.authorTwoName, options.authorTwoThumbnail);
             var authorsText=authorsText+", "+options.authorTwoName;
             if (options.showAuthor && options.authorTwoThumbnail) {
               authorsNum=2;
               var au2 = new Image();
-              var timestamp = new Date().getTime();
-              au2.src = options.authorTwoThumbnail+ "?"+timestamp;
+              au2.src = options.authorTwoThumbnail;
               au2.onload = function(e){
-                renderCircleImage(ctx1, this, {x:globalOptions[options.format].leftMargin+(globalOptions[options.format].authorImageSize+14),y:options.height-globalOptions[options.format].bottomMargin+4, size:globalOptions[options.format].authorImageSize})
+                renderCircleImage(ctx1, this, {x:globalOptions[options.format].leftMargin+(globalOptions[options.format].authorImageSize+14)+globalOptions[options.format].authorsLeftMargin,y:options.height-globalOptions[options.format].bottomMargin+8, size:globalOptions[options.format].authorImageSize})
               }
             }
           }
@@ -371,10 +323,9 @@ function renderCanvas(canvas, options) {
             if (options.showAuthor && options.authorThreeThumbnail) {
               authorsNum=3;
               var au2 = new Image();
-              var timestamp = new Date().getTime();
-              au2.src = options.authorThreeThumbnail+ "?"+timestamp;
+              au2.src = options.authorThreeThumbnail;
               au2.onload = function(e){
-                renderCircleImage(ctx1, this, {x:globalOptions[options.format].leftMargin+2*(globalOptions[options.format].authorImageSize+14),y:options.height-globalOptions[options.format].bottomMargin+4, size:globalOptions[options.format].authorImageSize})
+                renderCircleImage(ctx1, this, {x:globalOptions[options.format].leftMargin+2*(globalOptions[options.format].authorImageSize+14)+globalOptions[options.format].authorsLeftMargin,y:options.height-globalOptions[options.format].bottomMargin+8, size:globalOptions[options.format].authorImageSize})
               }
             }
           }
@@ -382,12 +333,12 @@ function renderCanvas(canvas, options) {
 
         /* set author's text margin, whether there are author's images or not. */
         if (options.showAuthor) {
-          var leftPos = globalOptions[options.format].leftMargin+(globalOptions[options.format].authorImageSize+14)*(authorsNum)+14;
+          var leftPos = globalOptions[options.format].leftMargin+(globalOptions[options.format].authorImageSize+14+globalOptions[options.format].authorsLeftMargin)*(authorsNum)+14;
         } else {
-          var leftPos=globalOptions[options.format].leftMargin+globalOptions[options.format].headlineFontSize/4;
+          var leftPos=globalOptions[options.format].leftMargin+globalOptions[options.format].headlineFontSize/4+globalOptions[options.format].authorsLeftMargin;
         }
         if (authorsNum==0) {
-          var leftPos=globalOptions[options.format].leftMargin+globalOptions[options.format].headlineFontSize/4;
+          var leftPos=globalOptions[options.format].leftMargin+globalOptions[options.format].headlineFontSize/4+globalOptions[options.format].authorsLeftMargin;
         }
         /* Draw author text */
         if (authorsText) {
@@ -406,7 +357,7 @@ function renderCanvas(canvas, options) {
           }
           /* TODO : set options to style author text?*/
           var authorTextDrawable = prepareText(ctx1, authorsText, authorTextOptions);
-          renderText(ctx1, authorTextDrawable, {x:leftPos, y:options.height-globalOptions[options.format].bottomMargin+10});
+          renderText(ctx1, authorTextDrawable, {x:leftPos, y:options.height-globalOptions[options.format].bottomMargin+18});
           var sourceTopMargin = authorTextDrawable.height;
         } else {
           var sourceTopMargin = 0;
@@ -415,8 +366,8 @@ function renderCanvas(canvas, options) {
         if (options.source) {
           var soOptions = getSourceOptions(options.source);
           /* TODO : set options to style source?*/
-          var sourceDrawable = prepareText(ctx1, soOptions.text, {fontSize:20, lineHeight:30, width:300, fontFamily:"IBM Plex Sans", fillBackground:soOptions.background,fillForeground:soOptions.foreground, roundedCorners:3});
-          renderText(ctx1, sourceDrawable, {x:leftPos, y:options.height-globalOptions[options.format].bottomMargin+15+sourceTopMargin});
+          var sourceDrawable = prepareText(ctx1, soOptions.text, {fontSize:24, lineHeight:34, width:300, fontFamily:"IBM Plex Sans", fillBackground:soOptions.background,fillForeground:soOptions.foreground, roundedCorners:3});
+          renderText(ctx1, sourceDrawable, {x:leftPos, y:options.height-globalOptions[options.format].bottomMargin+22+sourceTopMargin});
         }
         Resolve(canvas)
 
