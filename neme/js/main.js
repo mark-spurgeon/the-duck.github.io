@@ -153,8 +153,6 @@ function getOptions(articleInfo) {
   var customSource = document.getElementById('customSource');
   if (customSource.value!=''){
     options.source= customSource.value;
-  } else {
-    customSource.value=options.source;
   }
   var customAuthorName = document.getElementById('customAuthorName');
   if (customAuthorName.value!=''){
