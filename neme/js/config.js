@@ -83,7 +83,7 @@ var sourceOptions = {
     text:"Topolitique"
   },
   "theguardian.com": { /*this source works, at least...*/
-    background:"blue", /* TODO : find proper colour*/
+    background:"#4054B2", /* TODO : find proper colour*/
     foreground:"#ffffff",
     text:"The Guardian"
   },

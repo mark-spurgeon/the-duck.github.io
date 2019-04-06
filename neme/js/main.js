@@ -232,13 +232,13 @@ function renderCanvas(canvas, options) {
         var overlay = new Image();
         var timestamp = new Date().getTime();
         if (options.format==="instagram-feed") {
-          overlay.src = "http://markspurgeon.ch/neme/style/watermark_Square.png";
+          overlay.src = "https://markspurgeon.ch/neme/style/watermark_Square.png";
         } else if (options.format==="instagram-story") {
-          overlay.src = "http://markspurgeon.ch/neme/style/watermark_Screen.png";
+          overlay.src = "https://markspurgeon.ch/neme/style/watermark_Screen.png";
         } else if (options.format==="twitter-feed") {
-          overlay.src = "http://markspurgeon.ch/neme/style/watermark_Twitter.png";
+          overlay.src = "https://markspurgeon.ch/neme/style/watermark_Twitter.png";
         } else {
-          overlay.src = "http://markspurgeon.ch/neme/style/watermark_Screen.png";
+          overlay.src = "https://markspurgeon.ch/neme/style/watermark_Screen.png";
         }
         overlay.onload = function(e) {
           if (options.showWatermark) {
