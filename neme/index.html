@@ -41,7 +41,7 @@
           <h2>Link </h2>
           <div class="box">
             <p>Copy and paste the article link in here (though it works without a link too) 👇 </p>
-            <input type="text" id="url" name="url" placeholder="Welcome to the hotel caalifornia. Such a lovely place, such a lovely face." />
+            <input type="text" id="url" name="url" placeholder="URL (you don't have to though)" />
           </div>
           <div class="box">
             <p>Choose the best suited format for your image</p>
@@ -58,7 +58,7 @@
 
         </div>
         <div class="importance two">
-          <h2>Background image 📰 </h2>
+          <h2>Background image </h2>
           <div class="box">
             <input type="checkbox" id="showWatermark" name="showWatermark" checked><label for="showWatermark"> Show the watermark</label></br>
           </div>
@@ -67,39 +67,39 @@
           </div>
         </div>
         <div class="importance two">
-          <h2>Kicker 👟 </h2>
+          <h2>Kicker </h2>
           <div class="box">
             <input type="checkbox" id="showKicker" name="showKicker" checked><label for="showKicker"> Show the <i>kicker</i></label></br>
 
           </div>
           <div class="box">
-            Set the <i>kicker's</i> text : <input type="text" id="customKicker" name="customKicker" placeholder="Looking for some hot stuff baby this eeeveniing" />
+            Set the <i>kicker's</i> text : <input type="text" id="customKicker" name="customKicker" placeholder="Breaking News" />
           </div>
         </div>
 
         <div class="importance two">
-          <h2>Headline 📰 </h2>
+          <h2>Headline </h2>
           <div class="box">
             Custom text colour : <input class="color-change" type="text" id="customHeadlineColor" name="customHeadlineColor" placeholder="#ffffff" />
             Background colour: <input class="color-change"  type="text" id="customHeadlineBackground" name="customHeadlineBackground" placeholder="rgba(10,10,0,0.5)" />
           </div>
           <div class="box">
-            Set the title : <input type="text" id="customHeadline" name="customHeadline" placeholder="The eye of the tiiiigeeeer" />
+            Set the title : <input type="text" id="customHeadline" name="customHeadline" placeholder="10 things about stuff" />
           </div>
         </div>
-        <div class="importance one">
-          <h2>Author 👩‍⚖️ </h2>
+        <div class="importance two">
+          <h2>Author</h2>
           <div class="box">
             <input type="checkbox" id="showAuthor" name="showAuthor" checked><label for="showAuthor"> Show the author's face</label></br>
           </div>
           <div class="box">
             Set new author:
-            <input type="text" id="customAuthorName" name="customAuthorName" placeholder="That's me in the corneer. That's me in the spot. light. losing my religion" />
+            <input type="text" id="customAuthorName" name="customAuthorName" placeholder="James Smith" />
             Set new source:
-            <input type="text" id="customSource" name="customSource" placeholder="Gimme Gimme Gimme a maaan after midniight" />
+            <input type="text" id="customSource" name="customSource" placeholder="topolitique.ch" />
           </div>
         </div>
-        <div class="importance two" style="padding-top:12px">
+        <div class="importance three" style="padding-top:12px">
           <input class="button" type="button" value=" 🤖  Generate Image" onclick="generateImage();"/>
         </div>
         <div class="importance two">
@@ -109,16 +109,93 @@
           </div>
         </div>
 
+        <!-- Cheat sheet : colors -->
+        <div class="importance two">
+          <h3>Colour Cheat Sheet</h3>
+          <div class="box">
+            <div class="cheat">
+              <div class="cheat-color" style="background-color:#C30E00"></div>
+              <div class="cheat-text">#C30E00</div>
+              <div class="cheat-name">(Topo Red)</div>
+            </div>
+            <div class="cheat">
+              <div class="cheat-color" style="background-color:#FFF8E1"></div>
+              <div class="cheat-text">#FFF8E1</div>
+              <div class="cheat-name">(Nice Beige)</div>
+            </div>
+            <div class="cheat">
+              <div class="cheat-color" style="background-color:#212121"></div>
+              <div class="cheat-text">#212121</div>
+              <div class="cheat-name">(Nice Dark)</div>
+            </div>
+            <div class="cheat">
+              <div class="cheat-color" style="background-color:#757575"></div>
+              <div class="cheat-text">#757575</div>
+              <div class="cheat-name">(Nice Gray)</div>
+            </div>
+            <div class="cheat">
+              <div class="cheat-color" style="background-color:green"></div>
+              <div class="cheat-text">green</div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="cheat">
+              <div class="cheat-color" style="background-color:#4054B2"></div>
+              <div class="cheat-text">#4054B2</div>
+              <div class="cheat-name">(Pastel Blue)</div>
+            </div>
+            <div class="cheat">
+              <div class="cheat-color" style="background-color:#FFC857"></div>
+              <div class="cheat-text">#FFC857</div>
+              <div class="cheat-name">(Pastel Yellow)</div>
+            </div>
+            <div class="cheat">
+              <div class="cheat-color" style="background-color:#C5283D"></div>
+              <div class="cheat-text">#C5283D</div>
+              <div class="cheat-name">(Pastel Red)</div>
+
+            </div>
+            <div class="cheat">
+              <div class="cheat-color" style="background-color:green"></div>
+              <div class="cheat-text">green</div>
+            </div>
+            <div class="cheat">
+              <div class="cheat-color" style="background-color:green"></div>
+              <div class="cheat-text">green</div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="cheat">
+              <div class="cheat-color" style="background-color:purple"></div>
+              <div class="cheat-text">purple</div>
+            </div>
+            <div class="cheat">
+              <div class="cheat-color" style="background-color:blue"></div>
+              <div class="cheat-text">blue</div>
+            </div>
+            <div class="cheat">
+              <div class="cheat-color" style="background-color:green"></div>
+              <div class="cheat-text">green</div>
+            </div>
+            <div class="cheat">
+              <div class="cheat-color" style="background-color:red"></div>
+              <div class="cheat-text">red</div>
+            </div>
+            <div class="cheat">
+              <div class="cheat-color" style="background-color:white"></div>
+              <div class="cheat-text">white</div>
+            </div>
+          </div>
+        </div>
 
         <div class="importance three">
           <h3 class="disclaimer">⚠️ Disclaimer</h3>
           <div class="box">
             <p class="disclaimer">
-              This page retrieves images from other websites, depending on which links you provide. However, it does not publish or store these files, it is your responsibility to ensure that you have the right to use and modify these images.
-              The output image, which is not published but generated on this page, is subject to copyright infringement laws as soon as you publish this image.
+              This page retrieves images from the website that you have provided. However, it does not publish or store these files, it is your responsibility to ensure that you have the right to use and modify these images.
             </p>
             <p class="disclaimer">
-              All images published by this page (markspurgeon.com/neme/), which include overlay images and the header's images, are licensed under the Creative Commons (<a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC BY 2.0</a>) license.
+              All images provided by this page (markspurgeon.com/neme/), which include overlay images, are licensed under the Creative Commons (<a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC BY 2.0</a>) license.
             </p>
           </div>
         </div>
