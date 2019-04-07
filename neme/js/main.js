@@ -2,10 +2,7 @@
 
 function onload() {
   /* Console welcome message*/
-  console.log('%cHey !%c', 'color:rgb(255,30,30);font-weight:bold;font-size:32px;font-family:Helvetica');
-  console.log('%cInterested in this little tool? Check out the source code !%c', 'color:rgb(30,30,145);font-size:16px;font-family:monospace');
-  console.log('%cAnd feel free to improve it ! %c', 'color:rgb(30,30,145);font-size:16px;font-family:monospace');
-  console.log('%chttp://github.com/the-duck/neme %c', 'color:rgb(30,30,145);font-size:16px;font-family:monospace');
+  console.log('%chttp://github.com/the-duck/neme%c', 'color:rgb(30,30,145);font-size:16px;font-family:monospace');
 }
 
 /*
@@ -19,18 +16,20 @@ function generateImage(){
 
     var canvas = createCanvas(options);
     renderCanvas(canvas, options).then(function(canvas){
-      try {
-        var image = canvas.toDataURL("image/png");
-        var a = document.createElement('a');
-        document.getElementById('canvas-block').appendChild(a);
-        a.className="button download";
-        //a.href=URL.createObjectURL(b);
-        a.href = image;
-        a.download='output.png';
-        a.innerHTML="download";
-      } catch(e) {
-        console.warn('The image probably comes from another source. To download it, please right-click on the image and choose "save as" ');
-      }
+      setTimeout(function () {
+        try {
+          var image = canvas.toDataURL("image/png");
+          var a = document.createElement('a');
+          document.getElementById('canvas-block').appendChild(a);
+          a.className="button download";
+          //a.href=URL.createObjectURL(b);
+          a.href = image;
+          a.download='output.png';
+          a.innerHTML="download";
+        } catch(e) {
+          console.warn('The image probably comes from another source. To download it, please right-click on the image and choose "save as" ');
+        }
+      }, 1000);
     })
   })
 }
@@ -221,7 +220,7 @@ function renderCanvas(canvas, options) {
         img.src = options.backgroundImage;
       } else {
         console.warn('Couldnt find an image');
-        img.src = "http://markspurgeon.ch/neme/style/bg.png" + '?' + timestamp;
+        img.src = "style/bg.png" + '?' + timestamp;
       }
     });
 
@@ -230,16 +229,6 @@ function renderCanvas(canvas, options) {
       /* TODO : find cleaner way of including overlay image + add custom overlay image option*/
       var overlayPromise = new Promise(function(resolve, reject){
         var overlay = new Image();
-        var timestamp = new Date().getTime();
-        if (options.format==="instagram-feed") {
-          overlay.src = "https://markspurgeon.ch/neme/style/watermark_Square.png";
-        } else if (options.format==="instagram-story") {
-          overlay.src = "https://markspurgeon.ch/neme/style/watermark_Screen.png";
-        } else if (options.format==="twitter-feed") {
-          overlay.src = "https://markspurgeon.ch/neme/style/watermark_Twitter.png";
-        } else {
-          overlay.src = "https://markspurgeon.ch/neme/style/watermark_Screen.png";
-        }
         overlay.onload = function(e) {
           if (options.showWatermark) {
             ctx1.drawImage(overlay, 0,0);
@@ -250,6 +239,16 @@ function renderCanvas(canvas, options) {
           console.warn('Could not load watermark/overlay image');
           resolve(false);
         }
+        if (options.format==="instagram-feed") {
+          overlay.src = "style/watermark_Square.png";
+        } else if (options.format==="instagram-story") {
+          overlay.src = "style/watermark_Screen.png";
+        } else if (options.format==="twitter-feed") {
+          overlay.src = "style/watermark_Twitter.png";
+        } else {
+          overlay.src = "style/watermark_Screen.png";
+        }
+
       })
       overlayPromise.then(function(wat){
         /* Draw Headline */
@@ -298,10 +297,10 @@ function renderCanvas(canvas, options) {
             if (options.showAuthor && options.authorOneThumbnail) {
               authorsNum=1;
               var au = new Image();
-              au.src = options.authorOneThumbnail;
               au.onload = function(e){
                 renderCircleImage(ctx1, this, {x:globalOptions[options.format].leftMargin+globalOptions[options.format].authorsLeftMargin,y:options.height-globalOptions[options.format].bottomMargin+8, size:globalOptions[options.format].authorImageSize})
               }
+              au.src = options.authorOneThumbnail;
             }
           }
           if (options.authorTwoName) {
@@ -310,10 +309,10 @@ function renderCanvas(canvas, options) {
             if (options.showAuthor && options.authorTwoThumbnail) {
               authorsNum=2;
               var au2 = new Image();
-              au2.src = options.authorTwoThumbnail;
               au2.onload = function(e){
                 renderCircleImage(ctx1, this, {x:globalOptions[options.format].leftMargin+(globalOptions[options.format].authorImageSize+14)+globalOptions[options.format].authorsLeftMargin,y:options.height-globalOptions[options.format].bottomMargin+8, size:globalOptions[options.format].authorImageSize})
               }
+              au2.src = options.authorTwoThumbnail;
             }
           }
           if (options.authorThreeName) {
@@ -321,10 +320,10 @@ function renderCanvas(canvas, options) {
             if (options.showAuthor && options.authorThreeThumbnail) {
               authorsNum=3;
               var au2 = new Image();
-              au2.src = options.authorThreeThumbnail;
               au2.onload = function(e){
                 renderCircleImage(ctx1, this, {x:globalOptions[options.format].leftMargin+2*(globalOptions[options.format].authorImageSize+14)+globalOptions[options.format].authorsLeftMargin,y:options.height-globalOptions[options.format].bottomMargin+8, size:globalOptions[options.format].authorImageSize})
               }
+              au2.src = options.authorThreeThumbnail;
             }
           }
         }
@@ -343,7 +342,7 @@ function renderCanvas(canvas, options) {
           var textWidth = options.width/3*2;
           var authorTextOptions = {
             fontSize:globalOptions[options.format].authorsFontSize,
-            lineHeight:Math.round(globalOptions[options.format].authorsFontSize*1.5),
+            lineHeight:Math.round(globalOptions[options.format].authorsFontSize*1.2),
             width:textWidth,
             fontFamily:"IBM Plex Sans",
             fontWeight:'normal',
@@ -351,7 +350,7 @@ function renderCanvas(canvas, options) {
             fillForeground:'#ffffff',
             fillBackground:"rgba(30,30,30,0.1)",
             roundedCorners:4,
-            textMargin:3
+            textMargin:8
           }
           /* TODO : set options to style author text?*/
           var authorTextDrawable = prepareText(ctx1, authorsText, authorTextOptions);
@@ -364,7 +363,7 @@ function renderCanvas(canvas, options) {
         if (options.source) {
           var soOptions = getSourceOptions(options.source);
           /* TODO : set options to style source?*/
-          var sourceDrawable = prepareText(ctx1, soOptions.text, {fontSize:24, lineHeight:34, width:300, fontFamily:"IBM Plex Sans", fillBackground:soOptions.background,fillForeground:soOptions.foreground, roundedCorners:3});
+          var sourceDrawable = prepareText(ctx1, soOptions.text, {fontSize:24, lineHeight:32, width:300, fontFamily:"IBM Plex Sans", fillBackground:soOptions.background,fillForeground:soOptions.foreground, roundedCorners:3});
           renderText(ctx1, sourceDrawable, {x:leftPos, y:options.height-globalOptions[options.format].bottomMargin+22+sourceTopMargin});
         }
         Resolve(canvas)

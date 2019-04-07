@@ -7,11 +7,11 @@ var globalOptions = {
     headlineLineMargin:8,
     headlineRoundedCorders:4,
     authorsFontSize:36,
-    bottomMargin:256,
+    bottomMargin:160,
     leftMargin:48,
     rightMargin:48,
-    authorImageSize:116,
-    authorsLeftMargin:12
+    authorImageSize:108,
+    authorsLeftMargin:10
   },
   "instagram-story" : {
     imageWidth:1080,
