@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 4489 945" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(0.198481,0,0,0.429568,73.173,137.845)">
+        <rect x="0" y="312.865" width="4448.81" height="382.952" style="fill:rgb(140,45,4);"/>
+    </g>
+    <g transform="matrix(0.198481,0,0,0.429568,956.176,137.845)">
+        <rect x="0" y="312.865" width="4448.81" height="382.952" style="fill:rgb(241,105,19);"/>
+    </g>
+    <g transform="matrix(0.198481,0,0,0.429568,1839.18,137.845)">
+        <rect x="0" y="312.865" width="4448.81" height="382.952" style="fill:rgb(253,141,60);"/>
+    </g>
+    <g transform="matrix(0.198481,0,0,0.429568,2722.18,137.845)">
+        <rect x="0" y="312.865" width="4448.81" height="382.952" style="fill:rgb(253,174,107);"/>
+    </g>
+    <g transform="matrix(0.198481,0,0,0.962512,3605.19,-28.8943)">
+        <rect x="0" y="312.865" width="4448.81" height="382.952" style="fill:white;"/>
+    </g>
+    <g transform="matrix(1,0,0,1,73.173,0)">
+        <text x="0px" y="173.752px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:125.197px;">Queuing places per shop*</text>
+    </g>
+    <g transform="matrix(0.244843,0,0,0.69874,85.1049,20.6311)">
+        <rect x="-48.733" y="339.547" width="77.19" height="341.114"/>
+    </g>
+    <g transform="matrix(0.244843,0,0,0.69874,968.108,20.6311)">
+        <rect x="-48.733" y="339.547" width="77.19" height="341.114"/>
+    </g>
+    <g transform="matrix(0.244843,0,0,0.69874,1851.11,20.6311)">
+        <rect x="-48.733" y="339.547" width="77.19" height="341.114"/>
+    </g>
+    <g transform="matrix(0.244843,0,0,0.69874,2734.11,20.6311)">
+        <rect x="-48.733" y="339.547" width="77.19" height="341.114"/>
+    </g>
+    <g transform="matrix(0.244843,0,0,0.69874,3617.12,20.6311)">
+        <rect x="-48.733" y="339.547" width="77.19" height="341.114"/>
+    </g>
+    <g transform="matrix(1,0,0,1,73.173,689.452)">
+        <text x="0px" y="114.742px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:89.764px;">*A<tspan x="93.183px 138.064px " y="114.742px 114.742px ">va</tspan>ilable places inside public space, keeping a distance of</text>
+        <text x="2388.6px" y="114.742px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:89.764px;">2 metres</text>
+        <text x="0px" y="207.442px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:89.764px;">and removing half of places dedicated to movement.</text>
+    </g>
+    <g transform="matrix(1,0,0,1,3.55271e-15,-246.222)">
+        <text x="44.658px" y="883.906px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:125.197px;">0</text>
+    </g>
+    <g transform="matrix(1,0,0,1,886.154,-246.222)">
+        <text x="44.658px" y="883.906px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:125.197px;">3</text>
+    </g>
+    <g transform="matrix(1,0,0,1,1766.01,-246.222)">
+        <text x="44.658px" y="883.906px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:125.197px;">6</text>
+    </g>
+    <g transform="matrix(1,0,0,1,2616.31,-246.222)">
+        <text x="42.547px" y="883.906px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:125.197px;">12</text>
+    </g>
+    <g transform="matrix(1,0,0,1,3499.31,-246.222)">
+        <text x="37.319px" y="883.906px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:125.197px;">24 and more..</text>
+    </g>
+</svg>
