@@ -1,19 +1,207 @@
-<!DOCTYPE html><head><meta charset="utf-8"><title>Queuing in times of social distancing in Geneva </title><meta property="og:title" content="Queuing in times of social distancing in Geneva"><meta property="og:description" content="As the coronavirus (COVID-19) outbrake goes on, social distancing has become necessary for simple tasks like shopping. We need to create more public space in Geneva. Mark Spurgeon, April 2020."><meta property="og:image" content="thumbnail.c2e5277a.png"><meta name="twitter:image" content="thumbnail.c2e5277a.png"><meta name="twitter:card" content="summary_large_image"><script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css" type="text/css"><link rel="stylesheet" href="src.04a6741d.css"></head><body>
-<style>body,html{width:100%;padding:0;margin:0;flex-direction:row;font-family:Inter UI,Arial,Helvetica,sans-serif;font-size:13px}#article,body,html{height:100%;display:flex}#article{flex-direction:column;background:#fefeff;min-width:60px;width:60px;transition:width .4s;border:solid #dcdcdc;border-width:0 1px 0 0;overflow:hidden}#article.open{width:400px}#article article{padding:0 15px 10px 10px;flex:1;display:block;overflow:auto;text-align:justify}#article article h1{text-align:left}#map{height:100%;flex:1}#legend{padding:10px;border:solid #dcdcdc;border-width:1px 0 0}#legend-details{opacity:.3}#legend-details.open{opacity:1}#legend-interventions{opacity:.3}#legend-interventions.open{opacity:1}#legend-message{padding:6px}label{font-weight:400;font-size:.8rem;color:#a0a0a0;margin-left:6px}#information{position:absolute;padding:10px;bottom:10px;right:10px;background:#fff;border:1px solid #dcdcdc;box-shadow:0 1px 3px 2px rgba(50,50,60,.1)}</style> <div id="article" class="open">
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+  <!-- Load d3.js -->
+  <title>How to keep social distances in Geneva's streets ?</title>
+  <meta property="og:title" content="How to keep social distances in Geneva's streets ?">
+  <meta property="og:description" content="As the coronavirus (COVID-19) outbrake goes on, social distancing has become necessary for simple tasks like shopping. We need to create more public space in Geneva. Mark Spurgeon, April 2020.">
+  <meta property="og:image" content="/thumbnail.9bc6f4a4.png">
+  <meta name="twitter:image" content="/thumbnail.9bc6f4a4.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css" type="text/css">
+<link rel="stylesheet" href="/src.a2b27638.css"></head>
+<body>
+<style>html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Fira Sans', Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+#article {
+  display: flex;
+  flex-direction: column;
+  background: rgb(254, 254, 255);
+  height: 100%;
+  min-width: 60px;
+  width: 60px;
+  transition: width .4s;
+
+  border-style: solid;
+  border-width: 0;
+  border-right-width: 1px;
+  border-color: rgb(220, 220, 220);
+
+  overflow: hidden;
+}
+#article.open {
+  width: 400px;
+}
+
+#article article {
+  padding: 0;
+  flex: 1;
+  display: block;
+  overflow: auto;
+  text-align: justify;
+}
+#article article h1 {
+  text-align: left;
+}
+
+#map {
+  height: 100%;
+  flex: 1;
+}
+
+#legend {
+  padding-left: 1rem;
+  padding-right: 1rem;
+border-style: solid; border-width: 0px; border-top-width: 1px; border-color: rgb(220, 220, 220);
+}
+#legend-ppc {}
+#legend-details {opacity: .3; }
+#legend-details.open {opacity: 1}
+#legend-interventions {opacity: .3}
+#legend-interventions.open {opacity: 1}
+
+#legend-message {padding: 6px}
+
+
+label {
+  font-weight: 500;
+  font-size: 1rem;
+  display: block;
+  padding-top: 1rem;
+  padding-bottom: 0.4rem;
+  color: #337ab7;
+}
+
+label.small {
+  font-size: .7rem;
+  line-height: .2rem;
+  margin: 0;
+  padding: 0;
+  opacity: .6;
+}
+
+#information {
+  position: absolute;
+  padding: 10px;
+  bottom: 10px;
+  right: 10px;
+  background: white;
+  border-style: solid; border-width: 1px; border-color: rgb(220, 220, 220);
+  box-shadow: 0px 1px 3px 2px rgba(50,50,60,0.1);
+}
+
+h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: normal;
+  margin-top:0.5rem; 
+  margin-bottom:0.5rem; 
+  font-size: 1.6rem;
+  letter-spacing: .03rem;;
+  padding: 0.3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.6rem;
+  color: #337ab7;
+}
+p {
+  margin-top: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+b {
+  font-weight: 600;
+}
+
+.ol-zoom, .ol-zoom:hover {
+  background-color: rgba(100,100,100,0.2);
+}
+
+.ol-zoom-in, .ol-zoom-out {
+  background-color: white !important;
+  color: #333 !important
+}
+.ol-zoom-in:hover, .ol-zoom-out:hover {
+  background-color: #e1e1e1 !important;
+}</style>
+
+<div id="article" class="open">
 <article>
-<h1>How can we keep safe social distances in Geneva ?</h1>
-<p> With its <a href="https://www.theguardian.com/cities/gallery/2018/mar/22/most-densely-populated-square-kilometres-europe-mapped">21k inhabitants</a> per square metre, Geneva is one of the most densely populated cities in Europe. For that reason among others, it has seen <a href="https://corona-data.ch">many cases</a> of COVID-19 infections.
+<h1>How to keep social distances in Geneva's streets ?</h1>
+<p>
+  Geneva is one of the most 
+  <a href="https://www.theguardian.com/cities/gallery/2018/mar/22/most-densely-populated-square-kilometres-europe-mapped" target="_blank">densely populated cities in Europe</a>. 
+  For that reason among others, it has seen <a href="https://www.corona-data.ch" target="_blank">many cases</a> of COVID-19 infections.
 </p>
-<p> As of April 18th 2020, the situation in Switzerland is encouraging, prompting the government to slowly relax social distancing measures in the next two months.
+<p>
+  As of April 18th 2020, the situation in Switzerland 
+  is encouraging, prompting the government to slowly relax 
+  social distancing measures.
 </p>
-<p> However, with a growing number of cases and no vaccine to this day, we need to keep avoiding physical contact with each other. It is crucial that during our trips outside, to shop, run or have a quick walk, we must keep a safe distance of <b>2 metres</b>.
+<p>
+  However, with a growing number of cases and no vaccine to this day,
+  we need to keep avoiding physical contact. It is crucial 
+  that during our trips outside, to shop, run or have a quick walk, we 
+  must keep a safe distance of <b>2 metres</b> from each other.
 </p>
-<p> The dense nature of the city makes it hard to respect this rule, and there's been little help from Geneva's local authorities to support citizen accomplishing that duty, but it's not too late to take action. <b>This map aims at the showing concentrations of shops where free space is missing. It also points at measures to help temporarily free up space for citizen</b>. In the next weeks, as more shops will open doors, these measures will be necessary to keep everybody safe.
-</p> <p> <br> Author: Mark Spurgeon <br> Data: <a href="https://ge.ch/sitg/">SITG</a> <br> Source code: coming soon...
+<p>
+  However, citizen struggle to respect that distance, especially
+  when they have to <b>queue outside</b> to shop for food.
 </p>
-</article> <div id="legend"> <label>Legend</label> <div id="legend-ppc"> <img src="ppc.8e849331.svg" width="380"> </div> <div id="legend-details"> <img src="details.5de6aea0.svg" width="380"> </div> <div id="legend-interventions"> <img src="interventions.5f854701.svg" width="380"> </div>
+<p>
+  This map estimates the areas where <b>free space is missing</b> compared 
+  to the demand from the shops. 
+  It also points at <b>pedestrianization measures</b> that the local government should consider.
+  In the next weeks, as more 
+  shops will open doors, these measures will be necessary to keep 
+  everybody safe. 
+</p>
+<p>
+  Mark Spurgeon, April 2020
+</p>
+<p>
+  <br>
+  Let's pedestrianize Geneva. <a target="_blank" href="https://www.change.org/p/pour-que-nos-rues-deviennent-des-espaces-utiles-piétons-et-cyclables">Sign this petition !</a>
+</p>
+</article>
+
+<div id="legend">
+  <div id="legend-ppc">
+    <label>Available* vs Needed pedestrian / queuing places</label>
+    <img src="/ppc.28c9f13e.svg" width="380">
+    <label class="small">*  places at a distance of 2m from each other, subtracting space for movement</label>
+  </div>
+  <div id="legend-interventions">
+    <label>Measures (zoom in)</label>
+    <img src="/interventions.d4562f14.svg" width="380">
+  </div>
+  <div id="legend-details" class="open">
+    <img src="/details.e29135cc.svg" width="380">
+  </div>
 </div>
-</div> <div id="map" class="map"></div> <div id="information">
+</div>
+
+
+<div id="map" class="map"></div>
+
+<div id="information">
 <div id="legend-message">Hover over items for more info</div>
-</div> <script src="src.9a545b2a.js"></script>
+</div>
+
+<script src="/src.a2b27638.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
 </body>

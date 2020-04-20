@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 4489 355" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(0.584058,0,0,0.584058,811.649,-63.2028)">
+        <circle cx="2965.74" cy="420.514" r="89.767" style="fill:rgb(116,169,207);"/>
+    </g>
+    <g transform="matrix(0.584058,0,0,0.584058,1932.73,-59.6323)">
+        <circle cx="2965.74" cy="420.514" r="89.767" style="fill:rgb(173,221,142);"/>
+    </g>
+    <g transform="matrix(1.06629,0,0,1.06629,-2351.14,-109.192)">
+        <text x="2510.23px" y="317.496px" style="font-family:'FiraSans-Regular', 'Fira Sans', sans-serif;font-size:117.414px;">Buil<tspan x="2715.47px " y="317.496px ">d</tspan>ing</text>
+    </g>
+    <g transform="matrix(1.06629,0,0,1.06629,-1383.9,-109.192)">
+        <text x="2510.23px" y="317.496px" style="font-family:'FiraSans-Regular', 'Fira Sans', sans-serif;font-size:117.414px;">L<tspan x="2567.52px 2630.81px 2689.99px " y="317.496px 317.496px 317.496px ">ake</tspan> &amp; Riv<tspan x="3062.42px 3126.3px 3169.5px " y="317.496px 317.496px 317.496px ">ers</tspan></text>
+    </g>
+    <g transform="matrix(1.06629,0,0,1.06629,4.41596,-109.192)">
+        <text x="2510.23px" y="317.907px" style="font-family:'FiraSans-SemiBold', 'Fira Sans', sans-serif;font-weight:600;font-size:117.414px;">Supermark<tspan x="3095.89px " y="317.907px ">e</tspan>ts</text>
+    </g>
+    <g transform="matrix(1.06629,0,0,1.06629,1121.73,-109.192)">
+        <text x="2510.23px" y="317.907px" style="font-family:'FiraSans-SemiBold', 'Fira Sans', sans-serif;font-weight:600;font-size:117.414px;">P<tspan x="2577.74px " y="317.907px ">h</tspan>armacies</text>
+    </g>
+    <g transform="matrix(0.741223,0,0,0.669578,-88.7025,-35.6104)">
+        <rect x="119.67" y="185.48" width="350.508" height="286.961" style="fill:white;"/>
+        <path d="M470.179,472.441L119.67,472.441L119.67,185.48L470.179,185.48L470.179,472.441ZM454.244,203.119L135.605,203.119L135.605,454.801L454.244,454.801L454.244,203.119Z" style="fill:rgb(140,140,142);"/>
+    </g>
+    <g transform="matrix(0.741223,0,0,0.653878,878.543,-32.6983)">
+        <rect x="119.67" y="185.48" width="350.508" height="286.961" style="fill:rgb(180,210,255);"/>
+        <path d="M470.179,472.441L119.67,472.441L119.67,185.48L470.179,185.48L470.179,472.441ZM454.244,203.543L135.605,203.543L135.605,454.378L454.244,454.378L454.244,203.543Z" style="fill:rgb(170,200,245);"/>
+    </g>
+</svg>
