@@ -1232,7 +1232,7 @@
 ,
 {"type":"Feature","properties":{"ID_ETABLIS":"1-4XH-52836","NOM":"Bureau de Change Porte de Rive","UNITE_LOCA":"53062202","BRANCHE":"Courtage de valeurs mobiliÃ¨res et de marchandises","TAILLE":"6-9 travailleurs","SITE_INTER":"http://www.migros.ch","ADRESSE":"Rue de Rive 20","COMMERCE":"autre","P_BESOIN":1},"geometry":{"type":"Point","coordinates":[684812.7887223616,5812760.74765487]}}
 ,
-{"type":"Feature","properties":{"ID_ETABLIS":"1-4XH-60835","NOM":"Change Migros Agence de Mt-Blanc","UNITE_LOCA":"72488707","BRANCHE":"Banques commerciales","TAILLE":"3-5 travailleurs","SITE_INTER":"http://www.banquemigros.ch","ADRESSE":"Rue du Mont-Blanc 7","COMMERCE":"nourriture","P_BESOIN":1},"geometry":{"type":"Point","coordinates":[684166.7815970224,5813702.2627137955]}}
+{"type":"Feature","properties":{"ID_ETABLIS":"1-4XH-60835","NOM":"Change Migros Agence de Mt-Blanc","UNITE_LOCA":"72488707","BRANCHE":"Banques commerciales","TAILLE":"3-5 travailleurs","SITE_INTER":"http://www.banquemigros.ch","ADRESSE":"Rue du Mont-Blanc 7","COMMERCE":"autre","P_BESOIN":1},"geometry":{"type":"Point","coordinates":[684166.7815970224,5813702.2627137955]}}
 ,
 {"type":"Feature","properties":{"ID_ETABLIS":"1-4XH-87449","NOM":"Terres Sauvages","UNITE_LOCA":"60950675","BRANCHE":"ActivitÃ©s des agences de voyage","TAILLE":"6-9 travailleurs","SITE_INTER":"http://www.terres-sauvages.ch/","ADRESSE":"Rue PRÃ‰VOST-MARTIN 51","COMMERCE":"autre","P_BESOIN":1},"geometry":{"type":"Point","coordinates":[684049.8727972106,5811234.45577382]}}
 ,
@@ -5880,7 +5880,7 @@
 ,
 {"type":"Feature","properties":{"ID_ETABLIS":"1-4XH-5331","NOM":"Boutique SeptiÃ¨me Etage","UNITE_LOCA":"65887423","BRANCHE":"Commerce de dÃ©tail d'accessoires et d'habillement sans prÃ©dominance","TAILLE":"3-5 travailleurs","SITE_INTER":"http://www.septieme.com","ADRESSE":"Rue du Perron 10","COMMERCE":"autre","P_BESOIN":10},"geometry":{"type":"Point","coordinates":[684369.7328800054,5812795.022406273]}}
 ,
-{"type":"Feature","properties":{"ID_ETABLIS":"1-4XH-53311","NOM":"Migros Print-Shop Plainpalais","UNITE_LOCA":"94344287","BRANCHE":"Imprimerie-minute","TAILLE":"6-9 travailleurs","SITE_INTER":"http://www.migros.ch","ADRESSE":"Rue du Conseil-GÃ©nÃ©ral 20","COMMERCE":"nourriture","P_BESOIN":1},"geometry":{"type":"Point","coordinates":[683820.7660567128,5812233.105017493]}}
+{"type":"Feature","properties":{"ID_ETABLIS":"1-4XH-53311","NOM":"Migros Print-Shop Plainpalais","UNITE_LOCA":"94344287","BRANCHE":"Imprimerie-minute","TAILLE":"6-9 travailleurs","SITE_INTER":"http://www.migros.ch","ADRESSE":"Rue du Conseil-GÃ©nÃ©ral 20","COMMERCE":"autre","P_BESOIN":1},"geometry":{"type":"Point","coordinates":[683820.7660567128,5812233.105017493]}}
 ,
 {"type":"Feature","properties":{"ID_ETABLIS":"1-4XH-53321","NOM":"Restaurant La Bergamote","UNITE_LOCA":"62243198","BRANCHE":"Restaurants, cafÃ©s, snack-bar, tea-rooms et salons de dÃ©gustation de glaces","TAILLE":"3-5 travailleurs","SITE_INTER":"http://www.vivel.ch","ADRESSE":"Rue du Purgatoire 1","COMMERCE":"autre","P_BESOIN":4},"geometry":{"type":"Point","coordinates":[684544.5562104208,5812819.254634868]}}
 ,
@@ -6104,7 +6104,7 @@
 ,
 {"type":"Feature","properties":{"ID_ETABLIS":"1-4XH-52361","NOM":"Banque Raiffeisen GenÃ¨ve Ouest-Meyrin","UNITE_LOCA":"82726954","BRANCHE":"Banques Raiffeisen","TAILLE":"3-5 travailleurs","SITE_INTER":"https://www.raiffeisen.ch/geneve-ouest-meyrin","ADRESSE":"Rue de Lyon 2","COMMERCE":"autre","P_BESOIN":1},"geometry":{"type":"Point","coordinates":[683358.9775894473,5813952.4618799025]}}
 ,
-{"type":"Feature","properties":{"ID_ETABLIS":"1-4XH-53021","NOM":"SociÃ©tÃ© CoopÃ©rative Migros GenÃ¨ve MM GenÃ¨ve-Rieu","UNITE_LOCA":"50612866","BRANCHE":"Petits supermarchÃ©s (400-999 m2)","TAILLE":"20-49 travailleurs","SITE_INTER":"http://www.migros.ch","ADRESSE":"Route de Florissant 86","COMMERCE":"nourriture","P_BESOIN":15},"geometry":{"type":"Point","coordinates":[686195.2201190962,5811184.781266192]}}
+{"type":"Feature","properties":{"ID_ETABLIS":"1-4XH-53021","NOM":"SociÃ©tÃ© CoopÃ©rative Migros GenÃ¨ve MM GenÃ¨ve-Rieu","UNITE_LOCA":"50612866","BRANCHE":"Petits supermarchÃ©s (400-999 m2)","TAILLE":"20-49 travailleurs","SITE_INTER":"http://www.migros.ch","ADRESSE":"Route de Florissant 86","COMMERCE":"autre","P_BESOIN":15},"geometry":{"type":"Point","coordinates":[686195.2201190962,5811184.781266192]}}
 ,
 {"type":"Feature","properties":{"ID_ETABLIS":"1-4XH-53024","NOM":"MM-Servette","UNITE_LOCA":"50612562","BRANCHE":"Grands supermarchÃ©s (1000-2499 m2)","TAILLE":"20-49 travailleurs","SITE_INTER":"http://www.migros.ch","ADRESSE":"Rue de la Servette 93","COMMERCE":"nourriture","P_BESOIN":35},"geometry":{"type":"Point","coordinates":[682396.8444874334,5814603.417878913]}}
 ,
@@ -6394,7 +6394,7 @@
 ,
 {"type":"Feature","properties":{"ID_ETABLIS":"1-4XH-49314","NOM":"Drinks of the World GenÃ¨ve Gare Cornavin","UNITE_LOCA":null,"BRANCHE":"Commerce de dÃ©tail de boissons en magasin spÃ©cialisÃ©","TAILLE":"10-19 travailleurs","SITE_INTER":"http://www.beerworld.ch","ADRESSE":"Place de Cornavin 7","COMMERCE":"autre","P_BESOIN":10},"geometry":{"type":"Point","coordinates":[683877.4392846017,5814174.8222338045]}}
 ,
-{"type":"Feature","properties":{"ID_ETABLIS":"1-4XH-49318","NOM":"K Kiosque GenÃ¨ve Migros de Plainpalais","UNITE_LOCA":"50388952","BRANCHE":"Commerce de dÃ©tail de journaux et de pÃ©riodiques, kiosques","TAILLE":"3-5 travailleurs","SITE_INTER":null,"ADRESSE":"Rue de Carouge 64","COMMERCE":"nourriture","P_BESOIN":10},"geometry":{"type":"Point","coordinates":[683909.4202459161,5811358.953736654]}}
+{"type":"Feature","properties":{"ID_ETABLIS":"1-4XH-49318","NOM":"K Kiosque GenÃ¨ve Migros de Plainpalais","UNITE_LOCA":"50388952","BRANCHE":"Commerce de dÃ©tail de journaux et de pÃ©riodiques, kiosques","TAILLE":"3-5 travailleurs","SITE_INTER":null,"ADRESSE":"Rue de Carouge 64","COMMERCE":"autre","P_BESOIN":10},"geometry":{"type":"Point","coordinates":[683909.4202459161,5811358.953736654]}}
 ,
 {"type":"Feature","properties":{"ID_ETABLIS":"1-4XH-48780","NOM":"Rock & Road","UNITE_LOCA":"85090413","BRANCHE":"Commerce et rÃ©paration de motocycles","TAILLE":"3-5 travailleurs","SITE_INTER":"http://www.rock-and-road.ch","ADRESSE":"Avenue d'AÃ¯re 73D","COMMERCE":"autre","P_BESOIN":1},"geometry":{"type":"Point","coordinates":[680922.5433761665,5813372.698335911]}}
 ,
@@ -6772,7 +6772,7 @@
 ,
 {"type":"Feature","properties":{"ID_ETABLIS":"1-4XH-56559","NOM":"Boutique Atelson GenÃ¨ve","UNITE_LOCA":"65240243","BRANCHE":"Commerce de dÃ©tail d'accessoires et d'habillement sans prÃ©dominance","TAILLE":"1-2 travailleurs","SITE_INTER":"http://atelson.com/fr","ADRESSE":"Rue Neuve-du-Molard 8","COMMERCE":"autre","P_BESOIN":10},"geometry":{"type":"Point","coordinates":[684464.9962269345,5812991.356172655]}}
 ,
-{"type":"Feature","properties":{"ID_ETABLIS":"1-4XH-53114","NOM":"Migros Print-Shop Gare","UNITE_LOCA":"73093919","BRANCHE":"Imprimerie-minute","TAILLE":"6-9 travailleurs","SITE_INTER":"http://www.migros.ch","ADRESSE":"Rue de Lausanne 18","COMMERCE":"nourriture","P_BESOIN":1},"geometry":{"type":"Point","coordinates":[684003.8584020907,5814273.6399015635]}}
+{"type":"Feature","properties":{"ID_ETABLIS":"1-4XH-53114","NOM":"Migros Print-Shop Gare","UNITE_LOCA":"73093919","BRANCHE":"Imprimerie-minute","TAILLE":"6-9 travailleurs","SITE_INTER":"http://www.migros.ch","ADRESSE":"Rue de Lausanne 18","COMMERCE":"autre","P_BESOIN":1},"geometry":{"type":"Point","coordinates":[684003.8584020907,5814273.6399015635]}}
 ,
 {"type":"Feature","properties":{"ID_ETABLIS":"1-4XH-53122","NOM":"MM-Jonction","UNITE_LOCA":"51821552","BRANCHE":"Grands supermarchÃ©s (1000-2499 m2)","TAILLE":"20-49 travailleurs","SITE_INTER":"http://www.migros.ch","ADRESSE":"Boulevard Carl-VOGT 6","COMMERCE":"nourriture","P_BESOIN":35},"geometry":{"type":"Point","coordinates":[682455.9784850269,5812595.391680993]}}
 ,
@@ -7204,7 +7204,7 @@
 ,
 {"type":"Feature","properties":{"ID_ETABLIS":"1-4XH-65299","NOM":"Pressing Blanchisserie Quali-Clean","UNITE_LOCA":"64707754","BRANCHE":"Nettoyage Ã  sec","TAILLE":"3-5 travailleurs","SITE_INTER":null,"ADRESSE":"Rue de Lyon 8","COMMERCE":"autre","P_BESOIN":1},"geometry":{"type":"Point","coordinates":[683301.9207836854,5813932.582024476]}}
 ,
-{"type":"Feature","properties":{"ID_ETABLIS":"1-4XH-64604","NOM":"K Kiosk GenÃ¨ve Migros Champel","UNITE_LOCA":"50391379","BRANCHE":"Commerce de dÃ©tail de journaux et de pÃ©riodiques, kiosques","TAILLE":"3-5 travailleurs","SITE_INTER":"http://www.valora.com","ADRESSE":"Avenue de Champel 61","COMMERCE":"nourriture","P_BESOIN":10},"geometry":{"type":"Point","coordinates":[684896.925135999,5810985.6874765875]}}
+{"type":"Feature","properties":{"ID_ETABLIS":"1-4XH-64604","NOM":"K Kiosk GenÃ¨ve Migros Champel","UNITE_LOCA":"50391379","BRANCHE":"Commerce de dÃ©tail de journaux et de pÃ©riodiques, kiosques","TAILLE":"3-5 travailleurs","SITE_INTER":"http://www.valora.com","ADRESSE":"Avenue de Champel 61","COMMERCE":"autre","P_BESOIN":10},"geometry":{"type":"Point","coordinates":[684896.925135999,5810985.6874765875]}}
 ,
 {"type":"Feature","properties":{"ID_ETABLIS":"1-4XH-659","NOM":"Abyssint","UNITE_LOCA":"77925600","BRANCHE":"Commerce de dÃ©tail d'articles d'horlogerie et de bijouterie en magasin spÃ©cialisÃ©","TAILLE":"1-2 travailleurs","SITE_INTER":"http://www.abyssint.ch","ADRESSE":"Rue du Simplon 2","COMMERCE":"autre","P_BESOIN":10},"geometry":{"type":"Point","coordinates":[685461.4325736563,5813152.324612552]}}
 ,
@@ -9176,7 +9176,7 @@
 ,
 {"type":"Feature","properties":{"ID_ETABLIS":"1-YVGST","NOM":"Tanya Milberg Coiffure","UNITE_LOCA":"97960082","BRANCHE":"Salons de coiffure","TAILLE":"Sans travailleur","SITE_INTER":null,"ADRESSE":"Rue des Cordiers 5","COMMERCE":"autre","P_BESOIN":1},"geometry":{"type":"Point","coordinates":[685977.621060676,5812918.942376882]}}
 ,
-{"type":"Feature","properties":{"ID_ETABLIS":"1-YXN0F","NOM":"Aldi Superdiscount Charmilles","UNITE_LOCA":"11653343","BRANCHE":"Petits supermarchÃ©s (400-999 m2)","TAILLE":"3-5 travailleurs","SITE_INTER":null,"ADRESSE":"Promenade de l'Europe 11","COMMERCE":"autre","P_BESOIN":15},"geometry":{"type":"Point","coordinates":[681743.2264316415,5813781.023846915]}}
+{"type":"Feature","properties":{"ID_ETABLIS":"1-YXN0F","NOM":"Aldi Superdiscount Charmilles","UNITE_LOCA":"11653343","BRANCHE":"Petits supermarchÃ©s (400-999 m2)","TAILLE":"3-5 travailleurs","SITE_INTER":null,"ADRESSE":"Promenade de l'Europe 11","COMMERCE":"nourriture","P_BESOIN":15},"geometry":{"type":"Point","coordinates":[681743.2264316415,5813781.023846915]}}
 ,
 {"type":"Feature","properties":{"ID_ETABLIS":"1-4XH-80553","NOM":"Hotelplan Rousseau","UNITE_LOCA":"64833594","BRANCHE":"ActivitÃ©s des agences de voyage","TAILLE":"3-5 travailleurs","SITE_INTER":"http://www.hotelplan.ch","ADRESSE":"Rue ROUSSEAU 9","COMMERCE":"autre","P_BESOIN":1},"geometry":{"type":"Point","coordinates":[683929.2178687148,5813572.233801281]}}
 ,
@@ -10670,11 +10670,11 @@
 ,
 {"type":"Feature","properties":{"ID_ETABLIS":"1-4XH-99217","NOM":"Alimentation Talad ThaÃ¯","UNITE_LOCA":"70203470","BRANCHE":"Autres commerces de dÃ©tail en magasin spÃ©cialisÃ© de denrÃ©es alimentaires, de boissons et de tabac n.c.a.","TAILLE":"1-2 travailleurs","SITE_INTER":null,"ADRESSE":"Rue Jean-JAQUET 12","COMMERCE":"autre","P_BESOIN":1},"geometry":{"type":"Point","coordinates":[684729.6373798769,5814540.002388943]}}
 ,
-{"type":"Feature","properties":{"ID_ETABLIS":"1-6NPQY","NOM":"Restaurant Migros Navigation","UNITE_LOCA":"54454191","BRANCHE":"Restaurants, cafÃ©s, snack-bar, tea-rooms et salons de dÃ©gustation de glaces","TAILLE":"1-2 travailleurs","SITE_INTER":null,"ADRESSE":"Rue des PÃ¢quis 41","COMMERCE":"nourriture","P_BESOIN":4},"geometry":{"type":"Point","coordinates":[684596.7695927728,5814471.248058695]}}
+{"type":"Feature","properties":{"ID_ETABLIS":"1-6NPQY","NOM":"Restaurant Migros Navigation","UNITE_LOCA":"54454191","BRANCHE":"Restaurants, cafÃ©s, snack-bar, tea-rooms et salons de dÃ©gustation de glaces","TAILLE":"1-2 travailleurs","SITE_INTER":null,"ADRESSE":"Rue des PÃ¢quis 41","COMMERCE":"autre","P_BESOIN":4},"geometry":{"type":"Point","coordinates":[684596.7695927728,5814471.248058695]}}
 ,
 {"type":"Feature","properties":{"ID_ETABLIS":"1-6NQ8R","NOM":"Informatika, Denis Fernex","UNITE_LOCA":null,"BRANCHE":"Commerce de dÃ©tail d'ordinateurs, d'unitÃ©s pÃ©riphÃ©riques et de logiciels en magasin spÃ©cialisÃ©","TAILLE":"1-2 travailleurs","SITE_INTER":"https://informatikashop.ch","ADRESSE":"Rue Hugo-De-SENGER 8","COMMERCE":"autre","P_BESOIN":10},"geometry":{"type":"Point","coordinates":[683611.2318867741,5811452.979920178]}}
 ,
-{"type":"Feature","properties":{"ID_ETABLIS":"1-6NY9S","NOM":"Aldi Superdiscount Servette","UNITE_LOCA":"96990578","BRANCHE":"Petits supermarchÃ©s (400-999 m2)","TAILLE":"6-9 travailleurs","SITE_INTER":null,"ADRESSE":"Rue Antoine-CARTERET 22","COMMERCE":"autre","P_BESOIN":15},"geometry":{"type":"Point","coordinates":[682812.7580404197,5814474.74841064]}}
+{"type":"Feature","properties":{"ID_ETABLIS":"1-6NY9S","NOM":"Aldi Superdiscount Servette","UNITE_LOCA":"96990578","BRANCHE":"Petits supermarchÃ©s (400-999 m2)","TAILLE":"6-9 travailleurs","SITE_INTER":null,"ADRESSE":"Rue Antoine-CARTERET 22","COMMERCE":"nourriture","P_BESOIN":15},"geometry":{"type":"Point","coordinates":[682812.7580404197,5814474.74841064]}}
 ,
 {"type":"Feature","properties":{"ID_ETABLIS":"1-9Y1PN","NOM":"HERZMANN GenÃ¨ve","UNITE_LOCA":"91679036","BRANCHE":"Commerce de gros non spÃ©cialisÃ©","TAILLE":null,"SITE_INTER":null,"ADRESSE":"Avenue De-LUSERNA 32","COMMERCE":"autre","P_BESOIN":1},"geometry":{"type":"Point","coordinates":[681820.1606135212,5814649.891624734]}}
 ,
