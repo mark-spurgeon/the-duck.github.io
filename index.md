@@ -1,3 +1,3 @@
 ---
-redirect_to: "http://hello.markspurgeon.ch"
+redirect_to: "https://hello.markspurgeon.ch"
 ---
