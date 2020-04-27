@@ -1,3 +1,3 @@
 ---
-redirect_to: "https://hello.markspurgeon.ch"
+redirect_to: "https://markspurgeon.ch/gva-covid-distancing"
 ---
